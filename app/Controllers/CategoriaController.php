@@ -11,11 +11,19 @@ class CategoriaController extends BaseController
         $CategoriaModel = new CategoriaModel();
 
         $name = $this->request->getVar('NOMBRE'); // Obtener el término de búsqueda desde el formulario
+        $estado = $this->request->getGet('estado') ?? 'todas';
         $descripcion = $this -> request -> getVar('DESCRIPCION');
 
 
 
-        $query = $CategoriaModel;
+        $query = $CategoriaModel->select('*');
+
+        if($estado === 'altas'){
+            $query = $query->where('FECHA_BAJA', null);
+        }else if($estado === 'bajas'){
+            $query = $query->where('FECHA_BAJA !=', null);
+        }
+
         // Aplicar filtro si se introduce un nombre
         if($name){
             $query = $query->like('NOMBRE', $name);
@@ -29,6 +37,7 @@ class CategoriaController extends BaseController
         $data['pager'] = $CategoriaModel->pager; // Pasar el objeto del paginador a la vista
         $data['name'] = $name; // Mantener el término de búsqueda en la vista
         $data['descripcion'] = $descripcion;
+        $data['estado'] = $estado; // Mantener el estado en la vista
         return view('listado_categoria', $data); // Cargar la vista con los datos
     }
 
@@ -90,7 +99,7 @@ class CategoriaController extends BaseController
     public function delete($PK_ID_CATEGORIA)
     {
         $CategoriaModel = new CategoriaModel();
-        $CategoriaModel->delete($PK_ID_CATEGORIA); // Eliminar categoría
-        return redirect()->to('/categoria')->with('success', 'Categoría eliminada correctamente.');
+        $CategoriaModel->update($PK_ID_CATEGORIA, ['FECHA_BAJA' => date('Y-m-d H:i:s')]); // Dar de baja la categoría
+        return redirect()->to('/categoria')->with('success', 'Categoría dada de baja correctamente.');
     }
 }

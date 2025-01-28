@@ -27,13 +27,13 @@
                 <button type="submit" class="btn btn-primary">Buscar</button>
             </div>
             <div class="d-flex input-group w-auto ms-5">
-                <select name="" id="" class=" form-control w-auto selectpicker">
-                    <option value="" disabled selected>Seleccione una opción</option>
-                    <option value="">Bajas</option>
-                    <option value="">Altas</option>
-                    <option value="">Todas</option>
+                <select name="estado" id="estado" class="form-control w-auto selectpicker">
+                    <option value="" disabled <?= $estado === null ? 'selected' : '' ?>>Seleccione una opción</option>
+                    <option value="altas" <?= $estado === 'altas' ? 'selected' : '' ?>>Altas</option>
+                    <option value="bajas" <?= $estado === 'bajas' ? 'selected' : '' ?>>Bajas</option>
+                    <option value="todas" <?= $estado === 'todas' ? 'selected' : '' ?>>Todas</option>
                 </select>
-                <a href="" class="btn btn-primary w-auto">Ver listado</a>
+                <button type="submit" class="btn btn-primary w-auto">Ver listado</bu>
             </div>
         </div>
     </form>

@@ -310,3 +310,113 @@ in APPPATH/Views/listado_categoria.php on line 36.
  7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
  8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 17:02:11 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: GET, Route: categoria/delete/3]
+in SYSTEMPATH/BaseModel.php on line 1010.
+ 1 SYSTEMPATH/BaseModel.php(1010): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH/Model.php(863): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH/Controllers/CategoriaController.php(102): CodeIgniter\Model->update('3', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->delete('3')
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 17:13:29 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: categoria]
+in APPPATH/Views/listado_categoria.php on line 66.
+ 1 APPPATH/Views/listado_categoria.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 66)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(44): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 17:15:22 --> ErrorException: Undefined variable $pager
+[Method: GET, Route: categoria]
+in APPPATH/Views/listado_categoria.php on line 66.
+ 1 APPPATH/Views/listado_categoria.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 66)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(44): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 17:51:14 --> ErrorException: Undefined variable $estado
+[Method: GET, Route: categoria]
+in APPPATH/Views/listado_categoria.php on line 31.
+ 1 APPPATH/Views/listado_categoria.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estado', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 31)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(32): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 17:51:36 --> ErrorException: Undefined variable $estado
+[Method: GET, Route: categoria]
+in APPPATH/Views/listado_categoria.php on line 31.
+ 1 APPPATH/Views/listado_categoria.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estado', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 31)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(32): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 17:55:35 --> ErrorException: Undefined variable $estado
+[Method: GET, Route: categoria]
+in APPPATH/Views/listado_categoria.php on line 31.
+ 1 APPPATH/Views/listado_categoria.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estado', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 31)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(40): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 17:56:53 --> ErrorException: Undefined variable $estado
+[Method: GET, Route: categoria]
+in APPPATH/Views/listado_categoria.php on line 31.
+ 1 APPPATH/Views/listado_categoria.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estado', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 31)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(40): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 17:57:12 --> ErrorException: Undefined variable $estado
+[Method: GET, Route: categoria]
+in APPPATH/Views/listado_categoria.php on line 31.
+ 1 APPPATH/Views/listado_categoria.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estado', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 31)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(40): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
