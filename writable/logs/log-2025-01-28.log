@@ -1,0 +1,312 @@
+CRITICAL - 2025-01-28 07:26:58 --> ErrorException: Undefined variable $name
+[Method: GET, Route: categoria/save/2]
+in APPPATH/Views/listado_categoria.php on line 28.
+ 1 APPPATH/Views/listado_categoria.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $name', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 28)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(114): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->saveCategoria('2')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 07:27:01 --> ErrorException: Undefined variable $name
+[Method: GET, Route: categoria/save/2]
+in APPPATH/Views/listado_categoria.php on line 28.
+ 1 APPPATH/Views/listado_categoria.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $name', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 28)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(114): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->saveCategoria('2')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 07:28:52 --> TypeError: Cannot access offset of type string on string
+[Method: GET, Route: categoria/save/2]
+in APPPATH/Views/listado_categoria.php on line 45.
+ 1 SYSTEMPATH/View/View.php(224): include()
+ 2 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 4 APPPATH/Controllers/CategoriaController.php(114): view('listado_categoria', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->saveCategoria('2')
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 07:30:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "categoria.php"
+[Method: GET, Route: categoria/save/2]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('categoria.php')
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('categoria', [], true)
+ 3 APPPATH/Controllers/CategoriaController.php(114): view('categoria', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->saveCategoria('2')
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 07:31:36 --> TypeError: Cannot access offset of type string on string
+[Method: GET, Route: categoria/save/2]
+in APPPATH/Views/listado_categoria.php on line 45.
+ 1 SYSTEMPATH/View/View.php(224): include()
+ 2 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 4 APPPATH/Controllers/CategoriaController.php(114): view('listado_categoria', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->saveCategoria('2')
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 07:34:51 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "(:num)2"
+[Method: GET, Route: categoria/save/%28:num%292]
+in SYSTEMPATH/Router/Router.php on line 739.
+ 1 SYSTEMPATH/Router/Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('categoria/save/(:num)2')
+ 2 SYSTEMPATH/CodeIgniter.php(832): CodeIgniter\Router\Router->handle('categoria/save/(:num)2')
+ 3 SYSTEMPATH/CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-01-28 09:25:32 --> mysqli_sql_exception: Unknown column 'updated_at' in 'field list' in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('UPDATE `CATEGOR...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `CATEGOR...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `CATEGOR...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `CATEGOR...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(1027): CodeIgniter\Model->doUpdate(Array, Array)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(863): CodeIgniter\BaseModel->update(Array, Array)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/CategoriaController.php(67): CodeIgniter\Model->update('3', Array)
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\CategoriaController->saveCategoria('3')
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-01-28 09:25:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+[Method: POST, Route: categoria/save/3]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `CATEGORIA` SET `NOMBRE` = :NOMBRE:, `DESCRIPCION` = :DESCRIPCION:, `updated_at` = :updated_at:
+WHERE `CATEGORIA`.`PK_ID_CATEGORIA` IN :CATEGORIA.PK_ID_CATEGORIA:', [...], false)
+ 2 SYSTEMPATH/Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH/BaseModel.php(1027): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH/Model.php(863): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH/Controllers/CategoriaController.php(67): CodeIgniter\Model->update('3', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->saveCategoria('3')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 09:25:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `CATEGORIA` SET `NOMBRE` = \'asdassadas\', `DESCRIPCION` = \'dadsasdasdasd\', `updated_at` = \'2025-01-28 09:25:32\'
+WHERE `CATEGORIA`.`PK_ID_CATEGORIA` IN (\'3\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `CATEGORIA` SET `NOMBRE` = \'asdassadas\', `DESCRIPCION` = \'dadsasdasdasd\', `updated_at` = \'2025-01-28 09:25:32\'
+WHERE `CATEGORIA`.`PK_ID_CATEGORIA` IN (\'3\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `CATEGORIA` SET `NOMBRE` = :NOMBRE:, `DESCRIPCION` = :DESCRIPCION:, `updated_at` = :updated_at:
+WHERE `CATEGORIA`.`PK_ID_CATEGORIA` IN :CATEGORIA.PK_ID_CATEGORIA:', [...], false)
+ 4 SYSTEMPATH/Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH/BaseModel.php(1027): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH/Model.php(863): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH/Controllers/CategoriaController.php(67): CodeIgniter\Model->update('3', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->saveCategoria('3')
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 09:25:32 --> [Caused by] mysqli_sql_exception: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('UPDATE `CATEGORIA` SET `NOMBRE` = \'asdassadas\', `DESCRIPCION` = \'dadsasdasdasd\', `updated_at` = \'2025-01-28 09:25:32\'
+WHERE `CATEGORIA`.`PK_ID_CATEGORIA` IN (\'3\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `CATEGORIA` SET `NOMBRE` = \'asdassadas\', `DESCRIPCION` = \'dadsasdasdasd\', `updated_at` = \'2025-01-28 09:25:32\'
+WHERE `CATEGORIA`.`PK_ID_CATEGORIA` IN (\'3\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `CATEGORIA` SET `NOMBRE` = \'asdassadas\', `DESCRIPCION` = \'dadsasdasdasd\', `updated_at` = \'2025-01-28 09:25:32\'
+WHERE `CATEGORIA`.`PK_ID_CATEGORIA` IN (\'3\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `CATEGORIA` SET `NOMBRE` = :NOMBRE:, `DESCRIPCION` = :DESCRIPCION:, `updated_at` = :updated_at:
+WHERE `CATEGORIA`.`PK_ID_CATEGORIA` IN :CATEGORIA.PK_ID_CATEGORIA:', [...], false)
+ 5 SYSTEMPATH/Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH/BaseModel.php(1027): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH/Model.php(863): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH/Controllers/CategoriaController.php(67): CodeIgniter\Model->update('3', [...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->saveCategoria('3')
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 09:35:37 --> ErrorException: Undefined variable $PK_ID_CATEGORIA
+[Method: GET, Route: categoria]
+in APPPATH/Views/listado_categoria.php on line 26.
+ 1 APPPATH/Views/listado_categoria.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $PK_ID_CATEGORIA', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 26)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(26): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 11:05:12 --> CodeIgniter\Pager\Exceptions\PagerException: "custom_pagination" is not a valid Pager template.
+[Method: GET, Route: categoria]
+in SYSTEMPATH/Pager/Pager.php on line 124.
+ 1 SYSTEMPATH/Pager/Pager.php(124): CodeIgniter\Pager\Exceptions\PagerException::forInvalidTemplate('custom_pagination')
+ 2 SYSTEMPATH/Pager/Pager.php(87): CodeIgniter\Pager\Pager->displayLinks('default', 'custom_pagination')
+ 3 APPPATH/Views/listado_categoria.php(59): CodeIgniter\Pager\Pager->links('default', 'custom_pagination')
+ 4 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 5 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 7 APPPATH/Controllers/CategoriaController.php(26): view('listado_categoria', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 11:05:42 --> CodeIgniter\Pager\Exceptions\PagerException: "custom_pagination" is not a valid Pager template.
+[Method: GET, Route: categoria]
+in SYSTEMPATH/Pager/Pager.php on line 124.
+ 1 SYSTEMPATH/Pager/Pager.php(124): CodeIgniter\Pager\Exceptions\PagerException::forInvalidTemplate('custom_pagination')
+ 2 SYSTEMPATH/Pager/Pager.php(87): CodeIgniter\Pager\Pager->displayLinks('default', 'custom_pagination')
+ 3 APPPATH/Views/listado_categoria.php(59): CodeIgniter\Pager\Pager->links('default', 'custom_pagination')
+ 4 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 5 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 7 APPPATH/Controllers/CategoriaController.php(26): view('listado_categoria', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 11:06:29 --> CodeIgniter\Pager\Exceptions\PagerException: "custom_pagination" is not a valid Pager template.
+[Method: GET, Route: categoria]
+in SYSTEMPATH/Pager/Pager.php on line 124.
+ 1 SYSTEMPATH/Pager/Pager.php(124): CodeIgniter\Pager\Exceptions\PagerException::forInvalidTemplate('custom_pagination')
+ 2 SYSTEMPATH/Pager/Pager.php(87): CodeIgniter\Pager\Pager->displayLinks('default', 'custom_pagination')
+ 3 APPPATH/Views/listado_categoria.php(60): CodeIgniter\Pager\Pager->links('default', 'custom_pagination')
+ 4 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 5 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 7 APPPATH/Controllers/CategoriaController.php(26): view('listado_categoria', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 11:09:29 --> TypeError: CodeIgniter\View\View::render(): Argument #1 ($view) must be of type string, array given, called in /Applications/MAMP/htdocs/tienda_manualidades/system/Pager/Pager.php on line 130
+[Method: GET, Route: categoria]
+in SYSTEMPATH/View/View.php on line 166.
+ 1 SYSTEMPATH/Pager/Pager.php(130): CodeIgniter\View\View->render([...])
+ 2 SYSTEMPATH/Pager/Pager.php(87): CodeIgniter\Pager\Pager->displayLinks('default', 'custom_pagination')
+ 3 APPPATH/Views/listado_categoria.php(60): CodeIgniter\Pager\Pager->links('default', 'custom_pagination')
+ 4 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 5 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 7 APPPATH/Controllers/CategoriaController.php(26): view('listado_categoria', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 11:11:32 --> CodeIgniter\Pager\Exceptions\PagerException: "default_full" is not a valid Pager template.
+[Method: GET, Route: categoria]
+in SYSTEMPATH/Pager/Pager.php on line 124.
+ 1 SYSTEMPATH/Pager/Pager.php(124): CodeIgniter\Pager\Exceptions\PagerException::forInvalidTemplate('default_full')
+ 2 SYSTEMPATH/Pager/Pager.php(87): CodeIgniter\Pager\Pager->displayLinks('default', 'default_full')
+ 3 APPPATH/Views/listado_categoria.php(60): CodeIgniter\Pager\Pager->links('default')
+ 4 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 5 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 7 APPPATH/Controllers/CategoriaController.php(26): view('listado_categoria', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 11:11:34 --> CodeIgniter\Pager\Exceptions\PagerException: "default_full" is not a valid Pager template.
+[Method: GET, Route: categoria]
+in SYSTEMPATH/Pager/Pager.php on line 124.
+ 1 SYSTEMPATH/Pager/Pager.php(124): CodeIgniter\Pager\Exceptions\PagerException::forInvalidTemplate('default_full')
+ 2 SYSTEMPATH/Pager/Pager.php(87): CodeIgniter\Pager\Pager->displayLinks('default', 'default_full')
+ 3 APPPATH/Views/listado_categoria.php(60): CodeIgniter\Pager\Pager->links('default')
+ 4 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 5 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 7 APPPATH/Controllers/CategoriaController.php(26): view('listado_categoria', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 11:11:36 --> CodeIgniter\Pager\Exceptions\PagerException: "default_full" is not a valid Pager template.
+[Method: GET, Route: categoria]
+in SYSTEMPATH/Pager/Pager.php on line 124.
+ 1 SYSTEMPATH/Pager/Pager.php(124): CodeIgniter\Pager\Exceptions\PagerException::forInvalidTemplate('default_full')
+ 2 SYSTEMPATH/Pager/Pager.php(87): CodeIgniter\Pager\Pager->displayLinks('default', 'default_full')
+ 3 APPPATH/Views/listado_categoria.php(60): CodeIgniter\Pager\Pager->links('default')
+ 4 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 5 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 7 APPPATH/Controllers/CategoriaController.php(26): view('listado_categoria', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 11:11:37 --> CodeIgniter\Pager\Exceptions\PagerException: "default_full" is not a valid Pager template.
+[Method: GET, Route: categoria]
+in SYSTEMPATH/Pager/Pager.php on line 124.
+ 1 SYSTEMPATH/Pager/Pager.php(124): CodeIgniter\Pager\Exceptions\PagerException::forInvalidTemplate('default_full')
+ 2 SYSTEMPATH/Pager/Pager.php(87): CodeIgniter\Pager\Pager->displayLinks('default', 'default_full')
+ 3 APPPATH/Views/listado_categoria.php(60): CodeIgniter\Pager\Pager->links('default')
+ 4 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 5 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 7 APPPATH/Controllers/CategoriaController.php(26): view('listado_categoria', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 12:45:14 --> ParseError: syntax error, unexpected token ";"
+[Method: GET, Route: categoria]
+in APPPATH/Views/listado_categoria.php on line 36.
+ 1 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 3 APPPATH/Controllers/CategoriaController.php(33): view('listado_categoria', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 12:45:25 --> ParseError: syntax error, unexpected token ";"
+[Method: GET, Route: categoria]
+in APPPATH/Views/listado_categoria.php on line 36.
+ 1 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 3 APPPATH/Controllers/CategoriaController.php(33): view('listado_categoria', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
