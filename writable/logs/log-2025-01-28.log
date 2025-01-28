@@ -420,3 +420,141 @@ in APPPATH/Views/listado_categoria.php on line 31.
  9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 18:24:33 --> ParseError: syntax error, unexpected token "public"
+[Method: GET, Route: cliente]
+in APPPATH/Controllers/ClienteController.php on line 59.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/ClienteController.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ClienteController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ClienteController')
+ 4 SYSTEMPATH/CodeIgniter.php(885): class_exists('\\App\\Controllers\\ClienteController', true)
+ 5 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 18:26:07 --> ErrorException: Undefined variable $descripcion
+[Method: GET, Route: cliente]
+in APPPATH/Views/listado_categoria.php on line 26.
+ 1 APPPATH/Views/listado_categoria.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $descripcion', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 26)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(61): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 18:26:42 --> ErrorException: Undefined variable $descripcion
+[Method: GET, Route: cliente]
+in APPPATH/Views/listado_categoria.php on line 26.
+ 1 APPPATH/Views/listado_categoria.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $descripcion', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 26)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(60): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 18:27:10 --> ErrorException: Undefined variable $descripcion
+[Method: GET, Route: cliente]
+in APPPATH/Views/listado_categoria.php on line 26.
+ 1 APPPATH/Views/listado_categoria.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $descripcion', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 26)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(60): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 18:28:16 --> ErrorException: Undefined variable $descripcion
+[Method: GET, Route: cliente]
+in APPPATH/Views/listado_categoria.php on line 26.
+ 1 APPPATH/Views/listado_categoria.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $descripcion', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 26)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(60): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 18:28:34 --> ErrorException: Undefined variable $descripcion
+[Method: GET, Route: cliente]
+in APPPATH/Views/listado_categoria.php on line 26.
+ 1 APPPATH/Views/listado_categoria.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $descripcion', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 26)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(60): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 18:29:16 --> ErrorException: Undefined variable $descripcion
+[Method: GET, Route: cliente]
+in APPPATH/Views/listado_categoria.php on line 26.
+ 1 APPPATH/Views/listado_categoria.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $descripcion', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 26)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(61): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 18:29:49 --> ErrorException: Undefined variable $descripcion
+[Method: GET, Route: cliente]
+in APPPATH/Views/listado_categoria.php on line 26.
+ 1 APPPATH/Views/listado_categoria.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $descripcion', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 26)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(61): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 18:30:58 --> ErrorException: Undefined variable $descripcion
+[Method: GET, Route: cliente]
+in APPPATH/Views/listado_categoria.php on line 26.
+ 1 APPPATH/Views/listado_categoria.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $descripcion', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 26)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(61): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-28 18:32:18 --> ErrorException: Undefined array key "DESCRIPCION"
+[Method: GET, Route: cliente]
+in APPPATH/Views/listado_cliente.php on line 59.
+ 1 APPPATH/Views/listado_cliente.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "DESCRIPCION"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_cliente.php', 59)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_cliente.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_cliente', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(61): view('listado_cliente', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
