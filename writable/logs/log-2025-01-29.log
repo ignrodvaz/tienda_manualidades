@@ -548,3 +548,115 @@ in APPPATH/Views/listado_detalle_pedido.php on line 57.
  9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-29 18:06:10 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "detalle$detalle"
+[Method: POST, Route: detalle$detalle/save]
+in SYSTEMPATH/Router/Router.php on line 739.
+ 1 SYSTEMPATH/Router/Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('detalle$detalle/save')
+ 2 SYSTEMPATH/CodeIgniter.php(832): CodeIgniter\Router\Router->handle('detalle$detalle/save')
+ 3 SYSTEMPATH/CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-29 18:06:21 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "detalle$detalle"
+[Method: POST, Route: detalle$detalle/save]
+in SYSTEMPATH/Router/Router.php on line 739.
+ 1 SYSTEMPATH/Router/Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('detalle$detalle/save')
+ 2 SYSTEMPATH/CodeIgniter.php(832): CodeIgniter\Router\Router->handle('detalle$detalle/save')
+ 3 SYSTEMPATH/CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-29 18:06:24 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "detalle$detalle"
+[Method: POST, Route: detalle$detalle/save]
+in SYSTEMPATH/Router/Router.php on line 739.
+ 1 SYSTEMPATH/Router/Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('detalle$detalle/save')
+ 2 SYSTEMPATH/CodeIgniter.php(832): CodeIgniter\Router\Router->handle('detalle$detalle/save')
+ 3 SYSTEMPATH/CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-01-29 19:31:01 --> mysqli_sql_exception: Unknown column 'DETALLE_PEDIDO.PRECIO_UNITARIO' in 'where clause' in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/PedidoController.php(53): CodeIgniter\BaseModel->paginate(3)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-01-29 19:31:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'DETALLE_PEDIDO.PRECIO_UNITARIO' in 'where clause'
+[Method: GET, Route: pedido]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `DETALLE_PEDIDO`.`PRECIO_UNITARIO` LIKE :DETALLE_PEDIDO.PRECIO_UNITARIO: ESCAPE \'!\'', [...], false)
+ 2 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH/Controllers/PedidoController.php(53): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-29 19:31:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'DETALLE_PEDIDO.PRECIO_UNITARIO' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `DETALLE_PEDIDO`.`PRECIO_UNITARIO` LIKE \'%mi%\' ESCAPE \'!\'')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `DETALLE_PEDIDO`.`PRECIO_UNITARIO` LIKE \'%mi%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `DETALLE_PEDIDO`.`PRECIO_UNITARIO` LIKE :DETALLE_PEDIDO.PRECIO_UNITARIO: ESCAPE \'!\'', [...], false)
+ 4 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH/Controllers/PedidoController.php(53): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-29 19:31:01 --> [Caused by] mysqli_sql_exception: Unknown column 'DETALLE_PEDIDO.PRECIO_UNITARIO' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `DETALLE_PEDIDO`.`PRECIO_UNITARIO` LIKE \'%mi%\' ESCAPE \'!\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `DETALLE_PEDIDO`.`PRECIO_UNITARIO` LIKE \'%mi%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `DETALLE_PEDIDO`.`PRECIO_UNITARIO` LIKE \'%mi%\' ESCAPE \'!\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `DETALLE_PEDIDO`.`PRECIO_UNITARIO` LIKE :DETALLE_PEDIDO.PRECIO_UNITARIO: ESCAPE \'!\'', [...], false)
+ 5 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH/Controllers/PedidoController.php(53): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

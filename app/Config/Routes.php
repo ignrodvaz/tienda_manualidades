@@ -38,3 +38,13 @@ $routes->post('detalle_pedido/save', 'DetallePedidoController::saveDetallePedido
 $routes->get('detalle_pedido/save/(:num)', 'DetallePedidoController::saveDetallePedido/$1'); // Mostrar formulario para editar DETALLE_PEDIDO (GET)
 $routes->post('detalle_pedido/save/(:num)', 'DetallePedidoController::saveDetallePedido/$1'); // Editar DETALLE_PEDIDO (POST)
 $routes->get('detalle_pedido/delete/(:num)', 'DetallePedidoController::delete/$1'); //Esta ruta elimina una DETALLE_PEDIDO específica usando su ID.
+
+//PEDIDO
+//Rutas para Pedido
+$routes->get('pedido', 'PedidoController::index'); //Esta ruta muestra el listado de PEDIDO.
+//Estas rutas manejan tanto la creación como la edición de PEDIDO.
+$routes->get('pedido/save', 'PedidoController::savePedido'); // Mostrar formulario para crear PEDIDO (GET)
+$routes->post('pedido/save', 'PedidoController::savePedido'); // Crear PEDIDO (POST)
+$routes->get('pedido/save/(:num)', 'PedidoController::savePedido/$1'); // Mostrar formulario para editar PEDIDO (GET)
+$routes->post('pedido/save/(:num)', 'PedidoController::savePedido/$1'); // Editar PEDIDO (POST)
+$routes->get('pedido/delete/(:num)', 'PedidoController::delete/$1'); //Esta ruta elimina una PEDIDO específica usando su ID.

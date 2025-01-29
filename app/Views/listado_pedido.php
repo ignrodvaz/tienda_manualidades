@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de Clientes</title>
+    <title>Listado de Pedidos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
 </head>
@@ -11,23 +11,22 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <body>
 <div class="container w-100 mt-5">
-    <h1 class="text-center">Listado de Clientes</h1>
+    <h1 class="text-center">Listado de Pedidos</h1>
 
     <?php if (session()->getFlashdata('success')): ?>
         <script>
             toastr.success('<?= session()->getFlashdata('success'); ?>');
         </script>
     <?php endif; ?>
-    <form action="<?= base_url('cliente')?>" class="mb-3">
+    <form action="<?= base_url('pedido')?>" class="mb-3">
         <div class="container d-flex">
-            <a href="<?=base_url('cliente/save')?>" class="btn btn-primary w-auto me-3">Crear Cliente</a>
+            <a href="<?=base_url('pedido/save')?>" class="btn btn-primary w-auto me-3">Crear Pedido</a>
             <div class="input-group">
-                <input type="text" name="NOMBRE" class="form-control" placeholder="Nombre" value="<?= esc($name) ?>">
-                <input type="text" name="EMAIL" class="form-control" placeholder="Email" value="<?= esc($email) ?>">
-                <input type="text" name="TELEFONO" class="form-control" placeholder="Telefono" value="<?= esc($telefono) ?>">
-                <input type="text" name="DIRECCION" class="form-control" placeholder="Direccion" value="<?= esc($direccion) ?>">
-                <input type="text" name="FECHA_REGISTRO" class="form-control" placeholder="Fecha Registro" value="<?= esc($fecha_registro) ?>">
-                <input type="text" name="ROL" class="form-control" placeholder="Rol" value="<?= esc($rol) ?>">
+                <input type="text" name="FECHA_PEDIDO" class="form-control" placeholder="Fecha Pedido" value="<?= esc($fecha_pedido) ?>">
+                <input type="text" name="DIRECCION_PEDIDO" class="form-control" placeholder="Direccion" value="<?= esc($direccion_pedido) ?>">
+                <input type="text" name="TOTAL_PEDIDO" class="form-control" placeholder="Total" value="<?= esc($total_pedido) ?>">
+                <input type="text" name="ESTADO" class="form-control" placeholder="Estado" value="<?= esc($estado_pedido) ?>">
+                <input type="text" name="FK_ID_CLIENTE" class="form-control" placeholder="ID Cliente" value="<?= esc($fk_id_cliente) ?>">
                 <select name="estado" id="estado" class="form-control h-100 selectpicker">
                     <option value="" disabled <?= $estado === null ? 'selected' : '' ?>>Seleccione una opción</option>
                     <option value="altas" <?= $estado === 'altas' ? 'selected' : '' ?>>Altas</option>
@@ -39,31 +38,29 @@
         </div>
     </form>
 
-    <?php if (!empty($clientes) && is_array($clientes)): ?>
+    <?php if (!empty($pedidos) && is_array($pedidos)): ?>
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>NOMBRE</th>
-                    <th>EMAIL</th>
-                    <th>TELEFONO</th>
-                    <th>DIRECCION</th>
-                    <th>FECHA REGISTRO</th>
-                    <th>ROL</th>
+                    <th>FECHA PEDIDO</th>
+                    <th>DIRECCION PEDIDO</th>
+                    <th>TOTAL PEDIDO</th>
+                    <th>ESTADO</th>
+                    <th>ID CLIENTE</th>
                     <th>ACCIONES</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($clientes as $cliente): ?>
+                <?php foreach ($pedidos as $pedido): ?>
                     <tr>
-                        <td><?= esc($cliente['NOMBRE']) ?></td>
-                        <td><?= esc($cliente['EMAIL']) ?></td>
-                        <td><?= esc($cliente['TELEFONO']) ?></td>
-                        <td><?= esc($cliente['DIRECCION']) ?></td>
-                        <td><?= esc($cliente['FECHA_REGISTRO']) ?></td>
-                        <td><?= esc($cliente['ROL_NOMBRE']) ?></td>
+                        <td><?= esc($pedido['FECHA_PEDIDO']) ?></td>
+                        <td><?= esc($pedido['DIRECCION_PEDIDO']) ?></td>
+                        <td><?= esc($pedido['TOTAL_PEDIDO']) ?></td>
+                        <td><?= esc($pedido['ESTADO']) ?></td>
+                        <td><?= esc($pedido['FK_ID_CLIENTE']) ?></td>
                         <td>
-                            <a href="<?= base_url('cliente/save/' . $cliente['PK_ID_CLIENTE']) ?>" class="btn btn-warning btn-sm">Editar</a>
-                            <a href="<?= base_url('cliente/delete/' . esc($cliente['PK_ID_CLIENTE'])) ?>" 
+                            <a href="<?= base_url('pedido/save/' . $pedido['PK_ID_PEDIDO']) ?>" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="<?= base_url('pedido/delete/' . esc($pedido['PK_ID_PEDIDO'])) ?>" 
                                class="btn btn-danger btn-sm"
                                onclick="return confirm('¿Estás seguro de eliminar este cliente?');">Eliminar</a>
                         </td>

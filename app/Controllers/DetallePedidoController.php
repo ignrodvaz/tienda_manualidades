@@ -70,7 +70,7 @@ class DetallePedidoController extends BaseController
         if ($this->request->getMethod()=='POST') {
             // Reglas de validación
             $rules = [
-                'nombre' => 'required|min_length[3]|max_length[100]',
+                'cantidad' => 'required',
                 
             ];
 
