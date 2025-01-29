@@ -498,3 +498,53 @@ WHERE `FECHA_BAJA` IS NOT NULL', [], false)
 11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
 12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-29 11:53:18 --> ErrorException: Undefined variable $name
+[Method: GET, Route: detalle_pedido]
+in APPPATH/Controllers/DetallePedidoController.php on line 53.
+ 1 APPPATH/Controllers/DetallePedidoController.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $name', '/Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/DetallePedidoController.php', 53)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-29 12:00:06 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "listad_detalle_pedido.php"
+[Method: GET, Route: detalle_pedido]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('listad_detalle_pedido.php')
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listad_detalle_pedido', [], true)
+ 3 APPPATH/Controllers/DetallePedidoController.php(59): view('listad_detalle_pedido', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-29 12:00:31 --> ErrorException: Undefined variable $producto
+[Method: GET, Route: detalle_pedido]
+in APPPATH/Views/listado_detalle_pedido.php on line 25.
+ 1 APPPATH/Views/listado_detalle_pedido.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $producto', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_detalle_pedido.php', 25)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_detalle_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_detalle_pedido', [], true)
+ 5 APPPATH/Controllers/DetallePedidoController.php(59): view('listado_detalle_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-29 12:22:45 --> ErrorException: Undefined array key "PRECIO"
+[Method: GET, Route: detalle_pedido]
+in APPPATH/Views/listado_detalle_pedido.php on line 57.
+ 1 APPPATH/Views/listado_detalle_pedido.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "PRECIO"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_detalle_pedido.php', 57)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_detalle_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_detalle_pedido', [], true)
+ 5 APPPATH/Controllers/DetallePedidoController.php(59): view('listado_detalle_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

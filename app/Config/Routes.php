@@ -28,3 +28,13 @@ $routes->post('cliente/save', 'ClienteController::saveCliente'); // Crear CLIENT
 $routes->get('cliente/save/(:num)', 'ClienteController::saveCliente/$1'); // Mostrar formulario para editar CLIENTE (GET)
 $routes->post('cliente/save/(:num)', 'ClienteController::saveCliente/$1'); // Editar CLIENTE (POST)
 $routes->get('cliente/delete/(:num)', 'ClienteController::delete/$1'); //Esta ruta elimina una CLIENTE específica usando su ID.
+
+//DETALLE_PEDIDO
+//Rutas para Detalle_pedido
+$routes->get('detalle_pedido', 'DetallePedidoController::index'); //Esta ruta muestra el listado de DETALLE_PEDIDO.
+//Estas rutas manejan tanto la creación como la edición de DETALLE_PEDIDO.
+$routes->get('detalle_pedido/save', 'DetallePedidoController::saveDetallePedido'); // Mostrar formulario para crear DETALLE_PEDIDO (GET)
+$routes->post('detalle_pedido/save', 'DetallePedidoController::saveDetallePedido'); // Crear DETALLE_PEDIDO (POST)
+$routes->get('detalle_pedido/save/(:num)', 'DetallePedidoController::saveDetallePedido/$1'); // Mostrar formulario para editar DETALLE_PEDIDO (GET)
+$routes->post('detalle_pedido/save/(:num)', 'DetallePedidoController::saveDetallePedido/$1'); // Editar DETALLE_PEDIDO (POST)
+$routes->get('detalle_pedido/delete/(:num)', 'DetallePedidoController::delete/$1'); //Esta ruta elimina una DETALLE_PEDIDO específica usando su ID.
