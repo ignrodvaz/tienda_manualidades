@@ -21,29 +21,36 @@ class ClienteController extends BaseController
 
 
 
-        $query = $ClienteModel->select('*');
+        $query = $ClienteModel->select('CLIENTE.*, ROL.NOMBRE AS ROL_NOMBRE')->join('ROL', 'ROL.PK_ID_ROL = CLIENTE.FK_ID_ROL', 'left');
 
-        if($estado === 'altas'){
-            $query = $query->where('FECHA_BAJA', null);
-        }else if($estado === 'bajas'){
-            $query = $query->where('FECHA_BAJA !=', null);
+        // Aplicar filtro por estado usando switch
+        switch ($estado) {
+            case 'altas':
+                $query->where('CLIENTE.FECHA_BAJA', null);
+                break;
+            case 'bajas':
+                $query->where('CLIENTE.FECHA_BAJA !=', null);
+                break;
+            default:
+                // No se aplica ningún filtro adicional para 'todas'
+                break;
         }
 
         // Aplicar filtro si se introduce un nombre
         if($name){
-            $query = $query->like('NOMBRE', $name);
+            $query->like('CLIENTE.NOMBRE', $name);
         }else if($email){
-            $query = $query->like('EMAIL', $email);
+            $query->like('CLIENTE.EMAIL', $email);
         }else if($contrasena){
-            $query = $query->like('CONTRASENA', $contrasena);
+            $query->like('CLIENTE.CONTRASENA', $contrasena);
         }else if($telefono){
-            $query = $query->like('TELEFONO', $telefono);
+            $query->like('CLIENTE.TELEFONO', $telefono);
         }else if($direccion){
-            $query = $query->like('DIRECCION', $direccion);
+            $query->like('CLIENTE.DIRECCION', $direccion);
         }else if($fecha_registro){
-            $query = $query->like('FECHA_REGISTRO', $fecha_registro);
+            $query->like('CLIENTE.FECHA_REGISTRO', $fecha_registro);
         }else if($rol){
-            $query = $query->like('FK_ID_ROL', $rol);
+            $query->like('ROL.NOMBRE', $rol);
         }
 
         // Configuración de la paginación
@@ -58,6 +65,7 @@ class ClienteController extends BaseController
         $data['fecha_registro'] = $fecha_registro;
         $data['rol'] = $rol;
         $data['estado'] = $estado; // Mantener el estado en la vista
+
         return view('listado_cliente', $data); // Cargar la vista con los datos
     }
 
@@ -73,7 +81,7 @@ class ClienteController extends BaseController
             // Reglas de validación
             $rules = [
                 'nombre' => 'required|min_length[3]|max_length[100]',
-                'descripcion' => 'required',
+                
             ];
 
             $messages = [
@@ -82,25 +90,26 @@ class ClienteController extends BaseController
                     'min_length' => 'El Nombre debe tener al menos 3 caracteres.',
                     'max_length' => 'El Nombre no puede exceder los 100 caracteres.',
                 ],
-                'descripcion' => [
-                    'required' => 'El campo Descripción es obligatorio.',
-                ],
             ];
 
             if (!$this->validate($rules, $messages)) {
                 // Si las validaciones fallan, devuelve los errores
                 $data['validation'] = $this->validator;
+
             } else {
                 // Preparar datos del formulario
                 $clienteData = [
                     'NOMBRE' => $this->request->getPost('nombre'),
                     'EMAIL'=> $this->request->getPost('email'),
-                    'CONTRASENA'=> $this->request->getPost('contrasena'),
                     'TELEFONO'=> $this->request->getPost('telefono'),
                     'DIRECCION'=> $this->request->getPost('direccion'),
                     'FECHA_REGISTRO'=> $this->request->getPost('fecha_registro'),
                     'FK_ID_ROL'=> $this->request->getPost('rol'),
                 ];
+
+                if($this->request->getPost('contrasena')){
+                    $clienteData['CONTRASENA'] = password_hash($this->request->getPost('contrasena'), PASSWORD_DEFAULT);
+                }
 
                 if ($PK_ID_CLIENTE) {
                     // Actualizar cliente existente
