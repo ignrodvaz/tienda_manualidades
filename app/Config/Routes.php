@@ -9,6 +9,12 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('home', 'Home::index');
 
+//LOGIN
+$routes->get('login', 'LoginController::index'); //Esta ruta muestra el formulario de inicio de sesión.
+
+//REGISTER
+$routes->get('register', 'RegisterController::index'); //Esta ruta muestra el formulario de registro.
+
 //CATEGORIA
 // Rutas para Categoría
 $routes->get('categoria', 'CategoriaController::index'); //Esta ruta muestra el listado de categorías.
@@ -48,3 +54,13 @@ $routes->post('pedido/save', 'PedidoController::savePedido'); // Crear PEDIDO (P
 $routes->get('pedido/save/(:num)', 'PedidoController::savePedido/$1'); // Mostrar formulario para editar PEDIDO (GET)
 $routes->post('pedido/save/(:num)', 'PedidoController::savePedido/$1'); // Editar PEDIDO (POST)
 $routes->get('pedido/delete/(:num)', 'PedidoController::delete/$1'); //Esta ruta elimina una PEDIDO específica usando su ID.
+
+//PRODUCTO
+//Rutas para Producto
+$routes->get('producto', 'ProductoController::index'); //Esta ruta muestra el listado de PRODUCTO.
+//Estas rutas manejan tanto la creación como la edición de PRODUCTO.
+$routes->get('producto/save', 'ProductoController::saveProducto'); // Mostrar formulario para crear PRODUCTO (GET)
+$routes->post('producto/save', 'ProductoController::saveProducto'); // Crear PRODUCTO (POST)
+$routes->get('producto/save/(:num)', 'ProductoController::saveProducto/$1'); // Mostrar formulario para editar PRODUCTO (GET)
+$routes->post('producto/save/(:num)', 'ProductoController::saveProducto/$1'); // Editar PRODUCTO (POST)
+$routes->get('producto/delete/(:num)', 'ProductoController::delete/$1'); //Esta ruta elimina una PRODUCTO específica usando su ID.

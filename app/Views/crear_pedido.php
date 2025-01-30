@@ -43,7 +43,7 @@
                 <input class="form-control" id="estado_pedido" name="estado_pedido" value="<?= esc($pedido['ESTADO'] ?? set_value('estado_pedido')) ?>">
             </div>
             <button type="submit" class="btn btn-primary"><?= isset($pedido) ? 'Actualizar' : 'Guardar'?></button>
-            <a href="<?= base_url('detalle_pedido') ?>" class="btn btn-secondary">Cancelar</a>
+            <a href="<?= base_url('pedido') ?>" class="btn btn-secondary">Cancelar</a>
         </form>
     </div>
 </body>
