@@ -13,14 +13,14 @@ class DetallePedidoController extends BaseController
         $cantidad = $this->request->getVar('CANTIDAD');
         $precio_unitario = $this->request->getVar('PRECIO_UNITARIO');
         $fk_id_pedido = $this->request->getVar('FK_ID_PEDIDO');
-        $fk_id_producto = $this->request->getVar('FK_ID_PRODUCTO');
+        $producto_nombre = $this->request->getVar('PRODUCTO_NOMBRE');
         $estado = $this->request->getGet('estado') ?? 'todas';
 
 
 
-        $query = $DetallePedidoModel->select('DETALLE_PEDIDO.*')
-        ->join('PEDIDO', 'PEDIDO.PK_ID_PEDIDO = DETALLE_PEDIDO.FK_ID_PEDIDO', 'left')
-        ->join('PRODUCTO', 'PRODUCTO.PK_ID_PRODUCTO = DETALLE_PEDIDO.FK_ID_PRODUCTO', 'left');
+        $query = $DetallePedidoModel->select('DETALLE_PEDIDO.*, PRODUCTO.NOMBRE as PRODUCTO_NOMBRE')
+        ->join('PEDIDO', 'DETALLE_PEDIDO.FK_ID_PEDIDO = PEDIDO.PK_ID_PEDIDO', 'left')
+        ->join('PRODUCTO', 'DETALLE_PEDIDO.FK_ID_PRODUCTO = PRODUCTO.PK_ID_PRODUCTO', 'left');
 
         // Aplicar filtro por estado usando switch
         switch ($estado) {
@@ -42,8 +42,8 @@ class DetallePedidoController extends BaseController
             $query->like('DETALLE_PEDIDO.PRECIO_UNITARIO', $precio_unitario);
         }else if($fk_id_pedido){
             $query->like('PEDIDO.PK_ID_PEDIDO', $fk_id_pedido);
-        }else if($fk_id_producto){
-            $query->like('PRODUCTO.PK_ID_PRODUCTO', $fk_id_producto);
+        }else if($producto_nombre){
+            $query->like('PRODUCTO.NOMBRE', $producto_nombre);
         }
 
         // Configuración de la paginación
@@ -53,7 +53,7 @@ class DetallePedidoController extends BaseController
         $data['cantidad'] = $cantidad; // Mantener el término de búsqueda en la vista
         $data['precio_unitario'] = $precio_unitario;
         $data['fk_id_pedido'] = $fk_id_pedido;
-        $data['fk_id_producto'] = $fk_id_producto;
+        $data['producto_nombre'] = $producto_nombre;
         $data['estado'] = $estado; // Mantener el estado en la vista
 
         return view('listado_detalle_pedido', $data); // Cargar la vista con los datos

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ClienteModel;
+use App\Models\RolModel;
 
 class ClienteController extends BaseController
 {
@@ -72,10 +73,12 @@ class ClienteController extends BaseController
     public function saveCliente($PK_ID_CLIENTE = null)
     {
         $ClienteModel = new ClienteModel();
+        $RolModel = new RolModel();
         helper(['form', 'url']);
 
         // Cargar datos de la categoría si es edición
         $data['cliente'] = $PK_ID_CLIENTE ? $ClienteModel->find($PK_ID_CLIENTE) : null;
+        $data['roles'] = $RolModel->findAll(); // Obtener todos los roles
 
         if ($this->request->getMethod()=='POST') {
             // Reglas de validación

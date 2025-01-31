@@ -46,7 +46,7 @@
                     <th>DIRECCION PEDIDO</th>
                     <th>TOTAL PEDIDO</th>
                     <th>ESTADO</th>
-                    <th>ID CLIENTE</th>
+                    <th>CLIENTE</th>
                     <th>ACCIONES</th>
                 </tr>
             </thead>
@@ -57,7 +57,7 @@
                         <td><?= esc($pedido['DIRECCION_PEDIDO']) ?></td>
                         <td><?= esc($pedido['TOTAL_PEDIDO']) ?></td>
                         <td><?= esc($pedido['ESTADO']) ?></td>
-                        <td><?= esc($pedido['FK_ID_CLIENTE']) ?></td>
+                        <td><?= esc($pedido['CLIENTE_NOMBRE']) ?></td>
                         <td>
                             <a href="<?= base_url('pedido/save/' . $pedido['PK_ID_PEDIDO']) ?>" class="btn btn-warning btn-sm">Editar</a>
                             <a href="<?= base_url('pedido/delete/' . esc($pedido['PK_ID_PEDIDO'])) ?>" 

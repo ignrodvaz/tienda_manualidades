@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ProductoModel;
+use App\Models\CategoriaModel;
 
 class ProductoController extends BaseController
 {
@@ -25,10 +26,10 @@ class ProductoController extends BaseController
         // Aplicar filtro por estado usando switch
         switch ($estado) {
             case 'altas':
-                $query->where('CLIENTE.FECHA_BAJA', null);
+                $query->where('PRODUCTO.FECHA_BAJA', null);
                 break;
             case 'bajas':
-                $query->where('CLIENTE.FECHA_BAJA !=', null);
+                $query->where('PRODUCTO.FECHA_BAJA !=', null);
                 break;
             default:
                 // No se aplica ningún filtro adicional para 'todas'
@@ -45,7 +46,7 @@ class ProductoController extends BaseController
         }else if($stock){
             $query->like('PRODUCTO.STOCK', $stock);
         }else if($fk_id_categoria){
-            $query->like('PRODUCTO.FK_ID_CATEGORIA', $fk_id_categoria);
+            $query->like('CATEGORIA.NOMBRE', $fk_id_categoria);
         }
 
         // Configuración de la paginación
@@ -65,10 +66,12 @@ class ProductoController extends BaseController
     public function saveProducto($PK_ID_PRODUCTO = null)
     {
         $ProductoModel = new ProductoModel();
+        $CategoriaModel = new CategoriaModel();
         helper(['form', 'url']);
 
         // Cargar datos de la categoría si es edición
         $data['producto'] = $PK_ID_PRODUCTO ? $ProductoModel->find($PK_ID_PRODUCTO) : null;
+        $data['categorias'] = $CategoriaModel->findAll(); // Obtener todas las categorías
 
         if ($this->request->getMethod()=='POST') {
             // Reglas de validación

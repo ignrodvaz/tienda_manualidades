@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Pedido</title>
+    <title>Crear Producto</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container mt-5">
-        <h1><?= isset($pedido['PK_ID_PRODUCTO']) ? 'Editar Producto' : 'Crear Producto' ?></h1>
+        <h1><?= isset($producto['PK_ID_PRODUCTO']) ? 'Editar Producto' : 'Crear Producto' ?></h1>
 
         <?php if (isset($validation)): ?>
             <div class="alert alert-danger">
@@ -33,6 +33,13 @@
                 <label for="stock">Stock</label>
                 <input class="form-control" id="stock" name="stock" value="<?= esc($producto['STOCK'] ?? set_value('stock')) ?>">
             </div>
+            <label for="fk_id_categoria" class="form-label">Categoria</label>
+            <select name="fk_id_categoria" id="fk_id_categoria" class="form-control mb-3" required>
+                <option value="" selected disabled>Seleccione una categoria</option>
+                <?php foreach ($categorias as $categoria): ?>
+                    <option value="<?= $categoria['PK_ID_CATEGORIA'] ?>" <?= $producto['FK_ID_CATEGORIA'] == $categoria['PK_ID_CATEGORIA'] ? 'selected' : '' ?>><?= $categoria['NOMBRE'] ?></option>
+                <?php endforeach; ?>
+            </select>
             <button type="submit" class="btn btn-primary"><?= isset($producto) ? 'Actualizar' : 'Guardar'?></button>
             <a href="<?= base_url('producto') ?>" class="btn btn-secondary">Cancelar</a>
         </form>

@@ -19,8 +19,7 @@ class PedidoController extends BaseController
 
 
 
-        $query = $PedidoModel->select('PEDIDO.*')
-        ->join('CLIENTE', 'CLIENTE.PK_ID_CLIENTE = PEDIDO.FK_ID_CLIENTE', 'left');
+        $query = $PedidoModel->select('PEDIDO.*, CLIENTE.NOMBRE AS CLIENTE_NOMBRE')->join('CLIENTE', 'CLIENTE.PK_ID_CLIENTE = PEDIDO.FK_ID_CLIENTE', 'left');
 
         // Aplicar filtro por estado usando switch
         switch ($estado) {
@@ -45,7 +44,7 @@ class PedidoController extends BaseController
         }else if($estado_pedido){
             $query->like('PEDIDO.ESTADO', $estado_pedido);
         }else if($fk_id_cliente){
-            $query->like('CLIENTE.PK_ID_CLIENTE', $fk_id_cliente);
+            $query->like('CLIENTE_NOMBRE', $fk_id_cliente);
         }
 
         // Configuración de la paginación

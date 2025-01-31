@@ -25,7 +25,7 @@
                 <input type="text" name="CANTIDAD" class="form-control" placeholder="Cantidad" value="<?= esc($cantidad) ?>">
                 <input type="text" name="PRECIO_UNITARIO" class="form-control" placeholder="Precio" value="<?= esc($precio_unitario) ?>">
                 <input type="text" name="FK_ID_PEDIDO" class="form-control" placeholder="Id Pedido" value="<?= esc($fk_id_pedido) ?>">
-                <input type="text" name="FK_ID_PRODUCTO" class="form-control" placeholder="Id Producto" value="<?= esc($fk_id_producto) ?>">
+                <input type="text" name="PRODUCTO_NOMBRE" class="form-control" placeholder="Id Producto" value="<?= esc($producto_nombre) ?>">
                 <select name="estado" id="estado" class="form-control w-auto h-100 selectpicker">
                     <option value="" disabled <?= $estado === null ? 'selected' : '' ?>>Seleccione una opción</option>
                     <option value="altas" <?= $estado === 'altas' ? 'selected' : '' ?>>Altas</option>
@@ -45,7 +45,7 @@
                     <th>CANTIDAD</th>
                     <th>PRECIO</th>
                     <th>ID PEDIDO</th>
-                    <th>ID PRODUCTO</th>
+                    <th>PRODUCTO</th>
                     <th>ACCIONES</th>
                 </tr>
             </thead>
@@ -56,7 +56,7 @@
                         <td><?= esc($detalle['CANTIDAD']) ?></td>
                         <td><?= esc($detalle['PRECIO_UNITARIO']) ?></td>
                         <td><?= esc($detalle['FK_ID_PEDIDO']) ?></td>
-                        <td><?= esc($detalle['FK_ID_PRODUCTO']) ?></td>
+                        <td><?= esc($detalle['PRODUCTO_NOMBRE']) ?></td>
                         <td>
                             <a href="<?= base_url('detalle_pedido/save/' . $detalle['PK_ID_DETALLE']) ?>" class="btn btn-warning btn-sm">Editar</a>
                             <a href="<?= base_url('detalle_pedido/delete/' . esc($detalle['PK_ID_DETALLE'])) ?>" 

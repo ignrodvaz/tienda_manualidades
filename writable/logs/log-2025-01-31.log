@@ -1,0 +1,1106 @@
+CRITICAL - 2025-01-31 09:23:18 --> ErrorException: Undefined array key "NOMBRE"
+[Method: GET, Route: detalle_pedido]
+in APPPATH/Views/listado_detalle_pedido.php on line 59.
+ 1 APPPATH/Views/listado_detalle_pedido.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "NOMBRE"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_detalle_pedido.php', 59)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_detalle_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_detalle_pedido', [], true)
+ 5 APPPATH/Controllers/DetallePedidoController.php(59): view('listado_detalle_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 09:25:48 --> ErrorException: Undefined array key "NOMBRE"
+[Method: GET, Route: detalle_pedido]
+in APPPATH/Views/listado_detalle_pedido.php on line 59.
+ 1 APPPATH/Views/listado_detalle_pedido.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "NOMBRE"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_detalle_pedido.php', 59)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_detalle_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_detalle_pedido', [], true)
+ 5 APPPATH/Controllers/DetallePedidoController.php(59): view('listado_detalle_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-01-31 09:29:07 --> mysqli_sql_exception: Unknown column 'DETALLE_PEDIDO.pedido_nombre' in 'on clause' in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-01-31 09:29:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'DETALLE_PEDIDO.pedido_nombre' in 'on clause'
+[Method: GET, Route: detalle_pedido]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`pedido_nombre`', [], false)
+ 2 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 09:29:07 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'DETALLE_PEDIDO.pedido_nombre' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`pedido_nombre`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`pedido_nombre`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`pedido_nombre`', [], false)
+ 4 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 09:29:07 --> [Caused by] mysqli_sql_exception: Unknown column 'DETALLE_PEDIDO.pedido_nombre' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`pedido_nombre`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`pedido_nombre`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`pedido_nombre`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`pedido_nombre`', [], false)
+ 5 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-01-31 09:30:19 --> mysqli_sql_exception: Unknown column 'DETALLE_PEDIDO.pedido_nombre' in 'on clause' in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-01-31 09:30:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'DETALLE_PEDIDO.pedido_nombre' in 'on clause'
+[Method: GET, Route: detalle_pedido]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`pedido_nombre`', [], false)
+ 2 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 09:30:19 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'DETALLE_PEDIDO.pedido_nombre' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`pedido_nombre`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`pedido_nombre`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`pedido_nombre`', [], false)
+ 4 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 09:30:19 --> [Caused by] mysqli_sql_exception: Unknown column 'DETALLE_PEDIDO.pedido_nombre' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`pedido_nombre`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`pedido_nombre`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`pedido_nombre`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`pedido_nombre`', [], false)
+ 5 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-01-31 09:31:01 --> mysqli_sql_exception: Unknown column 'PEDIDO.NOMBRE' in 'field list' in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT `DETALLE...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DETALLE...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DETALLE...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `DETALLE...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(675): CodeIgniter\Model->doFindAll(3, 0)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(3, 0)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-01-31 09:31:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'PEDIDO.NOMBRE' in 'field list'
+[Method: GET, Route: detalle_pedido]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+ LIMIT 3', [], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(3, 0)
+ 4 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(3, 0)
+ 5 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 09:31:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'PEDIDO.NOMBRE' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+ LIMIT 3')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+ LIMIT 3')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+ LIMIT 3', [], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(3, 0)
+ 6 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(3, 0)
+ 7 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 09:31:01 --> [Caused by] mysqli_sql_exception: Unknown column 'PEDIDO.NOMBRE' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+ LIMIT 3', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+ LIMIT 3')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+ LIMIT 3')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `PEDIDO`.`PK_ID_PEDIDO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `PRODUCTO`.`PK_ID_PRODUCTO` = `DETALLE_PEDIDO`.`FK_ID_PEDIDO`
+ LIMIT 3', [], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(3, 0)
+ 7 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(3, 0)
+ 8 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-01-31 09:33:02 --> mysqli_sql_exception: Unknown column 'PEDIDO.NOMBRE' in 'field list' in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT `DETALLE...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DETALLE...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DETALLE...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `DETALLE...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(675): CodeIgniter\Model->doFindAll(3, 0)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(3, 0)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-01-31 09:33:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'PEDIDO.NOMBRE' in 'field list'
+[Method: GET, Route: detalle_pedido]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3', [], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(3, 0)
+ 4 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(3, 0)
+ 5 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 09:33:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'PEDIDO.NOMBRE' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3', [], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(3, 0)
+ 6 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(3, 0)
+ 7 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 09:33:02 --> [Caused by] mysqli_sql_exception: Unknown column 'PEDIDO.NOMBRE' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3', [], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(3, 0)
+ 7 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(3, 0)
+ 8 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-01-31 09:37:22 --> mysqli_sql_exception: Unknown column 'PEDIDO.NOMBRE' in 'field list' in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT `DETALLE...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DETALLE...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DETALLE...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `DETALLE...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(675): CodeIgniter\Model->doFindAll(3, 0)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(3, 0)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-01-31 09:37:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'PEDIDO.NOMBRE' in 'field list'
+[Method: GET, Route: detalle_pedido]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3', [], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(3, 0)
+ 4 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(3, 0)
+ 5 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 09:37:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'PEDIDO.NOMBRE' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3', [], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(3, 0)
+ 6 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(3, 0)
+ 7 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 09:37:22 --> [Caused by] mysqli_sql_exception: Unknown column 'PEDIDO.NOMBRE' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3', [], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(3, 0)
+ 7 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(3, 0)
+ 8 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-01-31 09:43:01 --> mysqli_sql_exception: Unknown column 'PEDIDO.NOMBRE' in 'field list' in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT `DETALLE...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DETALLE...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DETALLE...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `DETALLE...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(675): CodeIgniter\Model->doFindAll(3, 0)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(3, 0)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-01-31 09:43:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'PEDIDO.NOMBRE' in 'field list'
+[Method: GET, Route: detalle_pedido]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3', [], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(3, 0)
+ 4 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(3, 0)
+ 5 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 09:43:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'PEDIDO.NOMBRE' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3', [], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(3, 0)
+ 6 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(3, 0)
+ 7 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 09:43:01 --> [Caused by] mysqli_sql_exception: Unknown column 'PEDIDO.NOMBRE' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `DETALLE_PEDIDO`.*, `PEDIDO`.`NOMBRE` as `PEDIDO_NOMBRE`, `PRODUCTO`.`NOMBRE` as `PRODUCTO_NOMBRE`
+FROM `DETALLE_PEDIDO`
+LEFT JOIN `PEDIDO` ON `DETALLE_PEDIDO`.`FK_ID_PEDIDO` = `PEDIDO`.`PK_ID_PEDIDO`
+LEFT JOIN `PRODUCTO` ON `DETALLE_PEDIDO`.`FK_ID_PRODUCTO` = `PRODUCTO`.`PK_ID_PRODUCTO`
+ LIMIT 3', [], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(3, 0)
+ 7 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(3, 0)
+ 8 APPPATH/Controllers/DetallePedidoController.php(51): CodeIgniter\BaseModel->paginate(3)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->index()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 09:48:58 --> ErrorException: Undefined array key "NOMBRE"
+[Method: GET, Route: pedido]
+in APPPATH/Views/listado_pedido.php on line 60.
+ 1 APPPATH/Views/listado_pedido.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "NOMBRE"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php', 60)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(68): view('listado_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 09:49:16 --> ErrorException: Undefined array key "CLIENTE.NOMBRE"
+[Method: GET, Route: pedido]
+in APPPATH/Views/listado_pedido.php on line 60.
+ 1 APPPATH/Views/listado_pedido.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "CLIENTE.NOMBRE"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php', 60)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(68): view('listado_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 09:52:10 --> ErrorException: Undefined array key "CLIENTE.NOMBRE"
+[Method: GET, Route: pedido]
+in APPPATH/Views/listado_pedido.php on line 60.
+ 1 APPPATH/Views/listado_pedido.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "CLIENTE.NOMBRE"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php', 60)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(67): view('listado_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-01-31 10:45:32 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`tienda_manualidades`.`producto`, CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`FK_ID_CATEGORIA`) REFERENCES `categoria` (`PK_ID_CATEGORIA`) ON DELETE SET NULL) in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('UPDATE `PRODUCT...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `PRODUCT...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `PRODUCT...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `PRODUCT...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(1027): CodeIgniter\Model->doUpdate(Array, Array)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(863): CodeIgniter\BaseModel->update(Array, Array)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/ProductoController.php(105): CodeIgniter\Model->update('1', Array)
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\ProductoController->saveProducto('1')
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-01-31 10:45:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`tienda_manualidades`.`producto`, CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`FK_ID_CATEGORIA`) REFERENCES `categoria` (`PK_ID_CATEGORIA`) ON DELETE SET NULL)
+[Method: POST, Route: producto/save/1]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `PRODUCTO` SET `NOMBRE` = :NOMBRE:, `DESCRIPCION` = :DESCRIPCION:, `PRECIO` = :PRECIO:, `STOCK` = :STOCK:, `FECHA_BAJA` = :FECHA_BAJA:, `FK_ID_CATEGORIA` = :FK_ID_CATEGORIA:, `updated_at` = :updated_at:
+WHERE `PRODUCTO`.`PK_ID_PRODUCTO` IN :PRODUCTO.PK_ID_PRODUCTO:', [...], false)
+ 2 SYSTEMPATH/Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH/BaseModel.php(1027): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH/Model.php(863): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH/Controllers/ProductoController.php(105): CodeIgniter\Model->update('1', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->saveProducto('1')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 10:45:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`tienda_manualidades`.`producto`, CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`FK_ID_CATEGORIA`) REFERENCES `categoria` (`PK_ID_CATEGORIA`) ON DELETE SET NULL)
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `PRODUCTO` SET `NOMBRE` = \'aaaaaaaa\', `DESCRIPCION` = \'Libreta\', `PRECIO` = \'10.00\', `STOCK` = \'50\', `FECHA_BAJA` = NULL, `FK_ID_CATEGORIA` = \'agenda\', `updated_at` = \'2025-01-31 10:45:32\'
+WHERE `PRODUCTO`.`PK_ID_PRODUCTO` IN (\'1\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `PRODUCTO` SET `NOMBRE` = \'aaaaaaaa\', `DESCRIPCION` = \'Libreta\', `PRECIO` = \'10.00\', `STOCK` = \'50\', `FECHA_BAJA` = NULL, `FK_ID_CATEGORIA` = \'agenda\', `updated_at` = \'2025-01-31 10:45:32\'
+WHERE `PRODUCTO`.`PK_ID_PRODUCTO` IN (\'1\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `PRODUCTO` SET `NOMBRE` = :NOMBRE:, `DESCRIPCION` = :DESCRIPCION:, `PRECIO` = :PRECIO:, `STOCK` = :STOCK:, `FECHA_BAJA` = :FECHA_BAJA:, `FK_ID_CATEGORIA` = :FK_ID_CATEGORIA:, `updated_at` = :updated_at:
+WHERE `PRODUCTO`.`PK_ID_PRODUCTO` IN :PRODUCTO.PK_ID_PRODUCTO:', [...], false)
+ 4 SYSTEMPATH/Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH/BaseModel.php(1027): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH/Model.php(863): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH/Controllers/ProductoController.php(105): CodeIgniter\Model->update('1', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->saveProducto('1')
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 10:45:32 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`tienda_manualidades`.`producto`, CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`FK_ID_CATEGORIA`) REFERENCES `categoria` (`PK_ID_CATEGORIA`) ON DELETE SET NULL)
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('UPDATE `PRODUCTO` SET `NOMBRE` = \'aaaaaaaa\', `DESCRIPCION` = \'Libreta\', `PRECIO` = \'10.00\', `STOCK` = \'50\', `FECHA_BAJA` = NULL, `FK_ID_CATEGORIA` = \'agenda\', `updated_at` = \'2025-01-31 10:45:32\'
+WHERE `PRODUCTO`.`PK_ID_PRODUCTO` IN (\'1\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `PRODUCTO` SET `NOMBRE` = \'aaaaaaaa\', `DESCRIPCION` = \'Libreta\', `PRECIO` = \'10.00\', `STOCK` = \'50\', `FECHA_BAJA` = NULL, `FK_ID_CATEGORIA` = \'agenda\', `updated_at` = \'2025-01-31 10:45:32\'
+WHERE `PRODUCTO`.`PK_ID_PRODUCTO` IN (\'1\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `PRODUCTO` SET `NOMBRE` = \'aaaaaaaa\', `DESCRIPCION` = \'Libreta\', `PRECIO` = \'10.00\', `STOCK` = \'50\', `FECHA_BAJA` = NULL, `FK_ID_CATEGORIA` = \'agenda\', `updated_at` = \'2025-01-31 10:45:32\'
+WHERE `PRODUCTO`.`PK_ID_PRODUCTO` IN (\'1\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `PRODUCTO` SET `NOMBRE` = :NOMBRE:, `DESCRIPCION` = :DESCRIPCION:, `PRECIO` = :PRECIO:, `STOCK` = :STOCK:, `FECHA_BAJA` = :FECHA_BAJA:, `FK_ID_CATEGORIA` = :FK_ID_CATEGORIA:, `updated_at` = :updated_at:
+WHERE `PRODUCTO`.`PK_ID_PRODUCTO` IN :PRODUCTO.PK_ID_PRODUCTO:', [...], false)
+ 5 SYSTEMPATH/Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH/BaseModel.php(1027): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH/Model.php(863): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH/Controllers/ProductoController.php(105): CodeIgniter\Model->update('1', [...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->saveProducto('1')
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 10:49:35 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: producto/save/1]
+in APPPATH/Views/crear_producto.php on line 39.
+ 1 APPPATH/Views/crear_producto.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_producto.php', 39)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_producto.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_producto', [], true)
+ 5 APPPATH/Controllers/ProductoController.php(119): view('crear_producto', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->saveProducto('1')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 10:51:01 --> ErrorException: Undefined variable $productos
+[Method: GET, Route: producto/save/1]
+in APPPATH/Views/crear_producto.php on line 39.
+ 1 APPPATH/Views/crear_producto.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $productos', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_producto.php', 39)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_producto.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_producto', [], true)
+ 5 APPPATH/Controllers/ProductoController.php(119): view('crear_producto', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->saveProducto('1')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 10:54:29 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: producto/save/1]
+in APPPATH/Views/crear_producto.php on line 39.
+ 1 APPPATH/Views/crear_producto.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_producto.php', 39)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_producto.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_producto', [], true)
+ 5 APPPATH/Controllers/ProductoController.php(119): view('crear_producto', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->saveProducto('1')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 10:55:27 --> ErrorException: Undefined variable $categorias
+[Method: GET, Route: producto/save/1]
+in APPPATH/Views/crear_producto.php on line 39.
+ 1 APPPATH/Views/crear_producto.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categorias', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_producto.php', 39)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_producto.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_producto', [], true)
+ 5 APPPATH/Controllers/ProductoController.php(120): view('crear_producto', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->saveProducto('1')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 11:22:05 --> ErrorException: Undefined variable $roles
+[Method: GET, Route: cliente/save/1]
+in APPPATH/Views/crear_cliente.php on line 38.
+ 1 APPPATH/Views/crear_cliente.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $roles', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php', 38)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_cliente', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(130): view('crear_cliente', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->saveCliente('1')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 11:26:08 --> ErrorException: Undefined variable $roles
+[Method: GET, Route: cliente/save/1]
+in APPPATH/Views/crear_cliente.php on line 38.
+ 1 APPPATH/Views/crear_cliente.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $roles', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php', 38)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_cliente', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(132): view('crear_cliente', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->saveCliente('1')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 11:27:35 --> ErrorException: Undefined variable $roles
+[Method: GET, Route: cliente/save/1]
+in APPPATH/Views/crear_cliente.php on line 38.
+ 1 APPPATH/Views/crear_cliente.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $roles', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php', 38)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_cliente', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(132): view('crear_cliente', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->saveCliente('1')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-01-31 11:44:30 --> mysqli_sql_exception: Unknown column 'CLIENTE.FECHA_BAJA' in 'where clause' in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/ProductoController.php(54): CodeIgniter\BaseModel->paginate(3)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-01-31 11:44:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'CLIENTE.FECHA_BAJA' in 'where clause'
+[Method: GET, Route: producto]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL', [], false)
+ 2 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH/Controllers/ProductoController.php(54): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 11:44:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'CLIENTE.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL', [], false)
+ 4 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH/Controllers/ProductoController.php(54): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 11:44:30 --> [Caused by] mysqli_sql_exception: Unknown column 'CLIENTE.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL', [], false)
+ 5 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH/Controllers/ProductoController.php(54): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-01-31 11:44:37 --> mysqli_sql_exception: Unknown column 'CLIENTE.FECHA_BAJA' in 'where clause' in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/ProductoController.php(54): CodeIgniter\BaseModel->paginate(3)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-01-31 11:44:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'CLIENTE.FECHA_BAJA' in 'where clause'
+[Method: GET, Route: producto]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL', [], false)
+ 2 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH/Controllers/ProductoController.php(54): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 11:44:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'CLIENTE.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL', [], false)
+ 4 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH/Controllers/ProductoController.php(54): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 11:44:37 --> [Caused by] mysqli_sql_exception: Unknown column 'CLIENTE.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL', [], false)
+ 5 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH/Controllers/ProductoController.php(54): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-01-31 11:44:43 --> mysqli_sql_exception: Unknown column 'CLIENTE.FECHA_BAJA' in 'where clause' in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/ProductoController.php(54): CodeIgniter\BaseModel->paginate(3)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-01-31 11:44:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'CLIENTE.FECHA_BAJA' in 'where clause'
+[Method: GET, Route: producto]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL', [], false)
+ 2 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH/Controllers/ProductoController.php(54): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 11:44:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'CLIENTE.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL', [], false)
+ 4 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH/Controllers/ProductoController.php(54): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 11:44:43 --> [Caused by] mysqli_sql_exception: Unknown column 'CLIENTE.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NULL', [], false)
+ 5 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH/Controllers/ProductoController.php(54): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-01-31 11:44:46 --> mysqli_sql_exception: Unknown column 'CLIENTE.FECHA_BAJA' in 'where clause' in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/ProductoController.php(54): CodeIgniter\BaseModel->paginate(3)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-01-31 11:44:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'CLIENTE.FECHA_BAJA' in 'where clause'
+[Method: GET, Route: producto]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NOT NULL', [], false)
+ 2 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH/Controllers/ProductoController.php(54): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 11:44:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'CLIENTE.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NOT NULL')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NOT NULL')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NOT NULL', [], false)
+ 4 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH/Controllers/ProductoController.php(54): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 11:44:46 --> [Caused by] mysqli_sql_exception: Unknown column 'CLIENTE.FECHA_BAJA' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NOT NULL', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NOT NULL')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NOT NULL')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+WHERE `CLIENTE`.`FECHA_BAJA` IS NOT NULL', [], false)
+ 5 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH/Controllers/ProductoController.php(54): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

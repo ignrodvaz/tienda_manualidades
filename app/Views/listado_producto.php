@@ -26,7 +26,7 @@
                 <input type="text" name="DESCRIPCION" class="form-control" placeholder="Descripcion" value="<?= esc($descripcion) ?>">
                 <input type="text" name="PRECIO" class="form-control" placeholder="Precio" value="<?= esc($precio) ?>">
                 <input type="text" name="STOCK" class="form-control" placeholder="Stock" value="<?= esc($stock) ?>">
-                <input type="text" name="FK_ID_CATEGORIA" class="form-control" placeholder="ID Categoria" value="<?= esc($fk_id_categoria) ?>">
+                <input type="text" name="FK_ID_CATEGORIA" class="form-control" placeholder="Categoria" value="<?= esc($fk_id_categoria) ?>">
                 <select name="estado" id="estado" class="form-control h-100 selectpicker">
                     <option value="" disabled <?= $estado === null ? 'selected' : '' ?>>Seleccione una opción</option>
                     <option value="altas" <?= $estado === 'altas' ? 'selected' : '' ?>>Altas</option>
@@ -46,6 +46,7 @@
                     <th>DESCRIPCION</th>
                     <th>PRECIO</th>
                     <th>STOCK</th>
+                    <th>CATEGORIA</th>
                     <th>ACCIONES</th>
                 </tr>
             </thead>
@@ -56,6 +57,7 @@
                         <td><?= esc($producto['DESCRIPCION']) ?></td>
                         <td><?= esc($producto['PRECIO']) ?></td>
                         <td><?= esc($producto['STOCK']) ?></td>
+                        <td><?= esc($producto['CATEGORIA_NOMBRE']) ?></td>
                         <td>
                             <a href="<?= base_url('producto/save/' . $producto['PK_ID_PRODUCTO']) ?>" class="btn btn-warning btn-sm">Editar</a>
                             <a href="<?= base_url('producto/delete/' . esc($producto['PK_ID_PRODUCTO'])) ?>" 
