@@ -26,7 +26,7 @@
                 <input type="text" name="DIRECCION_PEDIDO" class="form-control" placeholder="Direccion" value="<?= esc($direccion_pedido) ?>">
                 <input type="text" name="TOTAL_PEDIDO" class="form-control" placeholder="Total" value="<?= esc($total_pedido) ?>">
                 <input type="text" name="ESTADO" class="form-control" placeholder="Estado" value="<?= esc($estado_pedido) ?>">
-                <input type="text" name="FK_ID_CLIENTE" class="form-control" placeholder="ID Cliente" value="<?= esc($fk_id_cliente) ?>">
+                <input type="text" name="FK_ID_CLIENTE" class="form-control" placeholder="Cliente" value="<?= esc($fk_id_cliente) ?>">
                 <select name="estado" id="estado" class="form-control h-100 selectpicker">
                     <option value="" disabled <?= $estado === null ? 'selected' : '' ?>>Seleccione una opción</option>
                     <option value="altas" <?= $estado === 'altas' ? 'selected' : '' ?>>Altas</option>

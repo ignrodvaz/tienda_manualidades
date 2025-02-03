@@ -37,7 +37,7 @@
             <select name="fk_id_categoria" id="fk_id_categoria" class="form-control mb-3" required>
                 <option value="" selected disabled>Seleccione una categoria</option>
                 <?php foreach ($categorias as $categoria): ?>
-                    <option value="<?= $categoria['PK_ID_CATEGORIA'] ?>" <?= $producto['FK_ID_CATEGORIA'] == $categoria['PK_ID_CATEGORIA'] ? 'selected' : '' ?>><?= $categoria['NOMBRE'] ?></option>
+                    <option value="<?= esc($categoria['PK_ID_CATEGORIA']) ?>" <?= isset($producto) && $producto['FK_ID_CATEGORIA'] == $categoria['PK_ID_CATEGORIA'] ? 'selected' : '' ?>><?= esc($categoria['NOMBRE']) ?></option>
                 <?php endforeach; ?>
             </select>
             <button type="submit" class="btn btn-primary"><?= isset($producto) ? 'Actualizar' : 'Guardar'?></button>

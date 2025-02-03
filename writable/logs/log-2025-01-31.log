@@ -1104,3 +1104,237 @@ WHERE `CLIENTE`.`FECHA_BAJA` IS NOT NULL', [], false)
 11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
 12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 12:12:32 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: cliente/save]
+in APPPATH/Views/crear_cliente.php on line 40.
+ 1 APPPATH/Views/crear_cliente.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php', 40)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_cliente', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(133): view('crear_cliente', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->saveCliente()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 12:14:56 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: cliente/save]
+in APPPATH/Views/crear_cliente.php on line 40.
+ 1 APPPATH/Views/crear_cliente.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php', 40)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_cliente', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(133): view('crear_cliente', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->saveCliente()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 12:18:00 --> ErrorException: Undefined array key "ROL_NOMBRE"
+[Method: GET, Route: cliente/save]
+in APPPATH/Views/crear_cliente.php on line 40.
+ 1 APPPATH/Views/crear_cliente.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ROL_NOMBRE"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php', 40)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_cliente', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(133): view('crear_cliente', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->saveCliente()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-01-31 12:21:15 --> mysqli_sql_exception: Unknown column 'CLIENTE_NOMBRE' in 'where clause' in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/PedidoController.php(52): CodeIgniter\BaseModel->paginate(3)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-01-31 12:21:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'CLIENTE_NOMBRE' in 'where clause'
+[Method: GET, Route: pedido]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `CLIENTE_NOMBRE` LIKE :CLIENTE_NOMBRE: ESCAPE \'!\'', [...], false)
+ 2 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH/Controllers/PedidoController.php(52): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 12:21:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'CLIENTE_NOMBRE' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `CLIENTE_NOMBRE` LIKE \'%ignacio%\' ESCAPE \'!\'')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `CLIENTE_NOMBRE` LIKE \'%ignacio%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `CLIENTE_NOMBRE` LIKE :CLIENTE_NOMBRE: ESCAPE \'!\'', [...], false)
+ 4 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH/Controllers/PedidoController.php(52): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 12:21:15 --> [Caused by] mysqli_sql_exception: Unknown column 'CLIENTE_NOMBRE' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `CLIENTE_NOMBRE` LIKE \'%ignacio%\' ESCAPE \'!\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `CLIENTE_NOMBRE` LIKE \'%ignacio%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `CLIENTE_NOMBRE` LIKE \'%ignacio%\' ESCAPE \'!\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `CLIENTE_NOMBRE` LIKE :CLIENTE_NOMBRE: ESCAPE \'!\'', [...], false)
+ 5 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH/Controllers/PedidoController.php(52): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-01-31 12:23:50 --> mysqli_sql_exception: Unknown column 'CLIENTE_NOMBRE' in 'where clause' in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/PedidoController.php(52): CodeIgniter\BaseModel->paginate(3)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-01-31 12:23:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'CLIENTE_NOMBRE' in 'where clause'
+[Method: GET, Route: pedido]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `CLIENTE_NOMBRE` LIKE :CLIENTE_NOMBRE: ESCAPE \'!\'', [...], false)
+ 2 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH/Controllers/PedidoController.php(52): CodeIgniter\BaseModel->paginate(3)
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 12:23:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'CLIENTE_NOMBRE' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `CLIENTE_NOMBRE` LIKE \'%I%\' ESCAPE \'!\'')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `CLIENTE_NOMBRE` LIKE \'%I%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `CLIENTE_NOMBRE` LIKE :CLIENTE_NOMBRE: ESCAPE \'!\'', [...], false)
+ 4 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH/Controllers/PedidoController.php(52): CodeIgniter\BaseModel->paginate(3)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 12:23:50 --> [Caused by] mysqli_sql_exception: Unknown column 'CLIENTE_NOMBRE' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `CLIENTE_NOMBRE` LIKE \'%I%\' ESCAPE \'!\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `CLIENTE_NOMBRE` LIKE \'%I%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `CLIENTE_NOMBRE` LIKE \'%I%\' ESCAPE \'!\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `PEDIDO`
+LEFT JOIN `CLIENTE` ON `CLIENTE`.`PK_ID_CLIENTE` = `PEDIDO`.`FK_ID_CLIENTE`
+WHERE `CLIENTE_NOMBRE` LIKE :CLIENTE_NOMBRE: ESCAPE \'!\'', [...], false)
+ 5 SYSTEMPATH/Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH/BaseModel.php(1283): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH/Controllers/PedidoController.php(52): CodeIgniter\BaseModel->paginate(3)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 12:26:34 --> ErrorException: Undefined array key "CLIENTE.NOMBRE"
+[Method: GET, Route: pedido]
+in APPPATH/Views/listado_pedido.php on line 60.
+ 1 APPPATH/Views/listado_pedido.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "CLIENTE.NOMBRE"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php', 60)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(67): view('listado_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-31 12:26:57 --> ErrorException: Undefined array key "CLIENTE.NOMBRE"
+[Method: GET, Route: pedido]
+in APPPATH/Views/listado_pedido.php on line 60.
+ 1 APPPATH/Views/listado_pedido.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "CLIENTE.NOMBRE"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php', 60)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(67): view('listado_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
