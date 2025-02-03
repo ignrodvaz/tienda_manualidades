@@ -24,9 +24,13 @@
             <!-- Espacio reservado para la barra de navegación -->
         </header>
         <main>
-            
+            <?php if (isset($validation)): ?>
+                <div class="alert alert-danger">
+                    <?= $validation->listErrors() ?>
+                </div>
+            <?php endif; ?>
             <!-- FORMULARIO DE INICIO DE SESIÓN -->
-            <form>
+            <form action="<?= base_url('login/authenticate') ?>" method="post">
                 <!-- Sección del formulario de inicio de sesión visible por defecto -->
                 <div id="login-section" class="d-flex justify-content-center align-items-center vh-100">
                     <div class="card w-25">
@@ -36,18 +40,18 @@
                         </div>
                         <div class="card-body">
                             <!-- Campo de correo electrónico -->
-                            <label class="form-label" for="email-login">Correo Electrónico</label>
-                            <input class="w-100 mb-3 form-control" type="email" placeholder="Ejemplo@correo.com" id="email-login" required>
+                            <label class="form-label" for="email">Correo Electrónico</label>
+                            <input class="w-100 mb-3 form-control" type="email" placeholder="Ejemplo@correo.com" name="email" id="email" required>
 
                             <!-- Campo de contraseña -->
-                            <label class="form-label" for="password-login">Contraseña</label>
-                            <input class="w-100 mb-3 form-control" type="password" placeholder="Tu contraseña" id="password-login" required>
+                            <label class="form-label" for="password">Contraseña</label>
+                            <input class="w-100 mb-3 form-control" type="password" placeholder="Tu contraseña" name="password" id="password" required>
 
                             <!-- Botón para iniciar sesión -->
                             <button id="btnInicioSesion" type="submit" class="btn btn-success text-center w-100 mb-2">Iniciar sesión</button>
 
                             <!-- Enlace para cambiar al formulario de registro -->
-                            <p class="text-center">¿Aun no tienes cuenta? <a id="showRegistro" href="">Regístrate</a></p>
+                            <p class="text-center">¿Aun no tienes cuenta? <a id="showRegistro" href="register">Regístrate</a></p>
                         </div>
                     </div>
                 </div>

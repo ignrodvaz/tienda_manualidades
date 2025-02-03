@@ -29,18 +29,15 @@
                 <label for="total_pedido">Total Pedido</label>
                 <input class="form-control" id="total_pedido" name="total_pedido" value="<?= esc($pedido['TOTAL_PEDIDO'] ?? set_value('total_pedido')) ?>">
             </div>
-            <label for="estado_pedido">Estado</label>
-            <select name="estado_pedido" id="estado_pedido" class="form-control mb-3">
-                <option value="" disabled selected>Seleccione una opción</option>
-                <option value="">Pendiente</option>
-                <option value="">Confirmado</option>
-                <option value="">En preparacion</option>
-                <option value="">Enviado</option>
-                <option value="">Entregado</option>
-            </select>
             <div class="form-group mb-3">
                 <label for="estado_pedido">Estado</label>
-                <input class="form-control" id="estado_pedido" name="estado_pedido" value="<?= esc($pedido['ESTADO'] ?? set_value('estado_pedido')) ?>">
+                <select class="form-control" id="estado_pedido" name="estado_pedido">
+                    <option value="pendiente" <?= (isset($pedido['ESTADO']) && trim($pedido['ESTADO']) == 'Pendiente') ? 'selected' : '' ?>>Pendiente</option>
+                    <option value="confirmado" <?= (isset($pedido['ESTADO']) && trim($pedido['ESTADO']) == 'Confirmado') ? 'selected' : '' ?>>Confirmado</option>
+                    <option value="en preparacion" <?= (isset($pedido['ESTADO']) && trim($pedido['ESTADO']) == 'En preparacion') ? 'selected' : '' ?>>En preparación</option>
+                    <option value="enviado" <?= (isset($pedido['ESTADO']) && trim($pedido['ESTADO']) == 'Enviado') ? 'selected' : '' ?>>Enviado</option>
+                    <option value="entregado" <?= (isset($pedido['ESTADO']) && trim($pedido['ESTADO']) == 'Entregado') ? 'selected' : '' ?>>Entregado</option>
+                </select>
             </div>
             <button type="submit" class="btn btn-primary"><?= isset($pedido) ? 'Actualizar' : 'Guardar'?></button>
             <a href="<?= base_url('pedido') ?>" class="btn btn-secondary">Cancelar</a>

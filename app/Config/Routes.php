@@ -11,6 +11,12 @@ $routes->get('home', 'Home::index');
 
 //LOGIN
 $routes->get('login', 'LoginController::index'); //Esta ruta muestra el formulario de inicio de sesión.
+$routes->post('/login/authenticate', 'LoginController::authenticate');
+$routes->get('/logout', 'LoginController::logout');
+
+//REGISTER
+$routes->get('register', 'RegisterController::index'); //Esta ruta muestra el formulario de registro.
+$routes->post('/register/authenticate', 'RegisterController::authenticate');
 
 //REGISTER
 $routes->get('register', 'RegisterController::index'); //Esta ruta muestra el formulario de registro.

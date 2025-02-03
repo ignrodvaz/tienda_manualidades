@@ -24,38 +24,55 @@
             <!-- Espacio reservado para la barra de navegación -->
         </header>
         <main>
-
+            <?php if (session()->getFlashdata('msg')): ?>
+                <div class="alert alert-success">
+                    <?= session()->getFlashdata('msg') ?>
+                </div>
+            <?php endif; ?>
             <!-- FORMULARIO DE REGISTRO -->
-            <form id="formRegistro">
+            <form action="<?= base_url('register/authenticate') ?>" method="post">
                 <!-- Sección del formulario de registro oculta por defecto -->
-                <div id="registro-section" class="d-flex justify-content-center align-items-center vh-100 d-none">
+                <div class="d-flex justify-content-center align-items-center vh-100">
                     <div class="card w-25">
                         <!-- Encabezado del formulario -->
                         <div class="card-header bg-primary text-center">
                             <h1 id="registro">Registro</h1>
                         </div>
                         <div class="card-body">
+                            
+                            <!-- Campo de nombre -->
+                            <label class="form-label" for="nombre">Nombre</label>
+                            <input class="w-100 mb-3 form-control" type="text" placeholder="Nombre" name="nombre" id="nombre" required>
+
                             <!-- Campo de correo electrónico -->
-                            <label class="form-label" for="email-registro">Correo Electrónico</label>
-                            <input class="w-100 mb-3 form-control" type="email" placeholder="Ejemplo@correo.com" id="email-registro" required>
+                            <label class="form-label" for="email">Correo Electrónico</label>
+                            <input class="w-100 mb-3 form-control" type="email" placeholder="Ejemplo@correo.com" name="email" id="email" required>
                             <!-- Mensaje de error para el correo -->
                             <div id="emailError" class="text-danger mt-2"></div>
 
                             <!-- Campo de contraseña -->
-                            <label class="form-label" for="password-registro">Contraseña</label>
-                            <input class="w-100 mb-3 form-control" type="password" placeholder="Tu contraseña" id="password-registro" required>
+                            <label class="form-label" for="password">Contraseña</label>
+                            <input class="w-100 mb-3 form-control" type="password" placeholder="Tu contraseña" name="password" id="password" required>
 
                             <!-- Campo para confirmar la contraseña -->
-                            <label class="form-label" for="confirmar-password">Confirmar contraseña</label>
-                            <input class="w-100 mb-3 form-control" type="password" placeholder="Repite tu contraseña" id="confirmar-password" required>
+                            <label class="form-label" for="confirmar">Confirmar contraseña</label>
+                            <input class="w-100 mb-3 form-control" type="password" placeholder="Repite tu contraseña" id="confirmar" required>
                             <!-- Mensaje de error para las contraseñas -->
                             <div id="passwordError" class="text-danger mt-2"></div>
+
+                            <!-- Campo de telefono -->
+                            <label class="form-label" for="telefono">Telefono</label>
+                            <input class="w-100 mb-3 form-control" type="text" placeholder="Teléfono" name="telefono" id="telefono" required>
+
+                            <!-- Campo de direccion -->
+                            <label class="form-label" for="direccion">Direccion</label>
+                            <input class="w-100 mb-3 form-control" type="text" placeholder="Dirección" name="direccion" id="direccion" required>
 
                             <!-- Botón para registrar -->
                             <button id="btnRegistro" type="submit" class="btn btn-success text-center w-100 mb-2">Registrar</button>
 
                             <!-- Enlace para cambiar al formulario de inicio de sesión -->
-                            <p class="text-center">¿Ya tienes cuenta? <a id="showLogin" href="">Inicia sesión</a></p>
+                            <p class="text-center">¿Ya tienes cuenta? <a id="showLogin" href="login">Inicia sesión</a></p>
                         </div>
                     </div>
                 </div>
