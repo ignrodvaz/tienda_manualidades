@@ -32,7 +32,7 @@ class CategoriaController extends BaseController
         }
 
         // Configuración de la paginación
-        $perPage = 3; // Número de resultados por página
+        $perPage = 10; // Número de resultados por página
         $data['categorias'] = $query->paginate($perPage); // Obtener categorías paginadas
         $data['pager'] = $CategoriaModel->pager; // Pasar el objeto del paginador a la vista
         $data['name'] = $name; // Mantener el término de búsqueda en la vista
