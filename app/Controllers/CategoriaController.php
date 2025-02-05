@@ -3,9 +3,16 @@
 namespace App\Controllers;
 
 use App\Models\CategoriaModel;
+use CodeIgniter\Controller;
 
 class CategoriaController extends BaseController
 {
+
+    public function __construct()
+    {
+        helper(['form', 'url']);
+    }
+    
     public function index()
     {
         $CategoriaModel = new CategoriaModel();

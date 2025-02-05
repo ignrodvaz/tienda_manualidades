@@ -81,7 +81,7 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 								</div>
 								<div class="menu-item">
-									<a class="menu-link active" href="../../demo1/dist/index.html">
+									<a class="menu-link" href="../../demo1/dist/index.html">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -103,7 +103,7 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<span class="menu-link">
+									<span class="menu-link active">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -118,10 +118,10 @@ License: For each use you must have a valid license purchased only from above li
 										<span class="menu-title">Tablas</span>
 										<span class="menu-arrow"></span>
 									</span>
-									<div class="menu-sub menu-sub-accordion menu-active-bg">
+									<div class="menu-sub menu-sub-accordion menu-active-bg show">
 										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
 											<div class="menu-item">
-												<a class="menu-link" href="categoria">
+												<a class="menu-link active" href="categoria">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -455,8 +455,8 @@ License: For each use you must have a valid license purchased only from above li
 							<!--end::Container-->
 						</div>
 						<!--end::Toolbar-->
-												<!--begin::Post-->
-												<div class="post d-flex flex-column-fluid" id="kt_post">
+						<!--begin::Post-->
+						<div class="post d-flex flex-column-fluid" id="kt_post">
 							<!--begin::Container-->
 							<div id="kt_content_container" class="container-xxl">
 								<!--begin::Card-->
@@ -475,7 +475,10 @@ License: For each use you must have a valid license purchased only from above li
 													</svg>
 												</span>
 												<!--end::Svg Icon-->
-												<input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search user" />
+												<form action="<?= base_url('categoria')?>">
+													<input type="text" name="NOMBRE" class="form-control form-control-solid w-250px ps-14" placeholder="Buscar" value="<?= esc($name) ?>"/>
+													<button type="submit" class="d-none">Buscar</button>
+												</form>
 											</div>
 											<!--end::Search-->
 										</div>
@@ -503,37 +506,41 @@ License: For each use you must have a valid license purchased only from above li
 													<!--begin::Separator-->
 													<div class="separator border-gray-200"></div>
 													<!--end::Separator-->
+													<?php if (session()->getFlashdata('success')): ?>
+														<script>
+															toastr.success('<?= session()->getFlashdata('success'); ?>');
+														</script>
+													<?php endif; ?>
 													<!--begin::Content-->
-													<div class="px-7 py-5" data-kt-user-table-filter="form">
-														<!--begin::Input group-->
-														<label class="form-label fs-6 fw-bold">Nombre:</label>
-														<div class="mb-3">
-															<input class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Nombre"></input>
+													<form action="<?= base_url('categoria')?>">
+														<div class="px-7 py-5" data-kt-user-table-filter="form">
+															<!--begin::Input group-->
+															<div class="mb-3">
+																<input type="text" name="NOMBRE" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Nombre" value="<?= esc($name) ?>"></input>
+															</div>
+															<!--end::Input group-->
+															<!--begin::Input group-->
+															<div class="mb-3">
+																<input type="text" name="DESCRIPCION" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Descripción" value="<?= esc($descripcion) ?>"></input>
+															</div>
+															<!--begin::Actions-->
+															<!--begin::Input group-->
+															<div class="mb-3">
+																<select name="estado" id="estado" class="form-select form-select-solid fw-bolder">
+																	<option value="" disabled <?= $estado === null ? 'selected' : '' ?>>Seleccione una opción</option>
+																	<option value="altas" <?= $estado === 'altas' ? 'selected' : '' ?>>Altas</option>
+																	<option value="bajas" <?= $estado === 'bajas' ? 'selected' : '' ?>>Bajas</option>
+																	<option value="todas" <?= $estado === 'todas' ? 'selected' : '' ?>>Todas</option>
+																</select>
+															</div>
+															<!--end::Input group-->
+															<div class="d-flex justify-content-end">
+																<button type="reset" class="btn btn-light btn-active-light-primary fw-bold me-2 px-6">Reset</button>
+																<button type="submit" class="btn btn-primary fw-bold px-6">Buscar</button>
+															</div>
+															<!--end::Actions-->
 														</div>
-														<!--end::Input group-->
-														<!--begin::Input group-->
-														<label class="form-label fs-6 fw-bold">Descripción:</label>
-														<div class="mb-3">
-															<input class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Descripción"></input>
-														</div>
-														<!--begin::Actions-->
-														<!--begin::Input group-->
-														<div class="mb-3">
-															<label class="form-label fs-6 fw-bold">Estado:</label>
-															<select name="estado" id="estado" class="form-select form-select-solid fw-bolder">
-																<option value="" disabled <?= $estado === null ? 'selected' : '' ?>>Seleccione una opción</option>
-																<option value="altas" <?= $estado === 'altas' ? 'selected' : '' ?>>Altas</option>
-																<option value="bajas" <?= $estado === 'bajas' ? 'selected' : '' ?>>Bajas</option>
-																<option value="todas" <?= $estado === 'todas' ? 'selected' : '' ?>>Todas</option>
-															</select>
-														</div>
-														<!--end::Input group-->
-														<div class="d-flex justify-content-end">
-															<button type="reset" class="btn btn-light btn-active-light-primary fw-bold me-2 px-6" data-kt-menu-dismiss="true" data-kt-user-table-filter="reset">Reset</button>
-															<button type="submit" class="btn btn-primary fw-bold px-6" data-kt-menu-dismiss="true" data-kt-user-table-filter="filter">Apply</button>
-														</div>
-														<!--end::Actions-->
-													</div>
+													</form>
 													<!--end::Content-->
 												</div>
 												<!--end::Menu 1-->
@@ -551,7 +558,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Svg Icon-->Export</button>
 												<!--end::Export-->
 												<!--begin::Add user-->
-												<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
+												<a href="<?=base_url('categoria/save')?>" type="button" class="btn btn-primary">
 												<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
 												<span class="svg-icon svg-icon-2">
 													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -559,7 +566,7 @@ License: For each use you must have a valid license purchased only from above li
 														<rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black" />
 													</svg>
 												</span>
-												<!--end::Svg Icon-->Add User</button>
+												<!--end::Svg Icon-->Crear</a>
 												<!--end::Add user-->
 											</div>
 											<!--end::Toolbar-->
@@ -595,57 +602,6 @@ License: For each use you must have a valid license purchased only from above li
 															<!--end::Close-->
 														</div>
 														<!--end::Modal header-->
-														<!--begin::Modal body-->
-														<div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
-															<!--begin::Form-->
-															<form id="kt_modal_export_users_form" class="form" action="#">
-																<!--begin::Input group-->
-																<div class="fv-row mb-10">
-																	<!--begin::Label-->
-																	<label class="fs-6 fw-bold form-label mb-2">Select Roles:</label>
-																	<!--end::Label-->
-																	<!--begin::Input-->
-																	<select name="role" data-control="select2" data-placeholder="Select a role" data-hide-search="true" class="form-select form-select-solid fw-bolder">
-																		<option></option>
-																		<option value="Administrator">Administrator</option>
-																		<option value="Analyst">Analyst</option>
-																		<option value="Developer">Developer</option>
-																		<option value="Support">Support</option>
-																		<option value="Trial">Trial</option>
-																	</select>
-																	<!--end::Input-->
-																</div>
-																<!--end::Input group-->
-																<!--begin::Input group-->
-																<div class="fv-row mb-10">
-																	<!--begin::Label-->
-																	<label class="required fs-6 fw-bold form-label mb-2">Select Export Format:</label>
-																	<!--end::Label-->
-																	<!--begin::Input-->
-																	<select name="format" data-control="select2" data-placeholder="Select a format" data-hide-search="true" class="form-select form-select-solid fw-bolder">
-																		<option></option>
-																		<option value="excel">Excel</option>
-																		<option value="pdf">PDF</option>
-																		<option value="cvs">CVS</option>
-																		<option value="zip">ZIP</option>
-																	</select>
-																	<!--end::Input-->
-																</div>
-																<!--end::Input group-->
-																<!--begin::Actions-->
-																<div class="text-center">
-																	<button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Discard</button>
-																	<button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
-																		<span class="indicator-label">Submit</span>
-																		<span class="indicator-progress">Please wait...
-																		<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-																	</button>
-																</div>
-																<!--end::Actions-->
-															</form>
-															<!--end::Form-->
-														</div>
-														<!--end::Modal body-->
 													</div>
 													<!--end::Modal content-->
 												</div>
@@ -661,198 +617,24 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Modal header-->
 														<div class="modal-header" id="kt_modal_add_user_header">
 															<!--begin::Modal title-->
-															<h2 class="fw-bolder">Add User</h2>
+															<h2 class="fw-bolder"><?= isset($categoria['PK_ID_CATEGORIA']) ? 'Editar Categoría' : 'Crear Categoría' ?></h2>
 															<!--end::Modal title-->
 															<!--begin::Close-->
 															<div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
-																<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-																<span class="svg-icon svg-icon-1">
-																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																		<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
-																		<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
-																	</svg>
-																</span>
+																<a href="categoria">
+																	<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+																	<span class="svg-icon svg-icon-1">
+																		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																			<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+																			<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+																		</svg>
+																	</span>
+																</a>
 																<!--end::Svg Icon-->
 															</div>
 															<!--end::Close-->
 														</div>
 														<!--end::Modal header-->
-														<!--begin::Modal body-->
-														<div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
-															<!--begin::Form-->
-															<form id="kt_modal_add_user_form" class="form" action="#">
-																<!--begin::Scroll-->
-																<div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
-																	<!--begin::Input group-->
-																	<div class="fv-row mb-7">
-																		<!--begin::Label-->
-																		<label class="d-block fw-bold fs-6 mb-5">Avatar</label>
-																		<!--end::Label-->
-																		<!--begin::Image input-->
-																		<div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url(assets/media/avatars/blank.png)">
-																			<!--begin::Preview existing avatar-->
-																			<div class="image-input-wrapper w-125px h-125px" style="background-image: url(assets/media/avatars/150-1.jpg);"></div>
-																			<!--end::Preview existing avatar-->
-																			<!--begin::Label-->
-																			<label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
-																				<i class="bi bi-pencil-fill fs-7"></i>
-																				<!--begin::Inputs-->
-																				<input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
-																				<input type="hidden" name="avatar_remove" />
-																				<!--end::Inputs-->
-																			</label>
-																			<!--end::Label-->
-																			<!--begin::Cancel-->
-																			<span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
-																				<i class="bi bi-x fs-2"></i>
-																			</span>
-																			<!--end::Cancel-->
-																			<!--begin::Remove-->
-																			<span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
-																				<i class="bi bi-x fs-2"></i>
-																			</span>
-																			<!--end::Remove-->
-																		</div>
-																		<!--end::Image input-->
-																		<!--begin::Hint-->
-																		<div class="form-text">Allowed file types: png, jpg, jpeg.</div>
-																		<!--end::Hint-->
-																	</div>
-																	<!--end::Input group-->
-																	<!--begin::Input group-->
-																	<div class="fv-row mb-7">
-																		<!--begin::Label-->
-																		<label class="required fw-bold fs-6 mb-2">Full Name</label>
-																		<!--end::Label-->
-																		<!--begin::Input-->
-																		<input type="text" name="user_name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Full name" value="Emma Smith" />
-																		<!--end::Input-->
-																	</div>
-																	<!--end::Input group-->
-																	<!--begin::Input group-->
-																	<div class="fv-row mb-7">
-																		<!--begin::Label-->
-																		<label class="required fw-bold fs-6 mb-2">Email</label>
-																		<!--end::Label-->
-																		<!--begin::Input-->
-																		<input type="email" name="user_email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@domain.com" value="e.smith@kpmg.com.au" />
-																		<!--end::Input-->
-																	</div>
-																	<!--end::Input group-->
-																	<!--begin::Input group-->
-																	<div class="mb-7">
-																		<!--begin::Label-->
-																		<label class="required fw-bold fs-6 mb-5">Role</label>
-																		<!--end::Label-->
-																		<!--begin::Roles-->
-																		<!--begin::Input row-->
-																		<div class="d-flex fv-row">
-																			<!--begin::Radio-->
-																			<div class="form-check form-check-custom form-check-solid">
-																				<!--begin::Input-->
-																				<input class="form-check-input me-3" name="user_role" type="radio" value="0" id="kt_modal_update_role_option_0" checked='checked' />
-																				<!--end::Input-->
-																				<!--begin::Label-->
-																				<label class="form-check-label" for="kt_modal_update_role_option_0">
-																					<div class="fw-bolder text-gray-800">Administrator</div>
-																					<div class="text-gray-600">Best for business owners and company administrators</div>
-																				</label>
-																				<!--end::Label-->
-																			</div>
-																			<!--end::Radio-->
-																		</div>
-																		<!--end::Input row-->
-																		<div class='separator separator-dashed my-5'></div>
-																		<!--begin::Input row-->
-																		<div class="d-flex fv-row">
-																			<!--begin::Radio-->
-																			<div class="form-check form-check-custom form-check-solid">
-																				<!--begin::Input-->
-																				<input class="form-check-input me-3" name="user_role" type="radio" value="1" id="kt_modal_update_role_option_1" />
-																				<!--end::Input-->
-																				<!--begin::Label-->
-																				<label class="form-check-label" for="kt_modal_update_role_option_1">
-																					<div class="fw-bolder text-gray-800">Developer</div>
-																					<div class="text-gray-600">Best for developers or people primarily using the API</div>
-																				</label>
-																				<!--end::Label-->
-																			</div>
-																			<!--end::Radio-->
-																		</div>
-																		<!--end::Input row-->
-																		<div class='separator separator-dashed my-5'></div>
-																		<!--begin::Input row-->
-																		<div class="d-flex fv-row">
-																			<!--begin::Radio-->
-																			<div class="form-check form-check-custom form-check-solid">
-																				<!--begin::Input-->
-																				<input class="form-check-input me-3" name="user_role" type="radio" value="2" id="kt_modal_update_role_option_2" />
-																				<!--end::Input-->
-																				<!--begin::Label-->
-																				<label class="form-check-label" for="kt_modal_update_role_option_2">
-																					<div class="fw-bolder text-gray-800">Analyst</div>
-																					<div class="text-gray-600">Best for people who need full access to analytics data, but don't need to update business settings</div>
-																				</label>
-																				<!--end::Label-->
-																			</div>
-																			<!--end::Radio-->
-																		</div>
-																		<!--end::Input row-->
-																		<div class='separator separator-dashed my-5'></div>
-																		<!--begin::Input row-->
-																		<div class="d-flex fv-row">
-																			<!--begin::Radio-->
-																			<div class="form-check form-check-custom form-check-solid">
-																				<!--begin::Input-->
-																				<input class="form-check-input me-3" name="user_role" type="radio" value="3" id="kt_modal_update_role_option_3" />
-																				<!--end::Input-->
-																				<!--begin::Label-->
-																				<label class="form-check-label" for="kt_modal_update_role_option_3">
-																					<div class="fw-bolder text-gray-800">Support</div>
-																					<div class="text-gray-600">Best for employees who regularly refund payments and respond to disputes</div>
-																				</label>
-																				<!--end::Label-->
-																			</div>
-																			<!--end::Radio-->
-																		</div>
-																		<!--end::Input row-->
-																		<div class='separator separator-dashed my-5'></div>
-																		<!--begin::Input row-->
-																		<div class="d-flex fv-row">
-																			<!--begin::Radio-->
-																			<div class="form-check form-check-custom form-check-solid">
-																				<!--begin::Input-->
-																				<input class="form-check-input me-3" name="user_role" type="radio" value="4" id="kt_modal_update_role_option_4" />
-																				<!--end::Input-->
-																				<!--begin::Label-->
-																				<label class="form-check-label" for="kt_modal_update_role_option_4">
-																					<div class="fw-bolder text-gray-800">Trial</div>
-																					<div class="text-gray-600">Best for people who need to preview content data, but don't need to make any updates</div>
-																				</label>
-																				<!--end::Label-->
-																			</div>
-																			<!--end::Radio-->
-																		</div>
-																		<!--end::Input row-->
-																		<!--end::Roles-->
-																	</div>
-																	<!--end::Input group-->
-																</div>
-																<!--end::Scroll-->
-																<!--begin::Actions-->
-																<div class="text-center pt-15">
-																	<button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Discard</button>
-																	<button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
-																		<span class="indicator-label">Submit</span>
-																		<span class="indicator-progress">Please wait...
-																		<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-																	</button>
-																</div>
-																<!--end::Actions-->
-															</form>
-															<!--end::Form-->
-														</div>
-														<!--end::Modal body-->
 													</div>
 													<!--end::Modal content-->
 												</div>
@@ -867,21 +649,21 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="card-body pt-0">
 										<!--begin::Table-->
 										<?php if (!empty($categorias) && is_array($categorias)): ?>
-										<table class="table table-bordered">
+										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
 											<thead>
-												<tr>
+												<tr class="text-start text-muted fw-bolder fs-7 gs-0">
 													<th>NOMBRE</th>
 													<th>DESCRIPCION</th>
 													<th>ACCIONES</th>
 												</tr>
 											</thead>
-											<tbody>
+											<tbody class="text-gray-700 fw-bold">
 												<?php foreach ($categorias as $categoria): ?>
 													<tr>
 														<td><?= esc($categoria['NOMBRE']) ?></td>
 														<td><?= esc($categoria['DESCRIPCION']) ?></td>
 														<td>
-															<a href="<?= base_url('categoria/save/' . $categoria['PK_ID_CATEGORIA']) ?>" class="btn btn-warning btn-sm">Editar</a>
+															<a href="<?= base_url('categoria/save/'. esc($categoria['PK_ID_CATEGORIA'])) ?>" class="btn btn-warning btn-sm">Editar</a>
 															<a href="<?= base_url('categoria/delete/' . esc($categoria['PK_ID_CATEGORIA'])) ?>" 
 															class="btn btn-danger btn-sm"
 															onclick="return confirm('¿Estás seguro de eliminar esta categoría?');">Eliminar</a>
@@ -956,7 +738,7 @@ License: For each use you must have a valid license purchased only from above li
 								</svg>
 							</span>
 							<!--end::Svg Icon-->
-						</button>
+						</>
 					</div>
 				</div>
 				<!--end::Header-->
