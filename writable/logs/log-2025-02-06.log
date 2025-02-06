@@ -40,3 +40,45 @@ in APPPATH/Views/listado_detalle_pedido.php on line 479.
  9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-06 17:05:38 --> ErrorException: Undefined variable $name
+[Method: GET, Route: pedido]
+in APPPATH/Views/listado_pedido.php on line 519.
+ 1 APPPATH/Views/listado_pedido.php(519): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $name', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php', 519)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(67): view('listado_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-06 17:29:09 --> ErrorException: Undefined variable $fk_id_cliente
+[Method: GET, Route: producto]
+in APPPATH/Views/listado_producto.php on line 479.
+ 1 APPPATH/Views/listado_producto.php(479): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $fk_id_cliente', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_producto.php', 479)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_producto.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_producto', [], true)
+ 5 APPPATH/Controllers/ProductoController.php(63): view('listado_producto', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-06 17:30:33 --> ErrorException: Undefined variable $fk_id_cliente
+[Method: GET, Route: producto]
+in APPPATH/Views/listado_producto.php on line 479.
+ 1 APPPATH/Views/listado_producto.php(479): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $fk_id_cliente', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_producto.php', 479)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_producto.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_producto', [], true)
+ 5 APPPATH/Controllers/ProductoController.php(63): view('listado_producto', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

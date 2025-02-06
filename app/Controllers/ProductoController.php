@@ -50,7 +50,7 @@ class ProductoController extends BaseController
         }
 
         // Configuración de la paginación
-        $perPage = 3; // Número de resultados por página
+        $perPage = 5; // Número de resultados por página
         $data['productos'] = $query->paginate($perPage); // Obtener categorías paginadas
         $data['pager'] = $ProductoModel->pager; // Pasar el objeto del paginador a la vista
         $data['name'] = $name; // Mantener el término de búsqueda en la vista
