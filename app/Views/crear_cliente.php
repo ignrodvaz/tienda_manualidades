@@ -35,9 +35,9 @@
             </div>
             <label for="rol" class="form-label">Rol</label>
             <select name="rol" id="rol" class="form-control mb-3" required>
-                <option value="" selected disabled>Seleccione el rol</option>
+                <option value="" selected disabled>Seleccione el Rol</option>
                 <?php foreach ($roles as $rol): ?>
-                    <option value="<?= $rol['PK_ID_ROL'] ?>" <?= $rol['PK_ID_ROL'] == $rol['PK_ID_ROL'] ? 'selected' : '' ?>><?= $rol['NOMBRE'] ?></option>
+                    <option value="<?= $rol['PK_ID_ROL'] ?>"><?= $rol['NOMBRE'] ?> </option>
                 <?php endforeach; ?>
             </select>
             <button type="submit" class="btn btn-primary"><?= isset($cliente) ? 'Actualizar' : 'Guardar'?></button>

@@ -17,7 +17,8 @@ class ClienteController extends BaseController
         $telefono = $this->request->getVar('TELEFONO');
         $direccion = $this->request->getVar('DIRECCION');
         $fecha_registro = $this->request->getVar('FECHA_REGISTRO');
-        $rol = $this->request->getVar('FK_ID_ROL');
+        $rol = $this->request->getVar('ROL');
+        var_dump($rol);
         $estado = $this->request->getGet('estado') ?? 'todas';
 
 
@@ -51,11 +52,11 @@ class ClienteController extends BaseController
         }else if($fecha_registro){
             $query->like('CLIENTE.FECHA_REGISTRO', $fecha_registro);
         }else if($rol){
-            $query->like('ROL.NOMBRE', $rol);
+            $query->like('ROL.PK_ID_ROL', $rol);
         }
 
         // Configuración de la paginación
-        $perPage = 3; // Número de resultados por página
+        $perPage = 10; // Número de resultados por página
         $data['clientes'] = $query->paginate($perPage); // Obtener categorías paginadas
         $data['pager'] = $ClienteModel->pager; // Pasar el objeto del paginador a la vista
         $data['name'] = $name; // Mantener el término de búsqueda en la vista

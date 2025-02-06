@@ -118,7 +118,7 @@ License: For each use you must have a valid license purchased only from above li
 										<span class="menu-title">Tablas</span>
 										<span class="menu-arrow"></span>
 									</span>
-									<div class="menu-sub menu-sub-accordion menu-active-bg show">
+									<div class="menu-sub menu-sub-accordion menu-active-bg">
 										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
 											<div class="menu-item">
 												<a class="menu-link active" href="categoria">
