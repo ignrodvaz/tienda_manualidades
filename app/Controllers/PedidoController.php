@@ -16,6 +16,7 @@ class PedidoController extends BaseController
         $estado_pedido = $this->request->getVar('ESTADO');
         $fk_id_cliente = $this->request->getVar('FK_ID_CLIENTE');
         $estado = $this->request->getGet('estado') ?? 'todas';
+        $perPage = $this->request->getVar('perPage') ?: 10;
 
 
 
@@ -48,7 +49,6 @@ class PedidoController extends BaseController
         }
 
         // Configuración de la paginación
-        $perPage = 3; // Número de resultados por página
         $data['pedidos'] = $query->paginate($perPage); // Obtener categorías paginadas
 
          // Formatear fecha para mostrar solo YYYY-MM-DD
@@ -63,6 +63,7 @@ class PedidoController extends BaseController
         $data['estado_pedido'] = $estado_pedido;
         $data['fk_id_cliente'] = $fk_id_cliente;
         $data['estado'] = $estado; // Mantener el estado en la vista
+        $data['perPage'] = $perPage; // Mantener el número de resultados por página en la vista
 
         return view('listado_pedido', $data); // Cargar la vista con los datos
     }

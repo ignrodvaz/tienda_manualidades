@@ -18,6 +18,7 @@ class ProductoController extends BaseController
         $fecha_baja = $this->request->getVar('FECHA_BAJA');
         $fk_id_categoria = $this->request->getVar('FK_ID_CATEGORIA');
         $estado = $this->request->getGet('estado') ?? 'todas';
+        $perPage = $this->request->getVar('perPage') ?: 10;
 
 
 
@@ -50,7 +51,6 @@ class ProductoController extends BaseController
         }
 
         // Configuración de la paginación
-        $perPage = 5; // Número de resultados por página
         $data['productos'] = $query->paginate($perPage); // Obtener categorías paginadas
         $data['pager'] = $ProductoModel->pager; // Pasar el objeto del paginador a la vista
         $data['name'] = $name; // Mantener el término de búsqueda en la vista
@@ -59,6 +59,7 @@ class ProductoController extends BaseController
         $data['stock'] = $stock;
         $data['fk_id_categoria'] = $fk_id_categoria;
         $data['estado'] = $estado; // Mantener el estado en la vista
+        $data['perPage'] = $perPage; // Mantener el número de resultados por página en la vista
 
         return view('listado_producto', $data); // Cargar la vista con los datos
     }

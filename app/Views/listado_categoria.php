@@ -512,7 +512,7 @@ License: For each use you must have a valid license purchased only from above li
 														</script>
 													<?php endif; ?>
 													<!--begin::Content-->
-													<form action="<?= base_url('categoria')?>">
+													<form id="formularioListadoCategoria" action="<?= base_url('categoria')?>">
 														<div class="px-7 py-5" data-kt-user-table-filter="form">
 															<!--begin::Input group-->
 															<div class="mb-3">
@@ -526,12 +526,13 @@ License: For each use you must have a valid license purchased only from above li
 															<!--begin::Actions-->
 															<!--begin::Input group-->
 															<div class="mb-3">
-																<select name="estado" id="estado" class="form-select form-select-solid fw-bolder">
-																	<option value="" disabled <?= $estado === null ? 'selected' : '' ?>>Seleccione una opción</option>
-																	<option value="altas" <?= $estado === 'altas' ? 'selected' : '' ?>>Altas</option>
-																	<option value="bajas" <?= $estado === 'bajas' ? 'selected' : '' ?>>Bajas</option>
-																	<option value="todas" <?= $estado === 'todas' ? 'selected' : '' ?>>Todas</option>
+																<select name="estado" id="estado" class="form-select form-select-solid fw-bolder" onchange="this.form.submit()">
+																	<option value="" disabled selected <?= $estado === null ? 'selected' : '' ?>>Seleccione una opción</option>
+																	<option value="altas">Altas</option>
+																	<option value="bajas">Bajas</option>
+																	<option value="todas">Todas</option>
 																</select>
+																<input type="hidden" name="perPage" id="hiddenPerPage">
 															</div>
 															<!--end::Input group-->
 															<div class="d-flex justify-content-end">
@@ -672,8 +673,24 @@ License: For each use you must have a valid license purchased only from above li
 												<?php endforeach; ?>
 											</tbody>
 										</table>
+										<div class="mb-3">
+											<label for="perPage" class="text-gray-700 fw-bold mb-3">Elementos por página:</label>
+											<select name="perPage" id="perPage" class="form-select form-select-solid fw-bolder">
+												<option value="5" <?php echo ($perPage == 5) ? 'selected' : '';?>>5</option>
+												<option value="10" <?php echo ($perPage == 10) ? 'selected' : '';?>>10</option>
+												<option value="15" <?php echo ($perPage == 15) ? 'selected' : '';?>>15</option>
+												<option value="20" <?php echo ($perPage == 20) ? 'selected' : '';?>>20</option>
+											</select>
+										</div>
+										<script>
+											document.getElementById('perPage').addEventListener('change', function() {
+												var perPageValue = this.value
+												document.getElementById('hiddenPerPage').value = perPageValue
+												document.getElementById('formularioListadoCategoria').submit()
+											});
+										</script>
 										<div class="mt-4">
-											<?= $pager ->only(['NOMBRE'])->links('default', 'custom_pagination')?> <!--Usa la plantilla predeterminada -->
+											<?= $pager ->links('default', 'custom_pagination')?> <!--Usa la plantilla predeterminada -->
 										</div>
 										<?php else: ?>
 											<p class="text-center">No hay categorías registradas.</p>

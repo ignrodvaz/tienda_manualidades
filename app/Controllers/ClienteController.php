@@ -18,8 +18,8 @@ class ClienteController extends BaseController
         $direccion = $this->request->getVar('DIRECCION');
         $fecha_registro = $this->request->getVar('FECHA_REGISTRO');
         $rol = $this->request->getVar('ROL');
-        var_dump($rol);
         $estado = $this->request->getGet('estado') ?? 'todas';
+        $perPage = $this->request->getVar('perPage') ?: 10;
 
 
 
@@ -56,7 +56,6 @@ class ClienteController extends BaseController
         }
 
         // Configuración de la paginación
-        $perPage = 10; // Número de resultados por página
         $data['clientes'] = $query->paginate($perPage); // Obtener categorías paginadas
         $data['pager'] = $ClienteModel->pager; // Pasar el objeto del paginador a la vista
         $data['name'] = $name; // Mantener el término de búsqueda en la vista
@@ -67,6 +66,7 @@ class ClienteController extends BaseController
         $data['fecha_registro'] = $fecha_registro;
         $data['rol'] = $rol;
         $data['estado'] = $estado; // Mantener el estado en la vista
+        $data['perPage'] = $perPage; // Mantener el número de resultados por página en la vista
 
         return view('listado_cliente', $data); // Cargar la vista con los datos
     }

@@ -15,6 +15,7 @@ class DetallePedidoController extends BaseController
         $fk_id_pedido = $this->request->getVar('FK_ID_PEDIDO');
         $producto_nombre = $this->request->getVar('PRODUCTO_NOMBRE');
         $estado = $this->request->getGet('estado') ?? 'todas';
+        $perPage = $this->request->getVar('perPage') ?: 10;
 
 
 
@@ -47,7 +48,6 @@ class DetallePedidoController extends BaseController
         }
 
         // Configuración de la paginación
-        $perPage = 3; // Número de resultados por página
         $data['detalles'] = $query->paginate($perPage); // Obtener categorías paginadas
         $data['pager'] = $DetallePedidoModel->pager; // Pasar el objeto del paginador a la vista
         $data['cantidad'] = $cantidad; // Mantener el término de búsqueda en la vista
@@ -55,6 +55,7 @@ class DetallePedidoController extends BaseController
         $data['fk_id_pedido'] = $fk_id_pedido;
         $data['producto_nombre'] = $producto_nombre;
         $data['estado'] = $estado; // Mantener el estado en la vista
+        $data['perPage'] = $perPage; // Mantener el número de resultados por página en la vista
 
         return view('listado_detalle_pedido', $data); // Cargar la vista con los datos
     }
