@@ -20,6 +20,7 @@ class CategoriaController extends BaseController
         $name = $this->request->getVar('NOMBRE'); // Obtener el término de búsqueda desde el formulario
         $estado = $this->request->getGet('estado') ?? 'todas';
         $descripcion = $this -> request -> getVar('DESCRIPCION');
+        $pk_id_categoria = $this -> request -> getVar('PK_ID_CATEGORIA');
         $perPage = $this -> request -> getVar('perPage') ?: 10;
 
 
@@ -44,6 +45,7 @@ class CategoriaController extends BaseController
         $data['pager'] = $CategoriaModel->pager; // Pasar el objeto del paginador a la vista
         $data['name'] = $name; // Mantener el término de búsqueda en la vista
         $data['descripcion'] = $descripcion;
+        $data['pk_id_categoria'] = $pk_id_categoria;
         $data['estado'] = $estado; // Mantener el estado en la vista
         $data['perPage'] = $perPage; // Mantener el número de resultados por página en la vista
         

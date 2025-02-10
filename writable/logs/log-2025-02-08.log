@@ -1,0 +1,42 @@
+CRITICAL - 2025-02-08 11:40:16 --> ErrorException: Undefined variable $name
+[Method: GET, Route: categoria/save]
+in APPPATH/Views/crear_categoria.php on line 470.
+ 1 APPPATH/Views/crear_categoria.php(470): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $name', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_categoria.php', 470)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(105): view('crear_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->saveCategoria()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-08 11:41:51 --> ErrorException: Undefined variable $descripcion
+[Method: GET, Route: categoria/save]
+in APPPATH/Views/crear_categoria.php on line 474.
+ 1 APPPATH/Views/crear_categoria.php(474): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $descripcion', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_categoria.php', 474)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(105): view('crear_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->saveCategoria()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-08 13:03:50 --> ErrorException: Undefined variable $pk_id_categoria
+[Method: GET, Route: categoria/save]
+in APPPATH/Views/crear_categoria.php on line 505.
+ 1 APPPATH/Views/crear_categoria.php(505): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pk_id_categoria', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_categoria.php', 505)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(107): view('crear_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->saveCategoria()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

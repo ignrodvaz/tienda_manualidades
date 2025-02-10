@@ -458,7 +458,74 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="post d-flex flex-column-fluid" id="kt_post">
 							<!--begin::Container-->
 							<div id="kt_content_container" class="container-xxl">
+									<!--begin::Card-->
+										<div class="card mb-5 mb-xl-8">
+											<!--begin::Card body-->
+											<div class="card-body">
+												<h1 class="d-flex flex-center flex-column py-5"><?= isset($categoria['PK_ID_CATEGORIA']) ? 'Editar Categoría' : 'Crear Categoría' ?></h1>
+												<?php if (isset($validation)): ?>
+													<div class="alert alert-danger">
+														<?= $validation->listErrors() ?>
+													</div>
+												<?php endif; ?>
+												<!--begin::Summary-->
+												<form action="<?= isset($categoria) ? base_url('categoria/save/') . $categoria['PK_ID_CATEGORIA'] : base_url('categoria/save') ?>" method="post">
+													<!--begin::User Info-->
+													<div class="d-flex flex-center flex-column py-5">
+														<div class="mb-3">
+															<!--begin::Name-->
+															<label for="nombre">Nombre:</label>
+															<input type="text" class="form-control form-control-solid mb-3 mb-lg-0" id="nombre" name="nombre" placeholder="Nombre" value="<?= esc($categoria['NOMBRE'] ?? set_value('nombre')) ?>">
+															<!--end::Name-->
+														</div>
+														<div class="mb-3">
+															<Label for="descripcion">Descripción:</Label>
+															<input class="form-control form-control-solid mb-3 mb-lg-0" id="descripcion" name="descripcion" placeholder="Descripción" value="<?= esc($categoria['DESCRIPCION'] ?? set_value('descripcion')) ?>"></input>
+														</div>
+													</div>
+													<!--end::User Info-->
+												
+													<!--end::Summary-->
+													<!--begin::Details toggle-->
+													<div class="d-flex d-flex justify-content-end py-3 mb-3">
+														<button type="submit" class="btn me-3 btn-primary"><?= isset($categoria) ? 'Actualizar' : 'Guardar'?></button>
+														<a href="<?= base_url('categoria') ?>" class="btn btn-secondary">Cancelar</a>
+													</div>
+													<!-- Sección de detalles -->
+													<div class="d-flex flex-stack fs-4 py-3">
+                                                    	<div class="fw-bolder rotate collapsible" data-bs-toggle="collapse" href="#kt_user_view_details" role="button" aria-expanded="false" aria-controls="kt_user_view_details">
+                                                        	Detalles
+                                                        	<span class="ms-2 rotate-180">
+                                                            	<span class="svg-icon svg-icon-3">
+                                                                	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                    	<path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black" />
+                                                                	</svg>
+                                                            	</span>
+                                                        	</span>
+                                                    	</div>
+                                                	</div>
 
+                                                	<div class="separator"></div>
+														<!--begin::Details content-->
+														<div id="kt_user_view_details" class="collapse show">
+															<div class="pb-5 fs-6">
+																<!--begin::Details item-->
+																<div class="fw-bolder mt-5">ID Categoría</div>
+																<div class="text-gray-600"><?= isset($categoria) ? esc($categoria['PK_ID_CATEGORIA']) : 'Nuevo' ?></div>
+																<!--begin::Details item-->
+																<div class="fw-bolder mt-5">Fecha de Creación</div>
+																<div class="text-gray-600"><?= isset($categoria) && $categoria['created_at'] !== null ? esc($categoria['created_at']) : 'NULL' ?></div>
+																<!--begin::Details item-->
+																<div class="fw-bolder mt-5">Fecha de Baja</div>
+																<div class="text-gray-600"><?= isset($categoria) && $categoria['FECHA_BAJA'] !== null ? esc($categoria['FECHA_BAJA']) : 'NULL' ?></div>
+															</div>
+														</div>
+													<!--end::Details content-->
+												</form>
+											</div>
+										<!--end::Card body-->
+									</div>
+								<!--end::Card-->
 							</div>
 							<!--end::Container-->
 						</div>
@@ -3653,23 +3720,23 @@ License: For each use you must have a valid license purchased only from above li
 		</div>
 		<!--end::Scrolltop-->
 		<!--end::Main-->
-		<script>var hostUrl = "../assets/";</script>
+		<script>var hostUrl = "../../assets/";</script>
 		<!--begin::Javascript-->
 		<!--begin::Global Javascript Bundle(used by all pages)-->
-		<script src="../assets/plugins/global/plugins.bundle.js"></script>
-		<script src="../assets/js/scripts.bundle.js"></script>
+		<script src="../../assets/plugins/global/plugins.bundle.js"></script>
+		<script src="../../assets/js/scripts.bundle.js"></script>
 		<!--end::Global Javascript Bundle-->
 		<!--begin::Page Vendors Javascript(used by this page)-->
-		<script src="../assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+		<script src="../../assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
 		<!--end::Page Vendors Javascript-->
 		<!--begin::Page Custom Javascript(used by this page)-->
-		<script src="../assets/js/custom/widgets.js"></script>
-		<script src="../assets/js/custom/apps/chat/chat.js"></script>
-		<script src="../assets/js/custom/modals/create-app.js"></script>
-		<script src="../assets/js/custom/modals/upgrade-plan.js"></script>
+		<script src="../../assets/js/custom/widgets.js"></script>
+		<script src="../../assets/js/custom/apps/chat/chat.js"></script>
+		<script src="../../assets/js/custom/modals/create-app.js"></script>
+		<script src="../../assets/js/custom/modals/upgrade-plan.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
-		<script type="text/JavaScript" src="../assets/js/apexchart.js"></script>
+		<script type="text/JavaScript" src="../../assets/js/apexchart.js"></script>
 	</body>
 	<!--end::Body-->
 </html>
