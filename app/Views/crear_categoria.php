@@ -24,16 +24,16 @@ License: For each use you must have a valid license purchased only from above li
 		<meta property="og:url" content="https://keenthemes.com/metronic" />
 		<meta property="og:site_name" content="Keenthemes | Metronic" />
 		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-		<link rel="shortcut icon" href="../../assets/media/logos/favicon.ico" />
+		<link rel="shortcut icon" href="<?= base_url("assets/media/logos/favicon.ico")?>" />
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
 		<!--begin::Page Vendor Stylesheets(used by this page)-->
-		<link href="../../assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="<?= base_url()?>/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Page Vendor Stylesheets-->
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
-		<link href="../../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-		<link href="../../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="<?= base_url()?>/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="<?= base_url("assets/css/style.bundle.css")?>" rel="stylesheet" type="text/css" />
 		<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 		<!--end::Global Stylesheets Bundle-->
 	</head>
@@ -3723,20 +3723,20 @@ License: For each use you must have a valid license purchased only from above li
 		<script>var hostUrl = "../../assets/";</script>
 		<!--begin::Javascript-->
 		<!--begin::Global Javascript Bundle(used by all pages)-->
-		<script src="../../assets/plugins/global/plugins.bundle.js"></script>
-		<script src="../../assets/js/scripts.bundle.js"></script>
+		<script src="<?= base_url()?>assets/plugins/global/plugins.bundle.js"></script>
+		<script src="<?= base_url("assets/js/scripts.bundle.js")?>"></script>
 		<!--end::Global Javascript Bundle-->
 		<!--begin::Page Vendors Javascript(used by this page)-->
-		<script src="../../assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+		<script src="<?= base_url("assets/plugins/custom/fullcalendar/fullcalendar.bundle.js")?>"></script>
 		<!--end::Page Vendors Javascript-->
 		<!--begin::Page Custom Javascript(used by this page)-->
-		<script src="../../assets/js/custom/widgets.js"></script>
-		<script src="../../assets/js/custom/apps/chat/chat.js"></script>
-		<script src="../../assets/js/custom/modals/create-app.js"></script>
-		<script src="../../assets/js/custom/modals/upgrade-plan.js"></script>
+		<script src="<?= base_url("assets/js/custom/widgets.js")?>"></script>
+		<script src="<?= base_url("assets/js/custom/apps/chat/chat.js")?>"></script>
+		<script src="<?= base_url("assets/js/custom/modals/create-app.js")?>"></script>
+		<script src="<?= base_url("assets/js/custom/modals/upgrade-plan.js")?>"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
-		<script type="text/JavaScript" src="../../assets/js/apexchart.js"></script>
+		<script type="text/JavaScript" src="<?= base_url("assets/js/apexchart.js")?>"></script>
 	</body>
 	<!--end::Body-->
 </html>
