@@ -660,28 +660,46 @@ License: For each use you must have a valid license purchased only from above li
 										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
 											<thead>
 												<tr class="text-start text-muted fw-bolder fs-7 gs-0">
-                                                    <th>NOMBRE</th>
-                                                    <th>DESCRIPCION</th>
-                                                    <th>PRECIO</th>
-                                                    <th>STOCK</th>
-                                                    <th>CATEGORIA</th>
-                                                    <th>ACCIONES</th>
+                                                    <th class="text-center">NOMBRE</th>
+                                                    <th class="text-center">DESCRIPCION</th>
+                                                    <th class="text-center">PRECIO</th>
+                                                    <th class="text-center">STOCK</th>
+                                                    <th class="text-center">CATEGORIA</th>
+                                                    <th class="text-center">ACCIONES</th>
 												</tr>
 											</thead>
 											<tbody class="text-gray-700 fw-bold">
                                                 <?php foreach ($productos as $producto): ?>
-                                                    <tr>
-                                                        <td><?= esc($producto['NOMBRE']) ?></td>
-                                                        <td><?= esc($producto['DESCRIPCION']) ?></td>
-                                                        <td><?= esc($producto['PRECIO']) ?></td>
-                                                        <td><?= esc($producto['STOCK']) ?></td>
-                                                        <td><?= esc($producto['CATEGORIA_NOMBRE']) ?></td>
-                                                        <td>
-                                                            <a href="<?= base_url('producto/save/' . $producto['PK_ID_PRODUCTO']) ?>" class="btn btn-warning btn-sm">Editar</a>
-                                                            <a href="<?= base_url('producto/delete/' . esc($producto['PK_ID_PRODUCTO'])) ?>" 
-                                                            class="btn btn-danger btn-sm"
-                                                            onclick="return confirm('¿Estás seguro de eliminar este cliente?');">Eliminar</a>
-                                                        </td>
+                                                    <tr class="<?= isset($producto['FECHA_BAJA']) && $producto['FECHA_BAJA'] !== null ? 'bg-light-danger' : '' ?>">
+                                                        <td class="text-center"><?= esc($producto['NOMBRE']) ?></td>
+                                                        <td class="text-center"><?= esc($producto['DESCRIPCION']) ?></td>
+                                                        <td class="text-center"><?= esc($producto['PRECIO']) ?></td>
+                                                        <td class="text-center"><?= esc($producto['STOCK']) ?></td>
+                                                        <td class="text-center"><?= esc($producto['CATEGORIA_NOMBRE']) ?></td>
+														<td class="text-center">
+															<a href="#" class="btn btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Acciones
+															<!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
+															<span class="svg-icon svg-icon-5 m-0">
+																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																	<path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black" />
+																</svg>
+															</span>
+															<!--end::Svg Icon--></a>
+															<!--begin::Menu-->
+															<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
+																<!--begin::Menu item-->
+																<div class="menu-item px-3">
+																	<a href="<?= base_url('producto/save/' . $producto['PK_ID_PRODUCTO']) ?>"  class="menu-link px-3">Editar</a>
+																</div>
+																<!--end::Menu item-->
+																<!--begin::Menu item-->
+																<div class="menu-item px-3">
+																	<a href="<?= base_url('producto/delete/' . esc($producto['PK_ID_PRODUCTO'])) ?>"   class="menu-link px-3" data-kt-users-table-filter="delete_row">Eliminar</a>
+																</div>
+																<!--end::Menu item-->
+															</div>
+															<!--end::Menu-->
+														</td>
                                                     </tr>
                                                 <?php endforeach; ?>
 											</tbody>
