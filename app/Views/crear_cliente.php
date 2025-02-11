@@ -320,7 +320,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--begin::Title-->
 									<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
 									<!--begin::Title-->
-										<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Categoría</h1>
+										<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Cliente</h1>
 										<!--end::Title-->
 										<!--begin::Separator-->
 										<span class="h-20px border-gray-200 border-start mx-4"></span>
@@ -346,7 +346,7 @@ License: For each use you must have a valid license purchased only from above li
 											</li>
 											<!--end::Item-->
 											<!--begin::Item-->
-											<li class="breadcrumb-item text-muted">Crear Categoria</li>
+											<li class="breadcrumb-item text-muted">Crear Cliente</li>
 											<!--end::Item-->
 										</ul>
 									<!--end::Breadcrumb-->
@@ -493,9 +493,9 @@ License: For each use you must have a valid license purchased only from above li
                                                         <div class="mb-3 w-50">
                                                             <label for="rol">Selecciona:</label>
                                                             <select name="rol" id="rol" class="form-control form-control-solid mb-3 mb-lg-0" required>
-                                                                <option value="" selected disabled>Seleccione el Rol</option>
+                                                                <option value="" disabled>Seleccione el Rol</option>
                                                                 <?php foreach ($roles as $rol): ?>
-                                                                    <option value="<?= $rol['PK_ID_ROL'] ?>"><?= $rol['NOMBRE'] ?> </option>
+                                                                    <option value="<?= $rol['PK_ID_ROL'] ?>" <?= isset($cliente) && $cliente['FK_ID_ROL'] == $rol['PK_ID_ROL'] ? 'selected' : '' ?>><?= $rol['NOMBRE'] ?></option>
                                                                 <?php endforeach; ?>
                                                             </select>
                                                         </div>
