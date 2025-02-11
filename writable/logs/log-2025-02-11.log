@@ -1,0 +1,42 @@
+CRITICAL - 2025-02-11 12:46:47 --> ErrorException: Undefined variable $categoria
+[Method: GET, Route: cliente/save/1]
+in APPPATH/Views/crear_cliente.php on line 534.
+ 1 APPPATH/Views/crear_cliente.php(534): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoria', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php', 534)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_cliente', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(134): view('crear_cliente', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->saveCliente('1')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-11 12:46:50 --> ErrorException: Undefined variable $categoria
+[Method: GET, Route: cliente/save/1]
+in APPPATH/Views/crear_cliente.php on line 534.
+ 1 APPPATH/Views/crear_cliente.php(534): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoria', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php', 534)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_cliente', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(134): view('crear_cliente', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->saveCliente('1')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-11 12:47:02 --> ErrorException: Undefined variable $categoria
+[Method: GET, Route: cliente/save/1]
+in APPPATH/Views/crear_cliente.php on line 537.
+ 1 APPPATH/Views/crear_cliente.php(537): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoria', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php', 537)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_cliente.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_cliente', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(134): view('crear_cliente', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->saveCliente('1')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
