@@ -117,10 +117,10 @@ License: For each use you must have a valid license purchased only from above li
 										<span class="menu-title">Tablas</span>
 										<span class="menu-arrow"></span>
 									</span>
-									<div class="menu-sub menu-sub-accordion menu-active-bg show">
+									<div class="menu-sub menu-sub-accordion menu-active-bg">
 										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
 											<div class="menu-item">
-												<a class="menu-link active" href="categoria">
+												<a class="menu-link active" href="../categoria">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -128,7 +128,7 @@ License: For each use you must have a valid license purchased only from above li
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link" href="cliente">
+												<a class="menu-link" href="../cliente">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -136,7 +136,7 @@ License: For each use you must have a valid license purchased only from above li
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link" href="detalle_pedido">
+												<a class="menu-link" href="../detalle_pedido">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -144,7 +144,7 @@ License: For each use you must have a valid license purchased only from above li
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link" href="log">
+												<a class="menu-link" href="../log">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -152,7 +152,7 @@ License: For each use you must have a valid license purchased only from above li
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link" href="pedido">
+												<a class="menu-link" href="../pedido">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -160,7 +160,7 @@ License: For each use you must have a valid license purchased only from above li
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link" href="producto">
+												<a class="menu-link" href="../producto">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -168,7 +168,7 @@ License: For each use you must have a valid license purchased only from above li
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link" href="rol">
+												<a class="menu-link" href="../rol">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>

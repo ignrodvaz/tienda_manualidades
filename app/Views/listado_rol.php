@@ -24,16 +24,17 @@ License: For each use you must have a valid license purchased only from above li
 		<meta property="og:url" content="https://keenthemes.com/metronic" />
 		<meta property="og:site_name" content="Keenthemes | Metronic" />
 		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-		<link rel="shortcut icon" href="<?= base_url("assets/media/logos/favicon.ico")?>" />
+		<link rel="shortcut icon" href="../assets/media/logos/favicon.ico" />
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
 		<!--begin::Page Vendor Stylesheets(used by this page)-->
-		<link href="<?= base_url()?>/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Page Vendor Stylesheets-->
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
-		<link href="<?= base_url()?>/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-		<link href="<?= base_url("assets/css/style.bundle.css")?>" rel="stylesheet" type="text/css" />
+		<link href="../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<script src="../"></script>
 		<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 		<!--end::Global Stylesheets Bundle-->
 	</head>
@@ -51,7 +52,7 @@ License: For each use you must have a valid license purchased only from above li
 					<div class="aside-logo flex-column-auto" id="kt_aside_logo">
 						<!--begin::Logo-->
 						<a href="../../demo1/dist/index.html">
-							<img alt="Logo" src="../../assets/media/logos/logo-1-dark.svg" class="h-25px logo" />
+							<img alt="Logo" src="../assets/media/logos/logo-1-dark.svg" class="h-25px logo" />
 						</a>
 						<!--end::Logo-->
 						<!--begin::Aside toggler-->
@@ -120,7 +121,7 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="menu-sub menu-sub-accordion menu-active-bg">
 										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
 											<div class="menu-item">
-												<a class="menu-link" href="../categoria">
+												<a class="menu-link active" href="categoria">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -128,7 +129,7 @@ License: For each use you must have a valid license purchased only from above li
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link" href="../cliente">
+												<a class="menu-link" href="cliente">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -136,7 +137,7 @@ License: For each use you must have a valid license purchased only from above li
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link" href="../detalle_pedido">
+												<a class="menu-link" href="detalle_pedido">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -144,7 +145,7 @@ License: For each use you must have a valid license purchased only from above li
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link" href="../log">
+												<a class="menu-link" href="log">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -152,7 +153,7 @@ License: For each use you must have a valid license purchased only from above li
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link active" href="../pedido">
+												<a class="menu-link" href="pedido">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -160,7 +161,7 @@ License: For each use you must have a valid license purchased only from above li
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link" href="../producto">
+												<a class="menu-link" href="producto">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -168,7 +169,7 @@ License: For each use you must have a valid license purchased only from above li
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link" href="../rol">
+												<a class="menu-link" href="rol">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -320,7 +321,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--begin::Title-->
 									<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
 									<!--begin::Title-->
-										<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Pedido</h1>
+										<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Rol</h1>
 										<!--end::Title-->
 										<!--begin::Separator-->
 										<span class="h-20px border-gray-200 border-start mx-4"></span>
@@ -346,7 +347,7 @@ License: For each use you must have a valid license purchased only from above li
 											</li>
 											<!--end::Item-->
 											<!--begin::Item-->
-											<li class="breadcrumb-item text-muted">Crear Pedido</li>
+											<li class="breadcrumb-item text-muted">Rol</li>
 											<!--end::Item-->
 										</ul>
 									<!--end::Breadcrumb-->
@@ -458,80 +459,263 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="post d-flex flex-column-fluid" id="kt_post">
 							<!--begin::Container-->
 							<div id="kt_content_container" class="container-xxl">
-									<!--begin::Card-->
-										<div class="card mb-5 mb-xl-8">
-											<!--begin::Card body-->
-											<div class="card-body">
-												<h1 class="d-flex flex-center flex-column py-5"><?= isset($pedido['PK_ID_PEDIDO']) ? 'Editar Pedido' : 'Crear Pedido' ?></h1>
-												<?php if (isset($validation)): ?>
-													<div class="alert alert-danger">
-														<?= $validation->listErrors() ?>
-													</div>
-												<?php endif; ?>
-												<!--begin::Summary-->
-												<form action="<?= isset($pedido) ? base_url('pedido/save/') . $pedido['PK_ID_PEDIDO'] : base_url('pedido/save') ?>" method="post">
-													<!--begin::User Info-->
-													<div class="d-flex flex-center flex-column py-5">
-														<div class="mb-3 w-50">
-															<!--begin::Name-->
-                                                            <label for="fecha_pedido">Fecha Pedido</label>
-                                                            <input type="date" class="form-control form-control-solid mb-3 mb-lg-0" id="fecha_pedido" name="fecha_pedido" value="<?= esc(isset($pedido['FECHA_PEDIDO']) ? date('Y-m-d', strtotime($pedido['FECHA_PEDIDO'])) : '') ?>">
-															<!--end::Name-->
-														</div>
-														<div class="mb-3 w-50">
-                                                            <label for="direccion_pedido">Direccion Pedido</label>
-                                                            <input type="text" class="form-control form-control-solid mb-3 mb-lg-0" id="direccion_pedido" name="direccion_pedido" value="<?= esc($pedido['DIRECCION_PEDIDO'] ?? set_value('direccion_pedido')) ?>">
-														</div>
-                                                        <div class="mb-3 w-50">
-                                                            <label for="total_pedido">Total Pedido</label>
-                                                            <input class="form-control form-control-solid mb-3 mb-lg-0" id="total_pedido" name="total_pedido" value="<?= esc($pedido['TOTAL_PEDIDO'] ?? set_value('total_pedido')) ?>">
-                                                        </div>
-													</div>
-													<!--end::User Info-->
-													<!--end::Summary-->
-													<!--begin::Details toggle-->
-													<div class="d-flex d-flex justify-content-end py-3 mb-3">
-														<button type="submit" class="btn me-3 btn-primary"><?= isset($pedido) ? 'Actualizar' : 'Guardar'?></button>
-														<a href="<?= base_url('pedido') ?>" class="btn btn-secondary">Cancelar</a>
-													</div>
-													<!-- Sección de detalles -->
-													<div class="d-flex flex-stack fs-4 py-3">
-                                                    	<div class="fw-bolder rotate collapsible" data-bs-toggle="collapse" href="#kt_user_view_details" role="button" aria-expanded="false" aria-controls="kt_user_view_details">
-                                                        	Detalles
-                                                        	<span class="ms-2 rotate-180">
-                                                            	<span class="svg-icon svg-icon-3">
-                                                                	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                    	<path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black" />
-                                                                	</svg>
-                                                            	</span>
-                                                        	</span>
-                                                    	</div>
-                                                	</div>
-
-                                                	<div class="separator"></div>
-														<!--begin::Details content-->
-														<div id="kt_user_view_details" class="collapse show">
-															<div class="pb-5 fs-6">
-																<!--begin::Details item-->
-																<div class="fw-bolder mt-5">ID Pedido</div>
-																<div class="text-gray-600"><?= isset($pedido) ? esc($pedido['PK_ID_PEDIDO']) : 'Nuevo' ?></div>
-																<!--begin::Details item-->
-                                                                <div class="fw-bolder mt-5">ID Cliente</div>
-																<div class="text-gray-600"><?= isset($pedido) && $pedido['FK_ID_CLIENTE'] !== null ? esc($pedido['FK_ID_CLIENTE']) : 'NULL' ?></div>
-                                                                <!--begin::Details item-->
-																<div class="fw-bolder mt-5">Fecha de Creación</div>
-																<div class="text-gray-600"><?= isset($pedido) && $pedido['created_at'] !== null ? esc($pedido['created_at']) : 'NULL' ?></div>
-																<!--begin::Details item-->
-																<div class="fw-bolder mt-5">Fecha de Baja</div>
-																<div class="text-gray-600"><?= isset($pedido) && $pedido['FECHA_BAJA'] !== null ? esc($pedido['FECHA_BAJA']) : 'NULL' ?></div>
-                                                                <!--begin::Details item-->
-															</div>
-														</div>
-													<!--end::Details content-->
+								<!--begin::Card-->
+								<div class="card">
+									<!--begin::Card header-->
+									<div class="card-header border-0 pt-6">
+										<!--begin::Card title-->
+										<div class="card-title">
+											<!--begin::Search-->
+											<div class="d-flex align-items-center position-relative my-1">
+												<!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+												<span class="svg-icon svg-icon-1 position-absolute ms-6">
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+														<rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black" />
+														<path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black" />
+													</svg>
+												</span>
+												<!--end::Svg Icon-->
+												<form action="<?= base_url('rol')?>">
+													<input type="text" name="NOMBRE" class="form-control form-control-solid w-250px ps-14" placeholder="Buscar" value="<?= esc($name) ?>"/>
+													<button type="submit" class="d-none">Buscar</button>
 												</form>
 											</div>
-										<!--end::Card body-->
+											<!--end::Search-->
+										</div>
+										<!--begin::Card title-->
+										<!--begin::Card toolbar-->
+										<div class="card-toolbar">
+											<!--begin::Toolbar-->
+											<div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
+												<!--begin::Filter-->
+												<button type="button" class="btn btn-light-primary me-3" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+												<!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
+												<span class="svg-icon svg-icon-2">
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+														<path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black" />
+													</svg>
+												</span>
+												<!--end::Svg Icon-->Filtro</button>
+												<!--begin::Menu 1-->
+												<div class="menu menu-sub menu-sub-dropdown w-300px w-md-325px" data-kt-menu="true">
+													<!--begin::Header-->
+													<div class="px-7 py-5">
+														<div class="fs-5 text-dark fw-bolder">Opciones</div>
+													</div>
+													<!--end::Header-->
+													<!--begin::Separator-->
+													<div class="separator border-gray-200"></div>
+													<!--end::Separator-->
+													<?php if (session()->getFlashdata('success')): ?>
+														<script>
+															toastr.success('<?= session()->getFlashdata('success'); ?>');
+														</script>
+													<?php endif; ?>
+													<!--begin::Content-->
+													<form id="formularioListadoRol" action="<?= base_url('rol')?>">
+														<div class="px-7 py-5" data-kt-user-table-filter="form">
+															<!--begin::Input group-->
+															<div class="mb-3">
+																<input type="text" name="NOMBRE" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Nombre" value="<?= esc($name) ?>"></input>
+															</div>
+															<!--end::Input group-->
+															<!--begin::Input group-->
+															<div class="mb-3">
+																<input type="text" name="DESCRIPCION" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Descripción" value="<?= esc($descripcion) ?>"></input>
+															</div>
+															<!--begin::Actions-->
+															<!--begin::Input group-->
+															<div class="mb-3">
+																<select name="estado" id="estado" class="form-select form-select-solid fw-bolder" onchange="this.form.submit()">
+																	<option value="" disabled selected <?= $estado === null ? 'selected' : '' ?>>Seleccione una opción</option>
+																	<option value="altas">Altas</option>
+																	<option value="bajas">Bajas</option>
+																	<option value="todas">Todas</option>
+																</select>
+																<input type="hidden" name="perPage" id="hiddenPerPage">
+															</div>
+															<!--end::Input group-->
+															<div class="d-flex justify-content-end">
+																<button type="reset" class="btn btn-light btn-active-light-primary fw-bold me-2 px-6">Reset</button>
+																<button type="submit" class="btn btn-primary fw-bold px-6">Buscar</button>
+															</div>
+															<!--end::Actions-->
+														</div>
+													</form>
+													<!--end::Content-->
+												</div>
+												<!--end::Menu 1-->
+												<!--end::Filter-->
+												<!--begin::Export-->
+												<button type="button" class="btn btn-light-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_export_users">
+												<!--begin::Svg Icon | path: icons/duotune/arrows/arr078.svg-->
+												<span class="svg-icon svg-icon-2">
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+														<rect opacity="0.3" x="12.75" y="4.25" width="12" height="2" rx="1" transform="rotate(90 12.75 4.25)" fill="black" />
+														<path d="M12.0573 6.11875L13.5203 7.87435C13.9121 8.34457 14.6232 8.37683 15.056 7.94401C15.4457 7.5543 15.4641 6.92836 15.0979 6.51643L12.4974 3.59084C12.0996 3.14332 11.4004 3.14332 11.0026 3.59084L8.40206 6.51643C8.0359 6.92836 8.0543 7.5543 8.44401 7.94401C8.87683 8.37683 9.58785 8.34458 9.9797 7.87435L11.4427 6.11875C11.6026 5.92684 11.8974 5.92684 12.0573 6.11875Z" fill="black" />
+														<path d="M18.75 8.25H17.75C17.1977 8.25 16.75 8.69772 16.75 9.25C16.75 9.80228 17.1977 10.25 17.75 10.25C18.3023 10.25 18.75 10.6977 18.75 11.25V18.25C18.75 18.8023 18.3023 19.25 17.75 19.25H5.75C5.19772 19.25 4.75 18.8023 4.75 18.25V11.25C4.75 10.6977 5.19771 10.25 5.75 10.25C6.30229 10.25 6.75 9.80228 6.75 9.25C6.75 8.69772 6.30229 8.25 5.75 8.25H4.75C3.64543 8.25 2.75 9.14543 2.75 10.25V19.25C2.75 20.3546 3.64543 21.25 4.75 21.25H18.75C19.8546 21.25 20.75 20.3546 20.75 19.25V10.25C20.75 9.14543 19.8546 8.25 18.75 8.25Z" fill="#C4C4C4" />
+													</svg>
+												</span>
+												<!--end::Svg Icon-->Export</button>
+												<!--end::Export-->
+												<!--begin::Add user-->
+												<a href="<?=base_url('rol/save')?>" type="button" class="btn btn-primary">
+												<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+												<span class="svg-icon svg-icon-2">
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+														<rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="black" />
+														<rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black" />
+													</svg>
+												</span>
+												<!--end::Svg Icon-->Crear</a>
+												<!--end::Add user-->
+											</div>
+											<!--end::Toolbar-->
+											<!--begin::Group actions-->
+											<div class="d-flex justify-content-end align-items-center d-none" data-kt-user-table-toolbar="selected">
+												<div class="fw-bolder me-5">
+												<span class="me-2" data-kt-user-table-select="selected_count"></span>Selected</div>
+												<button type="button" class="btn btn-danger" data-kt-user-table-select="delete_selected">Delete Selected</button>
+											</div>
+											<!--end::Group actions-->
+											<!--begin::Modal - Adjust Balance-->
+											<div class="modal fade" id="kt_modal_export_users" tabindex="-1" aria-hidden="true">
+												<!--begin::Modal dialog-->
+												<div class="modal-dialog modal-dialog-centered mw-650px">
+													<!--begin::Modal content-->
+													<div class="modal-content">
+														<!--begin::Modal header-->
+														<div class="modal-header">
+															<!--begin::Modal title-->
+															<h2 class="fw-bolder">Export Users</h2>
+															<!--end::Modal title-->
+															<!--begin::Close-->
+															<div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
+																<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+																<span class="svg-icon svg-icon-1">
+																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																		<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+																		<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+																	</svg>
+																</span>
+																<!--end::Svg Icon-->
+															</div>
+															<!--end::Close-->
+														</div>
+														<!--end::Modal header-->
+													</div>
+													<!--end::Modal content-->
+												</div>
+												<!--end::Modal dialog-->
+											</div>
+											<!--end::Modal - New Card-->
+											<!--begin::Modal - Add task-->
+											<div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true">
+												<!--begin::Modal dialog-->
+												<div class="modal-dialog modal-dialog-centered mw-650px">
+													<!--begin::Modal content-->
+													<div class="modal-content">
+														<!--begin::Modal header-->
+														<div class="modal-header" id="kt_modal_add_user_header">
+															<!--begin::Modal title-->
+															<h2 class="fw-bolder"><?= isset($rol['PK_ID_ROL']) ? 'Editar Rol' : 'Crear Rol' ?></h2>
+															<!--end::Modal title-->
+															<!--begin::Close-->
+															<div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
+																<a href="categoria">
+																	<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+																	<span class="svg-icon svg-icon-1">
+																		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																			<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+																			<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+																		</svg>
+																	</span>
+																</a>
+																<!--end::Svg Icon-->
+															</div>
+															<!--end::Close-->
+														</div>
+														<!--end::Modal header-->
+													</div>
+													<!--end::Modal content-->
+												</div>
+												<!--end::Modal dialog-->
+											</div>
+											<!--end::Modal - Add task-->
+										</div>
+										<!--end::Card toolbar-->
 									</div>
+									<!--end::Card header-->
+									<!--begin::Card body-->
+									<div class="card-body pt-0">
+										<!--begin::Table-->
+										<?php if (!empty($roles) && is_array($roles)): ?>
+										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
+											<thead>
+												<tr class="text-start text-muted fw-bolder fs-7 gs-0">
+													<th class="text-center">NOMBRE</th>
+													<th class="text-center">DESCRIPCION</th>
+													<th class="text-center">ACCIONES</th>
+												</tr>
+											</thead>
+											<tbody class="text-gray-700 fw-bold">
+												<?php foreach ($roles as $rol): ?>
+													<tr class="<?= isset($rol['FECHA_BAJA']) && $rol['FECHA_BAJA'] !== null ? 'bg-light-danger' : '' ?>">
+														<td class="text-center"><?= esc($rol['NOMBRE']) ?></td>
+														<td class="text-center"><?= esc($rol['DESCRIPCION']) ?></td>
+														<td class="text-center">
+															<a href="#" class="btn btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Acciones
+															<!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
+															<span class="svg-icon svg-icon-5 m-0">
+																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																	<path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black" />
+																</svg>
+															</span>
+															<!--end::Svg Icon--></a>
+															<!--begin::Menu-->
+															<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
+																<!--begin::Menu item-->
+																<div class="menu-item px-3">
+																	<a href="<?= base_url('rol/save/'. esc($rol['PK_ID_ROL'])) ?>"  class="menu-link px-3">Editar</a>
+																</div>
+																<!--end::Menu item-->
+																<!--begin::Menu item-->
+																<div class="menu-item px-3">
+																	<a href="<?= base_url('rol/delete/' . esc($rol['PK_ID_ROL'])) ?>"  class="menu-link px-3" data-kt-users-table-filter="delete_row">Eliminar</a>
+																</div>
+																<!--end::Menu item-->
+															</div>
+															<!--end::Menu-->
+														</td>
+													</tr>
+												<?php endforeach; ?>
+											</tbody>
+										</table>
+										<div class="mb-3">
+											<label for="perPage" class="text-gray-700 fw-bold mb-3">Elementos por página:</label>
+											<select name="perPage" id="perPage" class="form-select form-select-solid fw-bolder">
+												<option value="5" <?php echo ($perPage == 5) ? 'selected' : '';?>>5</option>
+												<option value="10" <?php echo ($perPage == 10) ? 'selected' : '';?>>10</option>
+												<option value="15" <?php echo ($perPage == 15) ? 'selected' : '';?>>15</option>
+												<option value="20" <?php echo ($perPage == 20) ? 'selected' : '';?>>20</option>
+											</select>
+										</div>
+										<script>
+											document.getElementById('perPage').addEventListener('change', function() {
+												var perPageValue = this.value
+												document.getElementById('hiddenPerPage').value = perPageValue
+												document.getElementById('formularioListadoRol').submit()
+											});
+										</script>
+										<div class="mt-4">
+											<?= $pager ->links('default', 'custom_pagination')?> <!--Usa la plantilla predeterminada -->
+										</div>
+										<?php else: ?>
+											<p class="text-center">No hay categorías registradas.</p>
+										<?php endif; ?>
+									</div>
+									<!--end::Card body-->
+								</div>
 								<!--end::Card-->
 							</div>
 							<!--end::Container-->
@@ -3727,23 +3911,23 @@ License: For each use you must have a valid license purchased only from above li
 		</div>
 		<!--end::Scrolltop-->
 		<!--end::Main-->
-		<script>var hostUrl = "../../assets/";</script>
+		<script>var hostUrl = "../assets/";</script>
 		<!--begin::Javascript-->
 		<!--begin::Global Javascript Bundle(used by all pages)-->
-		<script src="<?= base_url()?>assets/plugins/global/plugins.bundle.js"></script>
-		<script src="<?= base_url("assets/js/scripts.bundle.js")?>"></script>
+		<script src="../assets/plugins/global/plugins.bundle.js"></script>
+		<script src="../assets/js/scripts.bundle.js"></script>
 		<!--end::Global Javascript Bundle-->
 		<!--begin::Page Vendors Javascript(used by this page)-->
-		<script src="<?= base_url("assets/plugins/custom/fullcalendar/fullcalendar.bundle.js")?>"></script>
+		<script src="../assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
 		<!--end::Page Vendors Javascript-->
 		<!--begin::Page Custom Javascript(used by this page)-->
-		<script src="<?= base_url("assets/js/custom/widgets.js")?>"></script>
-		<script src="<?= base_url("assets/js/custom/apps/chat/chat.js")?>"></script>
-		<script src="<?= base_url("assets/js/custom/modals/create-app.js")?>"></script>
-		<script src="<?= base_url("assets/js/custom/modals/upgrade-plan.js")?>"></script>
+		<script src="../assets/js/custom/widgets.js"></script>
+		<script src="../assets/js/custom/apps/chat/chat.js"></script>
+		<script src="../assets/js/custom/modals/create-app.js"></script>
+		<script src="../assets/js/custom/modals/upgrade-plan.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
-		<script type="text/JavaScript" src="<?= base_url("assets/js/apexchart.js")?>"></script>
+		<script type="text/JavaScript" src="../assets/js/apexchart.js"></script>
 	</body>
 	<!--end::Body-->
 </html>

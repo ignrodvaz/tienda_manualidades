@@ -152,7 +152,7 @@ License: For each use you must have a valid license purchased only from above li
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link active" href="../pedido">
+												<a class="menu-link" href="../pedido">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -168,7 +168,7 @@ License: For each use you must have a valid license purchased only from above li
 												</a>
 											</div>
 											<div class="menu-item">
-												<a class="menu-link" href="../rol">
+												<a class="menu-link active" href="../rol">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -320,7 +320,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--begin::Title-->
 									<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
 									<!--begin::Title-->
-										<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Pedido</h1>
+										<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Rol</h1>
 										<!--end::Title-->
 										<!--begin::Separator-->
 										<span class="h-20px border-gray-200 border-start mx-4"></span>
@@ -329,7 +329,7 @@ License: For each use you must have a valid license purchased only from above li
 										<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 											<!--begin::Item-->
 											<li class="breadcrumb-item text-muted">
-												<a href="home" class="text-muted text-hover-primary">Home</a>
+												<a href="../home" class="text-muted text-hover-primary">Home</a>
 											</li>
 											<!--end::Item-->
 											<!--begin::Item-->
@@ -346,7 +346,7 @@ License: For each use you must have a valid license purchased only from above li
 											</li>
 											<!--end::Item-->
 											<!--begin::Item-->
-											<li class="breadcrumb-item text-muted">Crear Pedido</li>
+											<li class="breadcrumb-item text-muted">Crear Rol</li>
 											<!--end::Item-->
 										</ul>
 									<!--end::Breadcrumb-->
@@ -462,37 +462,34 @@ License: For each use you must have a valid license purchased only from above li
 										<div class="card mb-5 mb-xl-8">
 											<!--begin::Card body-->
 											<div class="card-body">
-												<h1 class="d-flex flex-center flex-column py-5"><?= isset($pedido['PK_ID_PEDIDO']) ? 'Editar Pedido' : 'Crear Pedido' ?></h1>
+												<h1 class="d-flex flex-center flex-column py-5"><?= isset($rol['PK_ID_ROL']) ? 'Editar Rol' : 'Crear Rol' ?></h1>
 												<?php if (isset($validation)): ?>
 													<div class="alert alert-danger">
 														<?= $validation->listErrors() ?>
 													</div>
 												<?php endif; ?>
 												<!--begin::Summary-->
-												<form action="<?= isset($pedido) ? base_url('pedido/save/') . $pedido['PK_ID_PEDIDO'] : base_url('pedido/save') ?>" method="post">
+												<form action="<?= isset($rol) ? base_url('rol/save/') . $rol['PK_ID_ROL'] : base_url('rol/save') ?>" method="post">
 													<!--begin::User Info-->
 													<div class="d-flex flex-center flex-column py-5">
-														<div class="mb-3 w-50">
+														<div class="mb-3">
 															<!--begin::Name-->
-                                                            <label for="fecha_pedido">Fecha Pedido</label>
-                                                            <input type="date" class="form-control form-control-solid mb-3 mb-lg-0" id="fecha_pedido" name="fecha_pedido" value="<?= esc(isset($pedido['FECHA_PEDIDO']) ? date('Y-m-d', strtotime($pedido['FECHA_PEDIDO'])) : '') ?>">
+															<label for="nombre">Nombre:</label>
+															<input type="text" class="form-control form-control-solid mb-3 mb-lg-0" id="nombre" name="nombre" placeholder="Nombre" value="<?= esc($rol['NOMBRE'] ?? set_value('nombre')) ?>">
 															<!--end::Name-->
 														</div>
-														<div class="mb-3 w-50">
-                                                            <label for="direccion_pedido">Direccion Pedido</label>
-                                                            <input type="text" class="form-control form-control-solid mb-3 mb-lg-0" id="direccion_pedido" name="direccion_pedido" value="<?= esc($pedido['DIRECCION_PEDIDO'] ?? set_value('direccion_pedido')) ?>">
+														<div class="mb-3">
+															<Label for="descripcion">Descripción:</Label>
+															<input class="form-control form-control-solid mb-3 mb-lg-0" id="descripcion" name="descripcion" placeholder="Descripción" value="<?= esc($rol['DESCRIPCION'] ?? set_value('descripcion')) ?>"></input>
 														</div>
-                                                        <div class="mb-3 w-50">
-                                                            <label for="total_pedido">Total Pedido</label>
-                                                            <input class="form-control form-control-solid mb-3 mb-lg-0" id="total_pedido" name="total_pedido" value="<?= esc($pedido['TOTAL_PEDIDO'] ?? set_value('total_pedido')) ?>">
-                                                        </div>
 													</div>
 													<!--end::User Info-->
+												
 													<!--end::Summary-->
 													<!--begin::Details toggle-->
 													<div class="d-flex d-flex justify-content-end py-3 mb-3">
-														<button type="submit" class="btn me-3 btn-primary"><?= isset($pedido) ? 'Actualizar' : 'Guardar'?></button>
-														<a href="<?= base_url('pedido') ?>" class="btn btn-secondary">Cancelar</a>
+														<button type="submit" class="btn me-3 btn-primary"><?= isset($rol) ? 'Actualizar' : 'Guardar'?></button>
+														<a href="<?= base_url('rol') ?>" class="btn btn-secondary">Cancelar</a>
 													</div>
 													<!-- Sección de detalles -->
 													<div class="d-flex flex-stack fs-4 py-3">
@@ -513,18 +510,14 @@ License: For each use you must have a valid license purchased only from above li
 														<div id="kt_user_view_details" class="collapse show">
 															<div class="pb-5 fs-6">
 																<!--begin::Details item-->
-																<div class="fw-bolder mt-5">ID Pedido</div>
-																<div class="text-gray-600"><?= isset($pedido) ? esc($pedido['PK_ID_PEDIDO']) : 'Nuevo' ?></div>
+																<div class="fw-bolder mt-5">ID Rol</div>
+																<div class="text-gray-600"><?= isset($rol) ? esc($rol['PK_ID_ROL']) : 'Nuevo' ?></div>
 																<!--begin::Details item-->
-                                                                <div class="fw-bolder mt-5">ID Cliente</div>
-																<div class="text-gray-600"><?= isset($pedido) && $pedido['FK_ID_CLIENTE'] !== null ? esc($pedido['FK_ID_CLIENTE']) : 'NULL' ?></div>
-                                                                <!--begin::Details item-->
 																<div class="fw-bolder mt-5">Fecha de Creación</div>
-																<div class="text-gray-600"><?= isset($pedido) && $pedido['created_at'] !== null ? esc($pedido['created_at']) : 'NULL' ?></div>
+																<div class="text-gray-600"><?= isset($rol) && $rol['created_at'] !== null ? esc($rol['created_at']) : 'NULL' ?></div>
 																<!--begin::Details item-->
 																<div class="fw-bolder mt-5">Fecha de Baja</div>
-																<div class="text-gray-600"><?= isset($pedido) && $pedido['FECHA_BAJA'] !== null ? esc($pedido['FECHA_BAJA']) : 'NULL' ?></div>
-                                                                <!--begin::Details item-->
+																<div class="text-gray-600"><?= isset($rol) && $rol['FECHA_BAJA'] !== null ? esc($rol['FECHA_BAJA']) : 'NULL' ?></div>
 															</div>
 														</div>
 													<!--end::Details content-->

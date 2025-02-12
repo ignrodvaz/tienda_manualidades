@@ -70,3 +70,13 @@ $routes->post('producto/save', 'ProductoController::saveProducto'); // Crear PRO
 $routes->get('producto/save/(:num)', 'ProductoController::saveProducto/$1'); // Mostrar formulario para editar PRODUCTO (GET)
 $routes->post('producto/save/(:num)', 'ProductoController::saveProducto/$1'); // Editar PRODUCTO (POST)
 $routes->get('producto/delete/(:num)', 'ProductoController::delete/$1'); //Esta ruta elimina una PRODUCTO específica usando su ID.
+
+//ROL
+//Rutas para Rol
+$routes->get('rol', 'RolController::index'); //Esta ruta muestra el listado de ROL.
+//Estas rutas manejan tanto la creación como la edición de ROL.
+$routes->get('rol/save', 'RolController::saveRol'); // Mostrar formulario para crear ROL (GET)
+$routes->post('rol/save', 'RolController::saveRol'); // Crear ROL (POST)
+$routes->get('rol/save/(:num)', 'RolController::saveRol/$1'); // Mostrar formulario para editar ROL (GET)
+$routes->post('rol/save/(:num)', 'RolController::saveRol/$1'); // Editar ROL (POST)
+$routes->get('rol/delete/(:num)', 'RolController::delete/$1'); //Esta ruta elimina una ROL específica usando su ID.

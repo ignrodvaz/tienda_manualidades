@@ -1,0 +1,70 @@
+CRITICAL - 2025-02-12 07:23:00 --> ErrorException: Undefined array key "PK_ID_PEDIDO"
+[Method: GET, Route: producto/save/2]
+in APPPATH/Views/crear_producto.php on line 472.
+ 1 APPPATH/Views/crear_producto.php(472): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "PK_ID_PEDIDO"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_producto.php', 472)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_producto.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_producto', [], true)
+ 5 APPPATH/Controllers/ProductoController.php(123): view('crear_producto', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->saveProducto('2')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 07:24:12 --> ErrorException: Undefined array key "PK_ID_producto"
+[Method: GET, Route: producto/save/1]
+in APPPATH/Views/crear_producto.php on line 472.
+ 1 APPPATH/Views/crear_producto.php(472): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "PK_ID_producto"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_producto.php', 472)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_producto.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_producto', [], true)
+ 5 APPPATH/Controllers/ProductoController.php(123): view('crear_producto', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->saveProducto('1')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 07:24:17 --> ErrorException: Undefined array key "PK_ID_producto"
+[Method: GET, Route: producto/save/1]
+in APPPATH/Views/crear_producto.php on line 472.
+ 1 APPPATH/Views/crear_producto.php(472): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "PK_ID_producto"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_producto.php', 472)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_producto.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_producto', [], true)
+ 5 APPPATH/Controllers/ProductoController.php(123): view('crear_producto', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->saveProducto('1')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 07:58:17 --> ErrorException: Undefined variable $role
+[Method: GET, Route: rol]
+in APPPATH/Views/listado_rol.php on line 652.
+ 1 APPPATH/Views/listado_rol.php(652): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $role', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_rol.php', 652)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_rol.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_rol', [], true)
+ 5 APPPATH/Controllers/RolController.php(46): view('listado_rol', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RolController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-12 07:58:36 --> ErrorException: Undefined array key "PK_ID_CATEGORIA"
+[Method: GET, Route: rol]
+in APPPATH/Views/listado_rol.php on line 679.
+ 1 APPPATH/Views/listado_rol.php(679): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "PK_ID_CATEGORIA"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_rol.php', 679)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_rol.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_rol', [], true)
+ 5 APPPATH/Controllers/RolController.php(46): view('listado_rol', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\RolController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RolController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
