@@ -106,12 +106,12 @@ class RolController extends BaseController
     {
         $RolModel = new RolModel();
 
-        $data = [
-            'FECHA_BAJA' => date('Y-m-d')
-        ];
-
-        $RolModel->update($PK_ID_ROL, $data);
-
-        return redirect()->to('/rol')->with('success', 'Rol dado de baja correctamente.');
+        if($RolModel->find($PK_ID_ROL)['FECHA_BAJA'] === null){
+            $RolModel->update($PK_ID_ROL, ['FECHA_BAJA' => date('Y-m-d H:i:s')]); // Dar de baja la categoría
+            return redirect()->to('/rol')->with('success', 'Categoría dada de baja correctamente.');
+        }else{
+            $RolModel->update($PK_ID_ROL, ['FECHA_BAJA' => NULL]); // Dar de alta la categoría
+            return redirect()->to('/rol')->with('success', 'Categoría dada de alta correctamente.');
+        }
     }
 }

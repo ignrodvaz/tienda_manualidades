@@ -137,7 +137,15 @@ class ClienteController extends BaseController
     public function delete($PK_ID_CLIENTE)
     {
         $ClienteModel = new ClienteModel();
-        $ClienteModel->update($PK_ID_CLIENTE, ['FECHA_BAJA' => date('Y-m-d H:i:s')]); // Dar de baja la categoría
-        return redirect()->to('/cliente')->with('success', 'Categoría dada de baja correctamente.');
+
+        if($ClienteModel->find($PK_ID_CLIENTE)['FECHA_BAJA'] === null){
+            $ClienteModel->update($PK_ID_CLIENTE, ['FECHA_BAJA' => date('Y-m-d H:i:s')]); // Dar de baja la categoría
+            return redirect()->to('/cliente')->with('success', 'Categoría dada de baja correctamente.');
+        }else{
+            $ClienteModel->update($PK_ID_CLIENTE, ['FECHA_BAJA' => NULL]); // Dar de alta la categoría
+            return redirect()->to('/cliente')->with('success', 'Categoría dada de alta correctamente.');
+        }
+        
     }
+
 }

@@ -126,7 +126,14 @@ class ProductoController extends BaseController
     public function delete($PK_ID_PRODUCTO)
     {
         $ProductoModel = new ProductoModel();
-        $ProductoModel->update($PK_ID_PRODUCTO, ['FECHA_BAJA' => date('Y-m-d H:i:s')]); // Dar de baja la categoría
-        return redirect()->to('/producto')->with('success', 'Categoría dada de baja correctamente.');
+
+        if($ProductoModel->find($PK_ID_PRODUCTO)['FECHA_BAJA'] === null){
+            $ProductoModel->update($PK_ID_PRODUCTO, ['FECHA_BAJA' => date('Y-m-d H:i:s')]); // Dar de baja la categoría
+            return redirect()->to('/producto')->with('success', 'Categoría dada de baja correctamente.');
+        }else{
+            $ProductoModel->update($PK_ID_PRODUCTO, ['FECHA_BAJA' => NULL]); // Dar de alta la categoría
+            return redirect()->to('/producto')->with('success', 'Categoría dada de alta correctamente.');
+        }
+        
     }
 }

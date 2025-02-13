@@ -127,7 +127,14 @@ class PedidoController extends BaseController
     public function delete($PK_ID_PEDIDO)
     {
         $PedidoModel = new PedidoModel();
-        $PedidoModel->update($PK_ID_PEDIDO, ['FECHA_BAJA' => date('Y-m-d H:i:s')]); // Dar de baja la categoría
-        return redirect()->to('/pedido')->with('success', 'Categoría dada de baja correctamente.');
+
+        if($PedidoModel->find($PK_ID_PEDIDO)['FECHA_BAJA'] === null){
+            $PedidoModel->update($PK_ID_PEDIDO, ['FECHA_BAJA' => date('Y-m-d H:i:s')]); // Dar de baja la categoría
+            return redirect()->to('/pedido')->with('success', 'Categoría dada de baja correctamente.');
+        }else{
+            $PedidoModel->update($PK_ID_PEDIDO, ['FECHA_BAJA' => NULL]); // Dar de alta la categoría
+            return redirect()->to('/pedido')->with('success', 'Categoría dada de alta correctamente.');
+        }
+        
     }
 }

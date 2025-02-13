@@ -110,7 +110,14 @@ class CategoriaController extends BaseController
     public function delete($PK_ID_CATEGORIA)
     {
         $CategoriaModel = new CategoriaModel();
-        $CategoriaModel->update($PK_ID_CATEGORIA, ['FECHA_BAJA' => date('Y-m-d H:i:s')]); // Dar de baja la categoría
-        return redirect()->to('/categoria')->with('success', 'Categoría dada de baja correctamente.');
+
+        if($CategoriaModel->find($PK_ID_CATEGORIA)['FECHA_BAJA'] === null){
+            $CategoriaModel->update($PK_ID_CATEGORIA, ['FECHA_BAJA' => date('Y-m-d H:i:s')]); // Dar de baja la categoría
+            return redirect()->to('/categoria')->with('success', 'Categoría dada de baja correctamente.');
+        }else{
+            $CategoriaModel->update($PK_ID_CATEGORIA, ['FECHA_BAJA' => NULL]); // Dar de alta la categoría
+            return redirect()->to('/categoria')->with('success', 'Categoría dada de alta correctamente.');
+        }
+        
     }
 }
