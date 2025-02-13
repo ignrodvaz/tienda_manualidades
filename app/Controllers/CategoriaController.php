@@ -64,7 +64,7 @@ class CategoriaController extends BaseController
             // Reglas de validación
             $rules = [
                 'nombre' => 'required|min_length[3]|max_length[100]',
-                'descripcion' => 'required',
+                'descripcion' => 'required|min_length[3]|max_length[100]',
             ];
 
             $messages = [

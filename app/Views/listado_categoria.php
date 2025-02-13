@@ -708,6 +708,32 @@ License: For each use you must have a valid license purchased only from above li
 												document.getElementById('formularioListadoCategoria').submit()
 											});
 										</script>
+										<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+										<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+										<script>
+											<?php if (session()->getFlashdata('success')): ?>
+												Swal.fire({
+													icon: 'success',
+													title: 'Éxito',
+													text: '<?= session()->getFlashdata('success') ?>',
+													position: 'top-center',
+													showConfirmButton: false,
+													timer: 1300
+												});
+											<?php endif; ?>
+
+											<?php if (session()->getFlashdata('error')): ?>
+												Swal.fire({
+													icon: 'error',
+													title: 'Error',
+													text: '<?= session()->getFlashdata('error') ?>',
+													position: 'top-end',
+													showConfirmButton: false,
+													timer: 3000
+												});
+											<?php endif; ?>
+										</script>
 										<div class="mt-4">
 											<?= $pager ->links('default', 'custom_pagination')?> <!--Usa la plantilla predeterminada -->
 										</div>
