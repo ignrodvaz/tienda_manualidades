@@ -1,0 +1,28 @@
+CRITICAL - 2025-02-13 07:29:09 --> ErrorException: Undefined global variable $_SESSION
+[Method: GET, Route: categoria]
+in APPPATH/Views/listado_categoria.php on line 297.
+ 1 APPPATH/Views/listado_categoria.php(297): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined global variable $_SESSION', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 297)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(52): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 07:30:04 --> ErrorException: Undefined variable $categoria
+[Method: GET, Route: categoria]
+in APPPATH/Views/listado_categoria.php on line 297.
+ 1 APPPATH/Views/listado_categoria.php(297): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoria', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 297)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(52): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

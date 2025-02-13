@@ -13,4 +13,9 @@ class RolModel extends Model{
 
     protected $allowedFields = ['PK_ID_ROL', 'NOMBRE', 'DESCRIPCION', 'FECHA_BAJA', 'created_at']; //Campos permitidos para insertar/actualizar
 
+    //Metodo para obtener el nombre del rol basado en el ID del rol
+    public function getRolName($id){
+        return $this->select('NOMBRE')->where('PK_ID_ROL', $id)->first();
+    }
+
 }

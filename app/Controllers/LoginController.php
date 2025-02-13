@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\RolModel;
 use CodeIgniter\Controller;
 
 class LoginController extends Controller
@@ -33,20 +34,25 @@ class LoginController extends Controller
 
         // Si la validación pasa, verificamos las credenciales.
         $userModel = new UserModel();
-        $user = $userModel->findByEmail($this->request->getPost('email')); // Buscamos al usuario por su correo.
+        $rolModel = new RolModel();
+        $user = $userModel->where('EMAIL', $this->request->getPost('email'))->first(); // Buscamos al usuario por su correo.
 
         if ($user && password_verify($this->request->getPost('password'), $user['CONTRASENA'])) {
+            // Obtener el nombre del rol basado en el ID del rol
+            $rol = $rolModel->getRolName($user['FK_ID_ROL']);
+
             // Si las credenciales son correctas, guardamos datos del usuario en la sesión.
             $session->set([
                 'id' => $user['PK_ID_CLIENTE'],           // ID del usuario.
                 'name' => $user['NOMBRE'],       // Nombre del usuario.
                 'email' => $user['EMAIL'],     // Correo del usuario.
+                'rol' => $rol['NOMBRE'],   // Nombre del rol del usuario.
                 'isLoggedIn' => true,          // Bandera para indicar que está logueado.
                 'created_at' => $user['created_at'], // Fecha de registro del usuario.
             ]);
 
             // Redirigimos a la página de inicio con un mensaje de éxito.
-            return redirect()->to('/cliente')->with('success', 'Inicio de sesión exitoso.');
+            return redirect()->to('/')->with('success', 'Inicio de sesión exitoso.');
         }
 
         // Si las credenciales son incorrectas, mostramos un mensaje de error.
