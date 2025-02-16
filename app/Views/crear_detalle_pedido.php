@@ -475,13 +475,13 @@ License: For each use you must have a valid license purchased only from above li
 													<div class="d-flex flex-center flex-column py-5">
 														<div class="mb-3 w-50">
 															<!--begin::Name-->
-                                                            <label for="cantidad">cantidad</label>
-                                                            <input type="text" class="form-control form-control-solid mb-3 mb-lg-0" id="cantidad" name="cantidad" value="<?= esc($detalle['CANTIDAD'] ?? set_value('cantidad')) ?>">
+                                                            <label for="cantidad">Cantidad</label>
+                                                            <input type="text" class="form-control form-control-solid mb-3 mb-lg-0" id="cantidad" name="cantidad" placeholder="Cantidad" value="<?= esc($detalle['CANTIDAD'] ?? set_value('cantidad')) ?>">
 															<!--end::Name-->
 														</div>
 														<div class="mb-3 w-50">
                                                             <label for="precio_unitario">Precio Unitario</label>
-                                                            <input class="form-control form-control-solid mb-3 mb-lg-0" id="precio_unitario" name="precio_unitario" value="<?= esc($detalle['PRECIO_UNITARIO'] ?? set_value('precio_unitario')) ?>">
+                                                            <input class="form-control form-control-solid mb-3 mb-lg-0" id="precio_unitario" name="precio_unitario" placeholder="Precio" value="<?= esc($detalle['PRECIO_UNITARIO'] ?? set_value('precio_unitario')) ?>">
 														</div>
 													</div>
 													<!--end::User Info-->
@@ -522,9 +522,11 @@ License: For each use you must have a valid license purchased only from above li
 																<div class="fw-bolder mt-5">Fecha de Creación</div>
 																<div class="text-gray-600"><?= isset($detalle) && $detalle['created_at'] !== null ? esc($detalle['created_at']) : 'NULL' ?></div>
 																<!--begin::Details item-->
+																<div class="fw-bolder mt-5">Última Modificación</div>
+																<div class="text-gray-600"><?= isset($detalle) && $detalle['updated_at'] !== null ? esc($detalle['updated_at']) : 'NULL' ?></div>
+																<!--begin::Details item-->
 																<div class="fw-bolder mt-5">Fecha de Baja</div>
 																<div class="text-gray-600"><?= isset($detalle) && $detalle['FECHA_BAJA'] !== null ? esc($detalle['FECHA_BAJA']) : 'NULL' ?></div>
-                                                                <!--begin::Details item-->
 															</div>
 														</div>
 													<!--end::Details content-->

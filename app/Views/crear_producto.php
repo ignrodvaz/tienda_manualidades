@@ -476,24 +476,24 @@ License: For each use you must have a valid license purchased only from above li
 														<div class="mb-3 w-50">
 															<!--begin::Name-->
                                                             <label for="nombre">Nombre</label>
-                                                            <input type="text" class="form-control form-control-solid mb-3 mb-lg-0" id="nombre" name="nombre" value="<?= esc($producto['NOMBRE'] ?? set_value('nombre')) ?>">
+                                                            <input type="text" class="form-control form-control-solid mb-3 mb-lg-0" id="nombre" name="nombre" placeholder="Nombre" value="<?= esc($producto['NOMBRE'] ?? set_value('nombre')) ?>">
 															<!--end::Name-->
 														</div>
 														<div class="mb-3 w-50">
                                                             <label for="descripcion">Descripcion</label>
-                                                             <input type="text" class="form-control form-control-solid mb-3 mb-lg-0" id="descripcion" name="descripcion" value="<?= esc($producto['DESCRIPCION'] ?? set_value('descripcion')) ?>">
+                                                             <input type="text" class="form-control form-control-solid mb-3 mb-lg-0" id="descripcion" name="descripcion" placeholder="Descripción" value="<?= esc($producto['DESCRIPCION'] ?? set_value('descripcion')) ?>">
 														</div>
                                                         <div class="mb-3 w-50">
                                                             <label for="precio">Precio</label>
-                                                            <input type="number" class="form-control form-control-solid mb-3 mb-lg-0" id="precio" name="precio" value="<?= esc($producto['PRECIO'] ?? set_value('precio')) ?>">
+                                                            <input type="number" class="form-control form-control-solid mb-3 mb-lg-0" id="precio" name="precio" placeholder="Precio" value="<?= esc($producto['PRECIO'] ?? set_value('precio')) ?>">
                                                         </div>
                                                         <div class="mb-3 w-50">
                                                             <label for="stock">Stock</label>
-                                                            <input type="number" class="form-control form-control-solid mb-3 mb-lg-0" id="stock" name="stock" value="<?= esc($producto['STOCK'] ?? set_value('stock')) ?>">
+                                                            <input type="number" class="form-control form-control-solid mb-3 mb-lg-0" id="stock" name="stock" placeholder="Stock" value="<?= esc($producto['STOCK'] ?? set_value('stock')) ?>">
                                                         </div>
                                                         <div class="mb-3 w-50">
                                                             <label for="fk_id_categoria" class="form-label">Categoria</label>
-                                                            <select name="fk_id_categoria" id="fk_id_categoria" class="form-control mb-3" required>
+                                                            <select name="fk_id_categoria" id="fk_id_categoria" class="form-control form-control-solid mb-3 mb-lg-0" required>
                                                                 <option value="" selected disabled>Seleccione una categoria</option>
                                                                 <?php foreach ($categorias as $categoria): ?>
                                                                     <option value="<?= esc($categoria['PK_ID_CATEGORIA']) ?>" <?= isset($producto) && $producto['FK_ID_CATEGORIA'] == $categoria['PK_ID_CATEGORIA'] ? 'selected' : '' ?>><?= esc($categoria['NOMBRE']) ?></option>
@@ -535,6 +535,9 @@ License: For each use you must have a valid license purchased only from above li
                                                                 <!--begin::Details item-->
 																<div class="fw-bolder mt-5">Fecha de Creación</div>
 																<div class="text-gray-600"><?= isset($producto) && $producto['created_at'] !== null ? esc($producto['created_at']) : 'NULL' ?></div>
+																<!--begin::Details item-->
+																<div class="fw-bolder mt-5">Última Modificación</div>
+																<div class="text-gray-600"><?= isset($producto) && $producto['updated_at'] !== null ? esc($producto['updated_at']) : 'NULL' ?></div>
 																<!--begin::Details item-->
 																<div class="fw-bolder mt-5">Fecha de Baja</div>
 																<div class="text-gray-600"><?= isset($producto) && $producto['FECHA_BAJA'] !== null ? esc($producto['FECHA_BAJA']) : 'NULL' ?></div>

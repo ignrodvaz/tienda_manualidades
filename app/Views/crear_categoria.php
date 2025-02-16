@@ -517,6 +517,9 @@ License: For each use you must have a valid license purchased only from above li
 																<div class="fw-bolder mt-5">Fecha de Creación</div>
 																<div class="text-gray-600"><?= isset($categoria) && $categoria['created_at'] !== null ? esc($categoria['created_at']) : 'NULL' ?></div>
 																<!--begin::Details item-->
+																<div class="fw-bolder mt-5">Última Modificación</div>
+																<div class="text-gray-600"><?= isset($categoria) && $categoria['updated_at'] !== null ? esc($categoria['updated_at']) : 'NULL' ?></div>
+																<!--begin::Details item-->
 																<div class="fw-bolder mt-5">Fecha de Baja</div>
 																<div class="text-gray-600"><?= isset($categoria) && $categoria['FECHA_BAJA'] !== null ? esc($categoria['FECHA_BAJA']) : 'NULL' ?></div>
 															</div>

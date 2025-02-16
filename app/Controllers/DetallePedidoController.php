@@ -72,15 +72,12 @@ class DetallePedidoController extends BaseController
             // Reglas de validación
             $rules = [
                 'cantidad' => 'required',
-                
+                'precio_unitario' => 'required',
             ];
 
             $messages = [
-                'nombre' => [
-                    'required' => 'El campo Nombre es obligatorio.',
-                    'min_length' => 'El Nombre debe tener al menos 3 caracteres.',
-                    'max_length' => 'El Nombre no puede exceder los 100 caracteres.',
-                ],
+                'cantidad' => ['required' => 'El campo cantidad es obligatorio'],
+                'precio_unitario' => ['required' => 'El campo precio unitario es obligatorio'],
             ];
 
             if (!$this->validate($rules, $messages)) {

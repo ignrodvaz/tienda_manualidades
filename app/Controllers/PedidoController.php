@@ -80,15 +80,17 @@ class PedidoController extends BaseController
         if ($this->request->getMethod()=='POST') {
             // Reglas de validación
             $rules = [
-                'fecha_pedido' => 'required'
+                'fecha_pedido' => 'required',
+                'direccion_pedido' => 'required',
+                'total_pedido' => 'required',
+                'estado_pedido' => 'required',
             ];
 
             $messages = [
-                'cantidad' => [
-                    'required' => 'El campo Nombre es obligatorio.',
-                    'min_length' => 'El Nombre debe tener al menos 3 caracteres.',
-                    'max_length' => 'El Nombre no puede exceder los 100 caracteres.',
-                ],
+                'fecha_pedido'    => ['required' => 'El campo Fecha Pedido es obligatorio.'],
+                'direccion_pedido'    => ['required' => 'El campo Dirección Pedido es obligatorio.'],
+                'total_pedido'    => ['required' => 'El campo Total Pedido es obligatorio.'],
+                'estado_pedido'    => ['required' => 'El campo Estado Pedido es obligatorio.'],
             ];
 
             if (!$this->validate($rules, $messages)) {

@@ -517,6 +517,9 @@ License: For each use you must have a valid license purchased only from above li
 																<div class="fw-bolder mt-5">Fecha de Creación</div>
 																<div class="text-gray-600"><?= isset($rol) && $rol['created_at'] !== null ? esc($rol['created_at']) : 'NULL' ?></div>
 																<!--begin::Details item-->
+																<div class="fw-bolder mt-5">Última Modificación</div>
+																<div class="text-gray-600"><?= isset($rol) && $rol['updated_at'] !== null ? esc($rol['updated_at']) : 'NULL' ?></div>
+																<!--begin::Details item-->
 																<div class="fw-bolder mt-5">Fecha de Baja</div>
 																<div class="text-gray-600"><?= isset($rol) && $rol['FECHA_BAJA'] !== null ? esc($rol['FECHA_BAJA']) : 'NULL' ?></div>
 															</div>

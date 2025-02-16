@@ -85,7 +85,10 @@ class ClienteController extends BaseController
             // Reglas de validación
             $rules = [
                 'nombre' => 'required|min_length[3]|max_length[100]',
-                
+                'email' => 'required|min_length[3]|max_length[100]',
+                'telefono' => 'required|min_length[9]|max_length[9]',
+                'direccion' => 'required|min_length[3]|max_length[100]',
+                'rol' => 'required',
             ];
 
             $messages = [
@@ -93,6 +96,24 @@ class ClienteController extends BaseController
                     'required' => 'El campo Nombre es obligatorio.',
                     'min_length' => 'El Nombre debe tener al menos 3 caracteres.',
                     'max_length' => 'El Nombre no puede exceder los 100 caracteres.',
+                ],
+                'email' => [
+                    'required' => 'El campo Email es obligatorio.',
+                    'min_length' => 'El Email debe tener al menos 3 caracteres.',
+                    'max_length' => 'El Email no puede exceder los 100 caracteres.',
+                ],
+                'telefono' => [
+                    'required' => 'El campo Teléfono es obligatorio.',
+                    'min_length' => 'El Teléfono debe tener 9 caracteres.',
+                    'max_length' => 'El Teléfono debe tener 9 caracteres.',
+                ],
+                'direccion' => [
+                    'required' => 'El campo Dirección es obligatorio.',
+                    'min_length' => 'La Dirección debe tener al menos 3 caracteres.',
+                    'max_length' => 'La Dirección no puede exceder los 100 caracteres.',
+                ],
+                'rol' => [
+                    'required' => 'El campo Rol es obligatorio.',
                 ],
             ];
 

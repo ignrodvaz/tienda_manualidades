@@ -78,14 +78,31 @@ class ProductoController extends BaseController
             // Reglas de validación
             $rules = [
                 'nombre' => 'required|min_length[3]|max_length[100]',
-                
+                'descripcion' => 'required|min_length[3]|max_length[100]',
+                'precio' => 'required',
+                'stock' => 'required',
+                'fk_id_categoria' => 'required',
             ];
 
             $messages = [
                 'nombre' => [
-                    'required' => 'El campo Nombre es obligatorio.',
-                    'min_length' => 'El Nombre debe tener al menos 3 caracteres.',
-                    'max_length' => 'El Nombre no puede exceder los 100 caracteres.',
+                    'required' => 'El campo nombre es obligatorio.',
+                    'min_length' => 'El campo nombre debe tener al menos 3 caracteres.',
+                    'max_length' => 'El campo nombre no debe superar los 100 caracteres.',
+                ],
+                'descripcion' => [
+                    'required' => 'El campo descripción es obligatorio.',
+                    'min_length' => 'El campo descripción debe tener al menos 3 caracteres.',
+                    'max_length' => 'El campo descripción no debe superar los 100 caracteres.',
+                ],
+                'precio' => [
+                    'required' => 'El campo precio es obligatorio.',
+                ],
+                'stock' => [
+                    'required' => 'El campo stock es obligatorio.',
+                ],
+                'fk_id_categoria' => [
+                    'required' => 'El campo categoría es obligatorio.',
                 ],
             ];
 

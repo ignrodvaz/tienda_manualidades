@@ -1,0 +1,72 @@
+CRITICAL - 2025-02-14 08:19:31 --> ErrorException: A non-numeric value encountered
+[Method: GET, Route: categoria/save/2]
+in APPPATH/Views/crear_categoria.php on line 521.
+ 1 APPPATH/Views/crear_categoria.php(521): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric value encountered', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_categoria.php', 521)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(107): view('crear_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->saveCategoria('2')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-14 10:04:01 --> CodeIgniter\Validation\Exceptions\ValidationException: "mmwogth" is not a valid rule.
+[Method: POST, Route: producto/save]
+in SYSTEMPATH/Validation/Validation.php on line 346.
+ 1 SYSTEMPATH/Validation/Validation.php(346): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('mmwogth')
+ 2 SYSTEMPATH/Validation/Validation.php(202): CodeIgniter\Validation\Validation->processRules('descripcion', 'descripcion', '', [...], [...], 'descripcion')
+ 3 SYSTEMPATH/Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH/Controllers/ProductoController.php(109): CodeIgniter\Controller->validate([...], [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->saveProducto()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-14 10:04:28 --> CodeIgniter\Validation\Exceptions\ValidationException: "mmwogth" is not a valid rule.
+[Method: POST, Route: producto/save]
+in SYSTEMPATH/Validation/Validation.php on line 346.
+ 1 SYSTEMPATH/Validation/Validation.php(346): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('mmwogth')
+ 2 SYSTEMPATH/Validation/Validation.php(202): CodeIgniter\Validation\Validation->processRules('descripcion', 'descripcion', '', [...], [...], 'descripcion')
+ 3 SYSTEMPATH/Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH/Controllers/ProductoController.php(109): CodeIgniter\Controller->validate([...], [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->saveProducto()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-14 10:09:36 --> TypeError: array_replace_recursive(): Argument #2 must be of type array, int given
+[Method: POST, Route: producto/save]
+in SYSTEMPATH/Language/Language.php on line 294.
+ 1 SYSTEMPATH/Language/Language.php(294): array_replace_recursive([...], 1)
+ 2 SYSTEMPATH/Language/Language.php(258): CodeIgniter\Language\Language->requireFile('Language/en/Validation.php')
+ 3 SYSTEMPATH/Language/Language.php(168): CodeIgniter\Language\Language->load('Validation', 'en')
+ 4 SYSTEMPATH/Language/Language.php(117): CodeIgniter\Language\Language->parseLine('ruleNotFound', 'en')
+ 5 SYSTEMPATH/Common.php(748): CodeIgniter\Language\Language->getLine('Validation.ruleNotFound', [...])
+ 6 SYSTEMPATH/Validation/Exceptions/ValidationException.php(27): lang('Validation.ruleNotFound', [...])
+ 7 SYSTEMPATH/Validation/Validation.php(346): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('mmwogth')
+ 8 SYSTEMPATH/Validation/Validation.php(202): CodeIgniter\Validation\Validation->processRules('descripcion', 'descripcion', '', [...], [...], 'descripcion')
+ 9 SYSTEMPATH/Controller.php(138): CodeIgniter\Validation\Validation->run()
+10 APPPATH/Controllers/ProductoController.php(109): CodeIgniter\Controller->validate([...], [...])
+11 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->saveProducto()
+12 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+13 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-14 10:10:07 --> CodeIgniter\Validation\Exceptions\ValidationException: "mmwogth" is not a valid rule.
+[Method: POST, Route: producto/save]
+in SYSTEMPATH/Validation/Validation.php on line 346.
+ 1 SYSTEMPATH/Validation/Validation.php(346): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('mmwogth')
+ 2 SYSTEMPATH/Validation/Validation.php(202): CodeIgniter\Validation\Validation->processRules('descripcion', 'descripcion', '', [...], [...], 'descripcion')
+ 3 SYSTEMPATH/Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH/Controllers/ProductoController.php(109): CodeIgniter\Controller->validate([...], [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->saveProducto()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
