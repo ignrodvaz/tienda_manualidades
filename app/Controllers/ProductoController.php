@@ -9,6 +9,16 @@ class ProductoController extends BaseController
 {
     public function index()
     {
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+        if($rol !== 'ADMINISTRADOR' && $rol !== 'MODERADOR'){
+            return redirect()->to('acceso_restringido');
+        }
+
         $ProductoModel = new ProductoModel();
 
         $name = $this->request->getVar('NOMBRE'); // Obtener el término de búsqueda desde el formulario
@@ -66,6 +76,16 @@ class ProductoController extends BaseController
 
     public function saveProducto($PK_ID_PRODUCTO = null)
     {
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+        if($rol !== 'ADMINISTRADOR' && $rol !== 'MODERADOR'){
+            return redirect()->to('acceso_restringido');
+        }
+
         $ProductoModel = new ProductoModel();
         $CategoriaModel = new CategoriaModel();
         helper(['form', 'url']);
@@ -142,6 +162,16 @@ class ProductoController extends BaseController
 
     public function delete($PK_ID_PRODUCTO)
     {
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+        if($rol !== 'ADMINISTRADOR' && $rol !== 'MODERADOR'){
+            return redirect()->to('acceso_restringido');
+        }
+        
         $ProductoModel = new ProductoModel();
 
         if($ProductoModel->find($PK_ID_PRODUCTO)['FECHA_BAJA'] === null){

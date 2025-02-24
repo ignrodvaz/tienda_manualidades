@@ -3,11 +3,22 @@
 namespace App\Controllers;
 
 use App\Models\PedidoModel;
+use App\Models\ClienteModel;
 
 class PedidoController extends BaseController
 {
     public function index()
     {
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+        if($rol !== 'ADMINISTRADOR' && $rol !== 'SUPERVISOR'){
+            return redirect()->to('acceso_restringido');
+        }
+
         $PedidoModel = new PedidoModel();
 
         $fecha_pedido = $this->request->getVar('FECHA_PEDIDO');
@@ -52,7 +63,7 @@ class PedidoController extends BaseController
         $data['pedidos'] = $query->paginate($perPage); // Obtener categorías paginadas
 
          // Formatear fecha para mostrar solo YYYY-MM-DD
-        foreach ($data['pedidos'] as &$pedido) {
+        foreach ($data['pedidos'] as $pedido) {
             $pedido['FECHA_PEDIDO'] = date('Y-m-d', strtotime($pedido['FECHA_PEDIDO']));
         }
 
@@ -62,6 +73,7 @@ class PedidoController extends BaseController
         $data['total_pedido'] = $total_pedido;
         $data['estado_pedido'] = $estado_pedido;
         $data['fk_id_cliente'] = $fk_id_cliente;
+        
         $data['estado'] = $estado; // Mantener el estado en la vista
         $data['perPage'] = $perPage; // Mantener el número de resultados por página en la vista
 
@@ -70,8 +82,20 @@ class PedidoController extends BaseController
 
     public function savePedido($PK_ID_PEDIDO = null)
     {
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+        if($rol !== 'ADMINISTRADOR' && $rol !== 'SUPERVISOR'){
+            return redirect()->to('acceso_restringido');
+        }
+
         $PedidoModel = new PedidoModel();
         helper(['form', 'url']);
+
+        $data['pedidos'] = $PedidoModel->findAll(); // Obtener todos los pedidos
 
         // Cargar datos de la categoría si es edición
         $data['pedido'] = $PK_ID_PEDIDO ? $PedidoModel->find($PK_ID_PEDIDO) : null;
@@ -128,6 +152,16 @@ class PedidoController extends BaseController
 
     public function delete($PK_ID_PEDIDO)
     {
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+        if($rol !== 'ADMINISTRADOR' && $rol !== 'SUPERVISOR'){
+            return redirect()->to('acceso_restringido');
+        }
+        
         $PedidoModel = new PedidoModel();
 
         if($PedidoModel->find($PK_ID_PEDIDO)['FECHA_BAJA'] === null){

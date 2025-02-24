@@ -8,6 +8,16 @@ class DetallePedidoController extends BaseController
 {
     public function index()
     {
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+        if($rol !== 'ADMINISTRADOR' && $rol !== 'SUPERVISOR'){
+            return redirect()->to('acceso_restringido');
+        }
+
         $DetallePedidoModel = new DetallePedidoModel();
 
         $cantidad = $this->request->getVar('CANTIDAD');
@@ -62,6 +72,16 @@ class DetallePedidoController extends BaseController
 
     public function saveDetallePedido($PK_ID_DETALLE = null)
     {
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+        if($rol !== 'ADMINISTRADOR' && $rol !== 'SUPERVISOR'){
+            return redirect()->to('acceso_restringido');
+        }
+
         $DetallePedidoModel = new DetallePedidoModel();
         helper(['form', 'url']);
 
@@ -112,6 +132,16 @@ class DetallePedidoController extends BaseController
 
     public function delete($PK_ID_DETALLE)
     {
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+        if($rol !== 'ADMINISTRADOR' && $rol !== 'SUPERVISOR'){
+            return redirect()->to('acceso_restringido');
+        }
+        
         $DetallePedidoModel = new DetallePedidoModel();
 
         if($DetallePedidoModel->find($PK_ID_DETALLE)['FECHA_BAJA'] === null){

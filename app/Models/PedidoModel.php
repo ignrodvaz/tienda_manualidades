@@ -11,6 +11,6 @@ class PedidoModel extends Model{
 
     protected $useTimestamps = true; //Habilitamos el uso de las marcas de tiempo automaticas (create_at, update_at).
 
-    protected $allowedFields = ['PK_ID_PEDIDO', 'FECHA_PEDIDO', 'DIRECCION_PEDIDO', 'TOTAL_PEDIDO', 'FECHA_BAJA', 'ESTADO', 'FK_ID_CLIENTE']; //Campos permitidos para insertar/actualizar
+    protected $allowedFields = ['PK_ID_PEDIDO', 'FECHA_PEDIDO', 'DIRECCION_PEDIDO', 'TOTAL_PEDIDO', 'FECHA_BAJA', 'ESTADO']; //Campos permitidos para insertar/actualizar
 
 }

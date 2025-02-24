@@ -1,0 +1,231 @@
+CRITICAL - 2025-02-24 09:28:56 --> Error: Undefined constant "App\Controllers\ADMINISTRADOR"
+[Method: GET, Route: categoria/save]
+in APPPATH/Controllers/CategoriaController.php on line 62.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->saveCategoria()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-24 09:37:34 --> Error: Object of class CodeIgniter\Session\Session could not be converted to string
+[Method: GET, Route: categoria]
+in APPPATH/Views/listado_categoria.php on line 297.
+ 1 SYSTEMPATH/View/View.php(224): include()
+ 2 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 4 APPPATH/Controllers/CategoriaController.php(57): view('listado_categoria', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-24 09:38:14 --> ErrorException: Undefined variable $session
+[Method: GET, Route: categoria]
+in APPPATH/Views/listado_categoria.php on line 297.
+ 1 APPPATH/Views/listado_categoria.php(297): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 297)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(57): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-24 09:38:18 --> ErrorException: Undefined variable $session
+[Method: GET, Route: categoria]
+in APPPATH/Views/listado_categoria.php on line 297.
+ 1 APPPATH/Views/listado_categoria.php(297): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $session', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php', 297)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_categoria.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_categoria', [], true)
+ 5 APPPATH/Controllers/CategoriaController.php(57): view('listado_categoria', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CategoriaController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriaController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-24 10:36:47 --> ErrorException: Undefined variable $pedidos
+[Method: GET, Route: pedido/save/13]
+in APPPATH/Views/crear_pedido.php on line 494.
+ 1 APPPATH/Views/crear_pedido.php(494): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pedidos', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php', 494)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(146): view('crear_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->savePedido('13')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-24 10:37:42 --> ErrorException: Undefined variable $estados
+[Method: GET, Route: pedido/save/13]
+in APPPATH/Views/crear_pedido.php on line 494.
+ 1 APPPATH/Views/crear_pedido.php(494): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estados', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php', 494)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(146): view('crear_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->savePedido('13')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-24 10:37:46 --> ErrorException: Undefined variable $estados
+[Method: GET, Route: pedido/save/13]
+in APPPATH/Views/crear_pedido.php on line 494.
+ 1 APPPATH/Views/crear_pedido.php(494): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estados', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php', 494)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(146): view('crear_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->savePedido('13')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-24 10:38:13 --> ErrorException: Undefined variable $pedidos
+[Method: GET, Route: pedido/save/13]
+in APPPATH/Views/crear_pedido.php on line 494.
+ 1 APPPATH/Views/crear_pedido.php(494): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pedidos', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php', 494)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(146): view('crear_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->savePedido('13')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-24 10:39:25 --> ErrorException: Undefined variable $pedidos
+[Method: GET, Route: pedido/save/13]
+in APPPATH/Views/crear_pedido.php on line 494.
+ 1 APPPATH/Views/crear_pedido.php(494): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pedidos', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php', 494)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(146): view('crear_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->savePedido('13')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-24 10:39:57 --> TypeError: Cannot access offset of type string on string
+[Method: GET, Route: pedido/save/13]
+in APPPATH/Views/crear_pedido.php on line 495.
+ 1 SYSTEMPATH/View/View.php(224): include()
+ 2 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_pedido', [], true)
+ 4 APPPATH/Controllers/PedidoController.php(146): view('crear_pedido', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->savePedido('13')
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-24 10:40:10 --> ErrorException: Undefined variable $pedidos
+[Method: GET, Route: pedido/save/13]
+in APPPATH/Views/crear_pedido.php on line 494.
+ 1 APPPATH/Views/crear_pedido.php(494): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pedidos', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php', 494)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(146): view('crear_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->savePedido('13')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-24 10:42:21 --> ErrorException: Undefined variable $pedidos
+[Method: GET, Route: pedido/save/13]
+in APPPATH/Views/crear_pedido.php on line 494.
+ 1 APPPATH/Views/crear_pedido.php(494): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pedidos', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php', 494)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(146): view('crear_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->savePedido('13')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-24 10:44:21 --> ErrorException: Undefined array key "ESTADO_PEDIDO"
+[Method: GET, Route: pedido/save/13]
+in APPPATH/Views/crear_pedido.php on line 495.
+ 1 APPPATH/Views/crear_pedido.php(495): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ESTADO_PEDIDO"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php', 495)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(148): view('crear_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->savePedido('13')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-24 11:34:46 --> ErrorException: Undefined variable $cliente
+[Method: GET, Route: pedido/save/12]
+in APPPATH/Views/crear_pedido.php on line 532.
+ 1 APPPATH/Views/crear_pedido.php(532): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cliente', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php', 532)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(148): view('crear_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->savePedido('12')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-24 11:35:37 --> ErrorException: Undefined variable $cliente
+[Method: GET, Route: pedido/save/12]
+in APPPATH/Views/crear_pedido.php on line 532.
+ 1 APPPATH/Views/crear_pedido.php(532): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cliente', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php', 532)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(149): view('crear_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->savePedido('12')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-24 11:40:45 --> ErrorException: Undefined array key "ESTADO_PEDIDO"
+[Method: GET, Route: pedido/save/12]
+in APPPATH/Views/crear_pedido.php on line 494.
+ 1 APPPATH/Views/crear_pedido.php(494): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ESTADO_PEDIDO"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php', 494)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(150): view('crear_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->savePedido('12')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-24 11:41:20 --> ErrorException: Undefined array key "estado_pedido"
+[Method: GET, Route: pedido/save/12]
+in APPPATH/Views/crear_pedido.php on line 494.
+ 1 APPPATH/Views/crear_pedido.php(494): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "estado_pedido"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php', 494)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/crear_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('crear_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(150): view('crear_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->savePedido('12')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

@@ -9,6 +9,16 @@ class ClienteController extends BaseController
 {
     public function index()
     {
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+        if($rol !== 'ADMINISTRADOR'){
+            return redirect()->to('acceso_restringido');
+        }
+
         $ClienteModel = new ClienteModel();
 
         $name = $this->request->getVar('NOMBRE'); // Obtener el término de búsqueda desde el formulario
@@ -73,6 +83,16 @@ class ClienteController extends BaseController
 
     public function saveCliente($PK_ID_CLIENTE = null)
     {
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+        if($rol !== 'ADMINISTRADOR'){
+            return redirect()->to('acceso_restringido');
+        }
+
         $ClienteModel = new ClienteModel();
         $RolModel = new RolModel();
         helper(['form', 'url']);
@@ -157,6 +177,16 @@ class ClienteController extends BaseController
 
     public function delete($PK_ID_CLIENTE)
     {
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+        if($rol !== 'ADMINISTRADOR'){
+            return redirect()->to('acceso_restringido');
+        }
+        
         $ClienteModel = new ClienteModel();
 
         if($ClienteModel->find($PK_ID_CLIENTE)['FECHA_BAJA'] === null){

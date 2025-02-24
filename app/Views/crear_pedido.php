@@ -487,6 +487,16 @@ License: For each use you must have a valid license purchased only from above li
                                                             <label for="total_pedido">Total Pedido</label>
                                                             <input type="number" class="form-control form-control-solid mb-3 mb-lg-0" id="total_pedido" name="total_pedido" placeholder="Total" value="<?= esc($pedido['TOTAL_PEDIDO'] ?? set_value('total_pedido')) ?>">
                                                         </div>
+														<div class="mb-3 w-50">
+															<label>Estado Pedido:</label>
+															<select name="estado_pedido" class="form-control form-control-solid mb-3 mb-lg-0">
+																<option value="" disabled <?= !isset($pedido['ESTADO']) ? 'selected' : '' ?>>Seleccione el Estado:</option>
+																<option value="Pendiente" <?= isset($pedido) && $pedido['ESTADO'] == 'Pendiente' ? 'selected' : '' ?>>Pendiente</option>
+																<option value="Enviado" <?= isset($pedido) && $pedido['ESTADO'] == 'Enviado' ? 'selected' : '' ?>>Enviado</option>
+																<option value="Entregado" <?= isset($pedido) && $pedido['ESTADO'] == 'Entregado' ? 'selected' : '' ?>>Entregado</option>
+																<option value="Cancelado" <?= isset($pedido) && $pedido['ESTADO'] == 'Cancelado' ? 'selected' : '' ?>>Cancelado</option>
+															</select>
+														</div>
 													</div>
 													<!--end::User Info-->
 													<!--end::Summary-->
@@ -519,7 +529,7 @@ License: For each use you must have a valid license purchased only from above li
 																<!--begin::Details item-->
                                                                 <div class="fw-bolder mt-5">ID Cliente</div>
 																<div class="text-gray-600"><?= isset($pedido) && $pedido['FK_ID_CLIENTE'] !== null ? esc($pedido['FK_ID_CLIENTE']) : 'NULL' ?></div>
-                                                                <!--begin::Details item-->
+																<!--begin::Details item-->
 																<div class="fw-bolder mt-5">Fecha de Creación</div>
 																<div class="text-gray-600"><?= isset($pedido) && $pedido['created_at'] !== null ? esc($pedido['created_at']) : 'NULL' ?></div>
 																<!--begin::Details item-->

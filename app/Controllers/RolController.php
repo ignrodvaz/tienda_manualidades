@@ -13,6 +13,16 @@ class RolController extends BaseController
 
     public function index()
     {
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+        if($rol !== 'ADMINISTRADOR'){
+            return redirect()->to('acceso_restringido');
+        }
+
         $RolModel = new RolModel();
 
         $name = $this->request->getVar('NOMBRE'); // Obtener el término de búsqueda desde el formulario
@@ -50,6 +60,16 @@ class RolController extends BaseController
 
     public function saveRol($PK_ID_ROL = null)
     {
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+        if($rol !== 'ADMINISTRADOR'){
+            return redirect()->to('acceso_restringido');
+        }
+
         $RolModel = new RolModel();
         helper(['form', 'url']);
 
@@ -104,6 +124,16 @@ class RolController extends BaseController
 
     public function delete($PK_ID_ROL)
     {
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+        if($rol !== 'ADMINISTRADOR'){
+            return redirect()->to('acceso_restringido');
+        }
+        
         $RolModel = new RolModel();
 
         if($RolModel->find($PK_ID_ROL)['FECHA_BAJA'] === null){

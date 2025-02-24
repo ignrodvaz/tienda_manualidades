@@ -14,7 +14,18 @@ class CategoriaController extends BaseController
     }
     
     public function index()
-    {
+    {   
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+
+        if($rol !== 'ADMINISTRADOR' && $rol !== 'MODERADOR'){
+            return redirect()->to('acceso_restringido');
+        }
+
         $CategoriaModel = new CategoriaModel();
 
         $name = $this->request->getVar('NOMBRE'); // Obtener el término de búsqueda desde el formulario
@@ -53,12 +64,30 @@ class CategoriaController extends BaseController
     }
 
     public function saveCategoria($PK_ID_CATEGORIA = null)
-    {
+    {   
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+
+        if($rol !== 'ADMINISTRADOR' && $rol !== 'MODERADOR'){
+            return redirect()->to('acceso_restringido');
+        }
+
         $CategoriaModel = new CategoriaModel();
         helper(['form', 'url']);
 
         // Cargar datos de la categoría si es edición
         $data['categoria'] = $PK_ID_CATEGORIA ? $CategoriaModel->find($PK_ID_CATEGORIA) : null;
+
+        // Verificar el rol del usuario
+        $session = session();
+        $rol = $session->get('rol');
+        if ($rol !== 'ADMINISTRADOR' && $rol !== 'MODERADOR') {
+            return redirect()->to('acceso_restringido');
+        }
 
         if ($this->request->getMethod()=='POST') {
             // Reglas de validación
@@ -109,6 +138,16 @@ class CategoriaController extends BaseController
 
     public function delete($PK_ID_CATEGORIA)
     {
+        $session = session();
+        if(!$session->get('isLoggedIn')){
+            return redirect()->to('login');
+        }
+
+        $rol = $session->get('rol');
+        if($rol !== 'ADMINISTRADOR' && $rol !== 'MODERADOR'){
+            return redirect()->to('acceso_restringido');
+        }
+
         $CategoriaModel = new CategoriaModel();
 
         if($CategoriaModel->find($PK_ID_CATEGORIA)['FECHA_BAJA'] === null){
@@ -120,4 +159,5 @@ class CategoriaController extends BaseController
         }
         
     }
+
 }
