@@ -394,6 +394,8 @@ License: For each use you must have a valid license purchased only from above li
                                             initialView: 'dayGridMonth',
                                             selectable: true,
                                             editable: true,
+                                            locale:'es',
+                                            firstDay: 1,
                             
                                             // Cargar eventos desde el servidor
                                             events: function(fetchInfo, successCallback, failureCallback) {

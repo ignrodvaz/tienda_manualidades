@@ -12,9 +12,6 @@ class EventoController extends BaseController
         $data['eventos'] = $eventoModel->findAll();
         return view('calendario', $data);
     }
-    public function buscarEvento(){
-
-    }
 
     public function anadirEvento(){
 

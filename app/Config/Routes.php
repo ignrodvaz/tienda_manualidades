@@ -85,6 +85,5 @@ $routes->get('rol/delete/(:num)', 'RolController::delete/$1'); //Esta ruta elimi
 //Rutas para Evento
 $routes->get('calendario', 'EventoController::index'); //Esta ruta muestra el listado de EVENTO.
 //Estas rutas manejan tanto la creación como la edición de EVENTO.
-$routes->get('/buscarEvento', 'EventController::buscarEvento');
 $routes->post('/anadirEvento', 'EventController::anadirEvento');
 $routes->delete('/eliminarEvento/(:num)', 'EventController::eliminarEvento/$1');
