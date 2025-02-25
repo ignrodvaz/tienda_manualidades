@@ -87,3 +87,6 @@ $routes->get('calendario', 'EventoController::index'); //Esta ruta muestra el li
 //Estas rutas manejan tanto la creación como la edición de EVENTO.
 $routes->post('/anadirEvento', 'EventController::anadirEvento');
 $routes->delete('/eliminarEvento/(:num)', 'EventController::eliminarEvento/$1');
+
+//ACCESO RESTRINGIDO
+$routes->get('acceso_restringido', 'acceso_restringidoController::index'); //Esta ruta muestra el listado de ACCESO_RESTRINGIDO.

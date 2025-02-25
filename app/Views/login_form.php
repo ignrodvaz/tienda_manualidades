@@ -57,6 +57,33 @@
                 </div>
             </form>
 
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+            <script>
+                <?php if (session()->getFlashdata('success')): ?>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Éxito',
+                        text: '<?= session()->getFlashdata('success') ?>',
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                <?php endif; ?>
+
+                <?php if (session()->getFlashdata('error')): ?>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: '<?= session()->getFlashdata('error') ?>',
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                <?php endif; ?>
+            </script>
+
             <!-- Botón para limpiar el almacenamiento local -->
             <button id="clearLocalStorage">Limpiar</button>
         </main>
@@ -78,5 +105,6 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+
     </body>
 </html>

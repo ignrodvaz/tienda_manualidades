@@ -114,67 +114,82 @@ License: For each use you must have a valid license purchased only from above li
 											</span>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-title">Tablas</span>
+										<span class="menu-title">Secciones</span>
 										<span class="menu-arrow"></span>
 									</span>
 									<div class="menu-sub menu-sub-accordion menu-active-bg">
 										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+											<?php $session = session(); ?>
+											<?php if($session->get('rol') == 'ADMINISTRADOR' || $session->get('rol') == 'MODERADOR'): ?>
 											<div class="menu-item">
-												<a class="menu-link" href="../categoria">
+												<a class="menu-link active" href="../categoria">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
 													<span class="menu-title">Categoria</span>
 												</a>
 											</div>
+											<?php endif; ?>
+											<?php if($session->get('rol') == 'ADMINISTRADOR'):?>
 											<div class="menu-item">
-												<a class="menu-link" href="../cliente">
+												<a class="menu-link" href="cliente">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
 													<span class="menu-title">Cliente</span>
 												</a>
 											</div>
+											<?php endif; ?>
+											<?php if($session->get(key: 'rol') == 'ADMINISTRADOR' || $session->get('rol') == 'SUPERVISOR'):?>
 											<div class="menu-item">
-												<a class="menu-link" href="../detalle_pedido">
+												<a class="menu-link" href="detalle_pedido">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
 													<span class="menu-title">Detalle Pedido</span>
 												</a>
 											</div>
+											<?php endif; ?>
+											<?php if($session->get('rol') == 'ADMINISTRADOR'):?>
 											<div class="menu-item">
-												<a class="menu-link" href="../log">
+												<a class="menu-link" href="log">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
 													<span class="menu-title">Log</span>
 												</a>
 											</div>
+											<?php endif; ?>
+											<?php if($session->get(key: 'rol') == 'ADMINISTRADOR' || $session->get('rol') == 'SUPERVISOR'):?>
 											<div class="menu-item">
-												<a class="menu-link" href="../pedido">
+												<a class="menu-link" href="pedido">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
 													<span class="menu-title">Pedido</span>
 												</a>
 											</div>
+											<?php endif; ?>
+											<?php if($session->get('rol') == 'ADMINISTRADOR' || $session->get('rol') == 'MODERADOR'): ?>
 											<div class="menu-item">
-												<a class="menu-link" href="../producto">
+												<a class="menu-link" href="producto">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
 													<span class="menu-title">Producto</span>
 												</a>
 											</div>
+											<?php endif; ?>
+											<?php if($session->get('rol') == 'ADMINISTRADOR'):?>
 											<div class="menu-item">
-												<a class="menu-link active" href="../rol">
+												<a class="menu-link" href="rol">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
 													<span class="menu-title">Rol</span>
 												</a>
 											</div>
+											<?php endif; ?>
 										</div>
 									</div>
 								</div>
