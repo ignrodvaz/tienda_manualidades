@@ -312,7 +312,8 @@ License: For each use you must have a valid license purchased only from above li
 					<div class="aside-footer flex-column-auto pt-5 px-5" id="kt_aside_footer">
 						<div class="btn btn-custom btn-primary w-100">
 							<?php if (session()->get('isLoggedIn')): ?>
-								<?= esc(session()->get('name')) ?> - <?= esc(session()->get('rol')) ?>
+								Nombre: <?= esc(session()->get('name')) ?> <br>
+								Rol: <?= esc(session()->get('rol')) ?>
 							<?php else: ?>
 								No hay usuario logueado.
 							<?php endif; ?>
