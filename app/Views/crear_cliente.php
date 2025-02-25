@@ -96,6 +96,8 @@ License: For each use you must have a valid license purchased only from above li
 										<span class="menu-title">Default</span>
 									</a>
 								</div>
+								<?php $session = session(); ?>
+								<?php if($session->get('rol') !== 'USUARIO'):?>
 								<div class="menu-item">
 									<div class="menu-content pt-8 pb-2">
 										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Crafted</span>
@@ -122,7 +124,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php $session = session(); ?>
 											<?php if($session->get('rol') == 'ADMINISTRADOR' || $session->get('rol') == 'MODERADOR'): ?>
 											<div class="menu-item">
-												<a class="menu-link active" href="../categoria">
+												<a class="menu-link" href="categoria">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -132,7 +134,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php endif; ?>
 											<?php if($session->get('rol') == 'ADMINISTRADOR'):?>
 											<div class="menu-item">
-												<a class="menu-link" href="cliente">
+												<a class="menu-link active" href="cliente">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -193,6 +195,7 @@ License: For each use you must have a valid license purchased only from above li
 										</div>
 									</div>
 								</div>
+								<?php endif; ?>
 								<div class="menu-item">
 									<div class="menu-content pt-8 pb-2">
 										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Apps</span>
@@ -521,7 +524,7 @@ License: For each use you must have a valid license purchased only from above li
 													<!--end::Summary-->
 													<!--begin::Details toggle-->
 													<div class="d-flex d-flex justify-content-end py-3 mb-3">
-														<button type="submit" class="btn me-3 btn-primary"><?= isset($cliente) ? 'Actualizar' : 'Guardar'?></button>
+														<button type="submit" id="submitButton" class="btn me-3 btn-primary"><?= isset($cliente) ? 'Actualizar' : 'Guardar'?></button>
 														<a href="<?= base_url('cliente') ?>" class="btn btn-secondary">Cancelar</a>
 													</div>
 													<!-- Sección de detalles -->
@@ -558,6 +561,13 @@ License: For each use you must have a valid license purchased only from above li
 														</div>
 													<!--end::Details content-->
 												</form>
+												<script>
+													document.getElementById('submitButton').addEventListener('click', function() {
+														this.disabled = true;
+														this.innerText = 'Enviando...';
+														this.form.submit();
+													});
+												</script>
 											</div>
 										<!--end::Card body-->
 									</div>

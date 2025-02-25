@@ -97,6 +97,8 @@ License: For each use you must have a valid license purchased only from above li
 										<span class="menu-title">Default</span>
 									</a>
 								</div>
+								<?php $session = session(); ?>
+								<?php if($session->get('rol') !== 'USUARIO'):?>
 								<div class="menu-item">
 									<div class="menu-content pt-8 pb-2">
 										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Crafted</span>
@@ -194,6 +196,7 @@ License: For each use you must have a valid license purchased only from above li
 										</div>
 									</div>
 								</div>
+								<?php endif; ?>
 								<div class="menu-item">
 									<div class="menu-content pt-8 pb-2">
 										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Apps</span>

@@ -48,7 +48,7 @@
                             <input class="w-100 mb-3 form-control" type="password" placeholder="Tu contraseña" name="password" id="password" required>
 
                             <!-- Botón para iniciar sesión -->
-                            <button id="btnInicioSesion" type="submit" class="btn btn-success text-center w-100 mb-2">Iniciar sesión</button>
+                            <button id="btnInicioSesion" type="submit" id="submitButton" class="btn btn-success text-center w-100 mb-2">Iniciar sesión</button>
 
                             <!-- Enlace para cambiar al formulario de registro -->
                             <p class="text-center">¿Aun no tienes cuenta? <a id="showRegistro" href="register">Regístrate</a></p>
@@ -56,6 +56,13 @@
                     </div>
                 </div>
             </form>
+            <script>
+				document.getElementById('submitButton').addEventListener('click', function() {
+					this.disabled = true;
+					this.innerText = 'Iniciando...';
+					this.form.submit();
+				});
+			</script>
 
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

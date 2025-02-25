@@ -69,7 +69,7 @@
                             <input class="w-100 mb-3 form-control" type="text" placeholder="Dirección" name="direccion" id="direccion" required>
 
                             <!-- Botón para registrar -->
-                            <button id="btnRegistro" type="submit" class="btn btn-success text-center w-100 mb-2">Registrar</button>
+                            <button id="submitButton" type="submit" class="btn btn-success text-center w-100 mb-2">Registrar</button>
 
                             <!-- Enlace para cambiar al formulario de inicio de sesión -->
                             <p class="text-center">¿Ya tienes cuenta? <a id="showLogin" href="login">Inicia sesión</a></p>
@@ -77,7 +77,13 @@
                     </div>
                 </div>
             </form>
-
+            <script>
+				document.getElementById('submitButton').addEventListener('click', function() {
+					this.disabled = true;
+					this.innerText = 'Enviando...';
+					this.form.submit();
+				});
+			</script>
             <!-- Botón para limpiar el almacenamiento local -->
             <button id="clearLocalStorage">Limpiar</button>
         </main>

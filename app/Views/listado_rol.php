@@ -97,6 +97,8 @@ License: For each use you must have a valid license purchased only from above li
 										<span class="menu-title">Default</span>
 									</a>
 								</div>
+								<?php $session = session(); ?>
+								<?php if($session->get('rol') !== 'USUARIO'):?>
 								<div class="menu-item">
 									<div class="menu-content pt-8 pb-2">
 										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Crafted</span>
@@ -123,7 +125,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php $session = session(); ?>
 											<?php if($session->get('rol') == 'ADMINISTRADOR' || $session->get('rol') == 'MODERADOR'): ?>
 											<div class="menu-item">
-												<a class="menu-link active" href="../categoria">
+												<a class="menu-link" href="categoria">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -183,7 +185,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php endif; ?>
 											<?php if($session->get('rol') == 'ADMINISTRADOR'):?>
 											<div class="menu-item">
-												<a class="menu-link" href="rol">
+												<a class="menu-link active" href="rol">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -194,6 +196,7 @@ License: For each use you must have a valid license purchased only from above li
 										</div>
 									</div>
 								</div>
+								<?php endif; ?>
 								<div class="menu-item">
 									<div class="menu-content pt-8 pb-2">
 										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Apps</span>
