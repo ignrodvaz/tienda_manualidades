@@ -309,57 +309,182 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="post d-flex flex-column-fluid mt-5" id="kt_post">
 							<!--begin::Container-->
 							<div id="kt_content_container" class="container-xl">
+								
                                 <!--begin::Calendar-->
                                 <div class="g-5 gx-xxl-8">
-                                    <div class="card card-xxl-stretch">
-                                        <div class="card-body">
-                                            <h2>Calendario Dinámico</h2>
-                                            <div id="kt_calendar_widget_1"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Metronic JS -->
-                                <script src="path/to/metronic/assets/js/scripts.bundle.js"></script>
-                                <!-- FullCalendar JS -->
-                                <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
-                                <!-- jQuery -->
-                                <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-                                <script>
-                                    $(document).ready(function () {
-                                        const calendarEl = document.getElementById('calendar');
-                            
-                                        // Inicializar FullCalendar
-                                        const calendar = new FullCalendar.Calendar(calendarEl, {
-                                            initialView: 'dayGridMonth',
-                                            selectable: true,
-                                            editable: true,
-                                            locale:'es',
-                                            firstDay: 1,
-                            
-                                            // Cargar eventos desde el servidor
-                                            events: function(fetchInfo, successCallback, failureCallback) {
-                                            
-                                            },
-                            
-                                            // Añadir evento
-                                            select: function (info) {
-                                                const title = prompt('Título del evento:');
-                                                if (title) {
-                                                
-                                                }
-                                            },
-                            
-                                            // Eliminar evento
-                                            eventClick: function (info) {
-                                                if (confirm('¿Deseas eliminar este evento?')) {
-                                                
-                                                }
-                                            }
-                                        });
-                            
-                                        calendar.render();
-                                    });
-                                </script>
+									<div class="card card-xxl-stretch">
+										<div class="card-body">
+											<h2>Calendario Dinámico</h2>
+											<div id="calendar"></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="modal fade" id="eventoModal" tabindex="-1" aria-labelledby="eventoModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="eventoModalLabel">Añadir Evento</h5>
+												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+											</div>
+											<div class="modal-body">
+												<form id="eventoForm">
+													<div class="mb-3">
+														<label for="titulo" class="form-label">Título</label>
+														<input type="text" class="form-control" id="titulo" name="titulo" required>
+													</div>
+													<div class="mb-3">
+														<label for="fecha_inicio" class="form-label">Fecha de Inicio</label>
+														<input type="datetime-local" class="form-control" id="fecha_inicio" name="fecha_inicio" required>
+													</div>
+													<div class="mb-3">
+														<label for="fecha_fin" class="form-label">Fecha de Fin</label>
+														<input type="datetime-local" class="form-control" id="fecha_fin" name="fecha_fin" required>
+													</div>
+													<div class="mb-3">
+														<label for="descripcion" class="form-label">Descripción</label>
+														<textarea class="form-control" id="descripcion" name="descripcion" required></textarea>
+													</div>
+													<button type="submit" class="btn btn-success">Guardar Evento</button>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Metronic JS -->
+								<script src="<?= base_url('assets/js/scripts.bundle.js') ?>"></script>
+								<!-- FullCalendar JS -->
+								<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+								<!-- jQuery -->
+								<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+								
+								<script>
+							$(document).ready(function() {
+								const calendarEl = document.getElementById('calendar');
+
+								const calendar = new FullCalendar.Calendar(calendarEl, {
+									initialView: 'dayGridMonth',
+									locale: 'es',
+									selectable: true,
+
+									events: function(fetchInfo, successCallback, failureCallback) {
+										$.ajax({
+											url: '<?= site_url("eventos") ?>',
+											type: 'GET',
+											dataType: 'json',
+											success: function(data) {
+												successCallback(data);
+											},
+											error: function() {
+												failureCallback('Error al cargar eventos');
+											}
+										});
+									},
+
+									select: function(info) {
+										// Comprobamos si el usuario tiene el rol adecuado para agregar eventos
+										<?php if (session()->get('rol') !== 'ADMINISTRADOR'): ?>
+											alert('No tienes permisos para crear eventos.');
+											return; // No abre el modal si no es ADMINISTRADOR
+										<?php endif; ?>
+										// Convertir la fecha seleccionada a formato adecuado para input datetime-local
+										let fechaSeleccionada = new Date(info.startStr);
+										fechaSeleccionada.setHours(12, 0, 0); // Establecer hora fija (12:00 PM) por defecto
+
+										// Formatear la fecha al formato requerido por datetime-local (YYYY-MM-DDTHH:MM)
+										let formatFecha = (fecha) => fecha.toISOString().slice(0, 16);
+
+										// Asignar la misma fecha en ambos campos
+										$("#fecha_inicio").val(formatFecha(fechaSeleccionada));
+										$("#fecha_fin").val(formatFecha(fechaSeleccionada));
+
+										// Mostrar el modal
+										$("#eventoModal").modal("show");
+
+										// Capturar envío del formulario
+										$("#eventoForm").off("submit").on("submit", function(e) {
+											e.preventDefault();
+
+											const title = $("#titulo").val();
+											const start = $("#fecha_inicio").val();
+											const end = $("#fecha_fin").val();
+											const descripcion = $("#descripcion").val();
+
+											if (title.trim() === "") {
+												alert("El título es obligatorio");
+												return;
+											}
+
+											$.ajax({
+												url: '<?= site_url("eventos/anadir") ?>',
+												type: 'POST',
+												dataType: 'json',
+												data: {
+													title: title,
+													start: start,
+													end: end,
+													descripcion: descripcion
+												},
+												success: function(response) {
+													if (response.status === 'success') {
+														calendar.addEvent({
+															id: response.id,
+															title: title,
+															start: start,
+															end: end
+														});
+														alert("Evento añadido correctamente");
+														$("#eventoModal").modal("hide");
+														$("#eventoForm")[0].reset();
+													} else {
+														alert("Error al añadir el evento");
+													}
+												},
+												error: function() {
+													alert("Error de comunicación con el servidor");
+												}
+											});
+										});
+									},
+
+									eventClick: function(info) {
+										<?php if (session()->get('rol') !== 'ADMINISTRADOR'): ?>
+											alert('No tienes permisos para dar de baja eventos.');
+											return; 
+										<?php endif; ?>
+
+										if (confirm('¿Deseas dar de baja este evento?')) {
+											console.log("Intentando dar de baja el evento con ID:", info.event.id); // 🛠️ Depuración
+
+											$.ajax({
+												url: '<?= site_url("eventos/eliminar") ?>', // 🔹 Ya no enviamos el ID en la URL
+												type: 'POST',
+												dataType: 'json',
+												data: { id: info.event.id }, // 🔹 Enviar el ID en el cuerpo del POST
+												success: function(response) {
+													if (response.success) {
+														info.event.remove();
+														alert('Evento dado de baja correctamente');
+													} else {
+														alert('Error: ' + response.error);
+													}
+												},
+												error: function(xhr, status, error) {
+													console.error("Error de comunicación con el servidor:", xhr.responseText);
+													alert('Error de comunicación con el servidor');
+												}
+											});
+										}
+									}
+
+								});
+
+								calendar.render();
+							});
+						</script>
+
+
                                 <!--end::Calendar-->
 							</div>
 							<!--end::Container-->
