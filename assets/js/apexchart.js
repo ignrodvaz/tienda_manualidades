@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var options = {
         series: [25, 20, 15, 10, 10, 10, 5],
         chart: {
-            width: 340,
+            width: 500,
+            height: 500,
             type: 'pie',
         },
         labels: ['Pinturas', 'Telas', 'Papel', 'Herramientas', 'Hilos y lanas', 'Arcilla', 'Pegamentos'],
@@ -15,10 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
             breakpoint: 480,
             options: {
                 chart: {
-                    width: 100
+                    width: 500,
+                    height: 500
                 },
                 legend: {
-                    position: 'bottom',
+                    position: 'center',
                     offsetY: -10
                 }
             }
@@ -61,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
             dataLabels: {
                 enabled: true,
                 formatter: function (val) {
-                    return "€" + val;
+                    return val + "€";
                 },
                 style: {
                     fontSize: '12px',
@@ -103,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 labels: {
                     show: true,
                     formatter: function (val) {
-                        return "€" + val;
+                        return val + "€";
                     }
                 }
             },
