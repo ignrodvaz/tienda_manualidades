@@ -8,9 +8,12 @@ use CodeIgniter\Controller;
 class CategoriaController extends BaseController
 {
 
+    protected $categoriaModel;
+
     public function __construct()
     {
         helper(['form', 'url']);
+        $this->categoriaModel = new CategoriaModel();
     }
     
     public function index()
@@ -21,47 +24,67 @@ class CategoriaController extends BaseController
         }
 
         $rol = $session->get('rol');
-
         if($rol !== 'ADMINISTRADOR' && $rol !== 'MODERADOR'){
             return redirect()->to('acceso_restringido');
         }
 
         $CategoriaModel = new CategoriaModel();
 
-        $name = $this->request->getVar('NOMBRE'); // Obtener el término de búsqueda desde el formulario
+        // Obtener parámetros de búsqueda, filtrado y ordenación
+        $name = $this->request->getGet('NOMBRE');
+        $descripcion = $this->request->getGet('DESCRIPCION');
         $estado = $this->request->getGet('estado') ?? 'todas';
-        $descripcion = $this -> request -> getVar('DESCRIPCION');
-        $pk_id_categoria = $this -> request -> getVar('PK_ID_CATEGORIA');
-        $perPage = $this -> request -> getVar('perPage') ?: 10;
+        $perPage = in_array($this->request->getGet('perPage'), [5, 10, 15, 20]) ? $this->request->getGet('perPage') : 10;
 
+        // Parámetros de ordenación
+        $order_columna = $this->request->getGet('order_columna') ?? 'NOMBRE';
+        $order_direccion = $this->request->getGet('order_direccion') ?? 'asc';
 
+        // Validar valores permitidos
+        $columnas_validas = ['NOMBRE', 'DESCRIPCION'];
+        $direcciones_validas = ['asc', 'desc'];
 
-        $query = $CategoriaModel->select('*');
+        if (!in_array($order_columna, $columnas_validas)) {
+            $order_columna = 'NOMBRE';
+        }
+        if (!in_array($order_direccion, $direcciones_validas)) {
+            $order_direccion = 'asc';
+        }
 
-        if($estado === 'altas'){
+        // Construcción de la consulta
+        $query = $CategoriaModel->select('*')->orderBy($order_columna, $order_direccion);
+
+        if ($estado === 'altas') {
             $query = $query->where('FECHA_BAJA', null);
-        }else if($estado === 'bajas'){
+        } elseif ($estado === 'bajas') {
             $query = $query->where('FECHA_BAJA !=', null);
         }
 
-        // Aplicar filtro si se introduce un nombre
-        if($name){
+        if ($name) {
             $query = $query->like('NOMBRE', $name);
-        }else if($descripcion){
+        }
+        if ($descripcion) {
             $query = $query->like('DESCRIPCION', $descripcion);
         }
 
-        // Configuración de la paginación
-        $data['categorias'] = $query->paginate($perPage); // Obtener categorías paginadas
-        $data['pager'] = $CategoriaModel->pager; // Pasar el objeto del paginador a la vista
-        $data['name'] = $name; // Mantener el término de búsqueda en la vista
+        // Paginación manteniendo parámetros
+        $data['categorias'] = $query->paginate($perPage);
+        $data['pager'] = $CategoriaModel->pager;
+
+        // Mantener los filtros y la paginación en la vista
+        $data['name'] = $name;
         $data['descripcion'] = $descripcion;
-        $data['pk_id_categoria'] = $pk_id_categoria;
-        $data['estado'] = $estado; // Mantener el estado en la vista
-        $data['perPage'] = $perPage; // Mantener el número de resultados por página en la vista
-        
-        return view('listado_categoria', $data); // Cargar la vista con los datos
+        $data['estado'] = $estado;
+        $data['perPage'] = $perPage;
+
+        // Mantener ordenación
+        $data['order_columna'] = $order_columna;
+        $data['order_direccion'] = $order_direccion;
+
+        return view('listado_categoria', $data);
     }
+
+
 
     public function saveCategoria($PK_ID_CATEGORIA = null)
     {   
@@ -158,6 +181,35 @@ class CategoriaController extends BaseController
             return redirect()->to('/categoria')->with('success', 'Categoría dada de alta correctamente.');
         }
         
+    }
+
+    public function exportar()
+    {
+        $categorias = $this->categoriaModel->findAll(); // Obtiene los datos
+
+        // Definir encabezados para la descarga de CSV
+        header('Content-Type: text/csv; charset=utf-8');
+        header('Content-Disposition: attachment; filename="categorias.csv"');
+
+        $output = fopen('php://output', 'w');
+
+        // Encabezados de la tabla (ajusta según lo que se muestra en la vista)
+        fputcsv($output, ['ID', 'Nombre', 'Descripción', 'Fecha de Baja', 'Fecha Creación', 'Fecha Ultima Modificación']);
+
+        // Agregar los datos
+        foreach ($categorias as $categoria) {
+            fputcsv($output, [
+                $categoria['PK_ID_CATEGORIA'],
+                $categoria['NOMBRE'],
+                $categoria['DESCRIPCION'],
+                $categoria['FECHA_BAJA'],
+                $categoria['created_at'],
+                $categoria['updated_at'],
+            ]);
+        }
+
+        fclose($output);
+        exit;
     }
 
 }

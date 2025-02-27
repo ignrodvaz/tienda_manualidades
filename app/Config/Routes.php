@@ -30,6 +30,8 @@ $routes->post('categoria/save', 'CategoriaController::saveCategoria'); // Crear 
 $routes->get('categoria/save/(:num)', 'CategoriaController::saveCategoria/$1'); // Mostrar formulario para editar categoría (GET)
 $routes->post('categoria/save/(:num)', 'CategoriaController::saveCategoria/$1'); // Editar categoría (POST)
 $routes->get('categoria/delete/(:num)', 'CategoriaController::delete/$1'); //Esta ruta elimina una categoría específica usando su ID.
+$routes->get('categoria/exportar', 'CategoriaController::exportar'); //Esta ruta exporta las categorías a un archivo CSV.
+
 
 //CLIENTE
 //Rutas para Cliente

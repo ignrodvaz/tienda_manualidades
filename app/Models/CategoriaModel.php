@@ -13,4 +13,10 @@ class CategoriaModel extends Model{
 
     protected $allowedFields = ['PK_ID_CATEGORIA', 'NOMBRE', 'DESCRIPCION', 'FECHA_BAJA']; //Campos permitidos para insertar/actualizar
 
+    public function getCategorias()
+    {
+        return $this->findAll(); // Verifica que esto trae toda la información
+    }
+
+
 }
