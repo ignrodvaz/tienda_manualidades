@@ -405,7 +405,12 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Menu 1-->
 												<!--end::Filter-->
 												<!--begin::Export-->
-												<a href="<?= base_url('categoria/exportar') ?>" class="btn btn-light-primary me-3" >
+												<a href="<?= base_url('categoria/exportar?' . http_build_query(array_merge($_GET, [
+														'NOMBRE' => $name,
+														'DESCRIPCION' => $descripcion,
+														'order_columna' => $order_columna,
+														'order_direccion' => $order_direccion
+													]))) ?>" class="btn btn-light-primary me-3">
 												<!--begin::Svg Icon | path: icons/duotune/arrows/arr078.svg-->
 												<span class="svg-icon svg-icon-2">
 													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

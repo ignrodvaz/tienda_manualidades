@@ -185,31 +185,51 @@ class CategoriaController extends BaseController
 
     public function exportar()
     {
-        $categorias = $this->categoriaModel->findAll(); // Obtiene los datos
+        $nombre = $this->request->getGet('NOMBRE');
+        $descripcion = $this->request->getGet('DESCRIPCION');
+        $estado = $this->request->getGet('estado') ?? 'todas';
+        $order_columna = $this->request->getGet('order_columna') ?? 'NOMBRE';
+        $order_direccion = $this->request->getGet('order_direccion') ?? 'asc';
 
-        // Definir encabezados para la descarga de CSV
+
+        $query = $this->categoriaModel;
+        
+        if (!empty($nombre)) {
+            $query = $query->like('NOMBRE', $nombre);
+        }
+
+        if (!empty($descripcion)) {
+            $query = $query->like('DESCRIPCION', $descripcion);
+        }
+
+        if ($estado === 'altas') {
+            $query = $query->where('FECHA_BAJA', null);
+        } elseif ($estado === 'bajas') {
+            $query = $query->where('FECHA_BAJA !=', null);
+        }
+
+        $query = $query->orderBy($order_columna, $order_direccion);
+
+        $categorias = $query->findAll();
+
+        if (empty($categorias)) {
+            return "⚠️ No hay datos que coincidan con los filtros.";
+        }
+
         header('Content-Type: text/csv; charset=utf-8');
-        header('Content-Disposition: attachment; filename="categorias.csv"');
+        header('Content-Disposition: attachment; filename="categorias_filtradas.csv"');
 
         $output = fopen('php://output', 'w');
+        fputcsv($output, ['ID', 'Nombre', 'Descripción', 'Fecha de Baja', 'Fecha de Creacion', 'Fecha ultima modificación'], ';');
 
-        // Encabezados de la tabla (ajusta según lo que se muestra en la vista)
-        fputcsv($output, ['ID', 'Nombre', 'Descripción', 'Fecha de Baja', 'Fecha Creación', 'Fecha Ultima Modificación']);
-
-        // Agregar los datos
         foreach ($categorias as $categoria) {
-            fputcsv($output, [
-                $categoria['PK_ID_CATEGORIA'],
-                $categoria['NOMBRE'],
-                $categoria['DESCRIPCION'],
-                $categoria['FECHA_BAJA'],
-                $categoria['created_at'],
-                $categoria['updated_at'],
-            ]);
+            fputcsv($output, [$categoria['PK_ID_CATEGORIA'], $categoria['NOMBRE'], $categoria['DESCRIPCION'],$categoria['FECHA_BAJA'], $categoria['created_at'], $categoria['updated_at']], ';');
         }
 
         fclose($output);
         exit;
     }
+
+
 
 }
