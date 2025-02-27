@@ -378,10 +378,10 @@ License: For each use you must have a valid license purchased only from above li
 															<!--begin::Input group-->
 															<div class="mb-3">
 																<select name="estado" id="estado" class="form-select form-select-solid fw-bolder" onchange="this.form.submit()">
-																	<option value="" disabled selected <?= $estado === null ? 'selected' : '' ?>>Seleccione una opción</option>
-																	<option value="altas">Altas</option>
-																	<option value="bajas">Bajas</option>
-																	<option value="todas">Todas</option>
+																	<option value="" disabled <?= $estado === null ? 'selected' : '' ?>>Seleccione una opción</option>
+																	<option value="altas" <?= $estado === 'altas' ? 'selected' : '' ?>>Altas</option>
+																	<option value="bajas" <?= $estado === 'bajas' ? 'selected' : '' ?>>Bajas</option>
+																	<option value="todas" <?= $estado === 'todas' ? 'selected' : '' ?>>Todas</option>
 																</select>
 																<select class="d-none" name="perPage">
 																	<option value="5" <?= ($perPage == 5) ? 'selected' : '' ?>>5</option>
