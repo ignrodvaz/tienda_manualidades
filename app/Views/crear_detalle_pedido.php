@@ -50,7 +50,7 @@ License: For each use you must have a valid license purchased only from above li
 					<!--begin::Brand-->
 					<div class="aside-logo flex-column-auto" id="kt_aside_logo">
 						<!--begin::Logo-->
-						<a href="home">
+						<a href="../home">
 							<img alt="Logo" src="../../assets/media/logos/logo-1-dark.svg" class="h-25px logo" />
 						</a>
 						<!--end::Logo-->
@@ -80,7 +80,7 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 								</div>
 								<div class="menu-item">
-									<a class="menu-link" href="../../demo1/dist/index.html">
+									<a class="menu-link" href="../home">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -124,7 +124,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php $session = session(); ?>
 											<?php if($session->get('rol') == 'ADMINISTRADOR' || $session->get('rol') == 'MODERADOR'): ?>
 											<div class="menu-item">
-												<a class="menu-link" href="categoria">
+												<a class="menu-link" href="../categoria">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -134,7 +134,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php endif; ?>
 											<?php if($session->get('rol') == 'ADMINISTRADOR'):?>
 											<div class="menu-item">
-												<a class="menu-link" href="cliente">
+												<a class="menu-link" href="../cliente">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -144,7 +144,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php endif; ?>
 											<?php if($session->get(key: 'rol') == 'ADMINISTRADOR' || $session->get('rol') == 'SUPERVISOR'):?>
 											<div class="menu-item">
-												<a class="menu-link active" href="detalle_pedido">
+												<a class="menu-link active" href="../detalle_pedido">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -154,7 +154,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php endif; ?>
 											<?php if($session->get('rol') == 'ADMINISTRADOR'):?>
 											<div class="menu-item">
-												<a class="menu-link" href="log">
+												<a class="menu-link" href="../log">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -164,7 +164,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php endif; ?>
 											<?php if($session->get(key: 'rol') == 'ADMINISTRADOR' || $session->get('rol') == 'SUPERVISOR'):?>
 											<div class="menu-item">
-												<a class="menu-link" href="pedido">
+												<a class="menu-link" href="../pedido">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -174,7 +174,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php endif; ?>
 											<?php if($session->get('rol') == 'ADMINISTRADOR' || $session->get('rol') == 'MODERADOR'): ?>
 											<div class="menu-item">
-												<a class="menu-link" href="producto">
+												<a class="menu-link" href="../producto">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -184,7 +184,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php endif; ?>
 											<?php if($session->get('rol') == 'ADMINISTRADOR'):?>
 											<div class="menu-item">
-												<a class="menu-link" href="rol">
+												<a class="menu-link" href="../rol">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -269,7 +269,7 @@ License: For each use you must have a valid license purchased only from above li
 										<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 											<!--begin::Item-->
 											<li class="breadcrumb-item text-muted">
-												<a href="home" class="text-muted text-hover-primary">Home</a>
+												<a href="../home" class="text-muted text-hover-primary">Home</a>
 											</li>
 											<!--end::Item-->
 											<!--begin::Item-->
@@ -278,7 +278,7 @@ License: For each use you must have a valid license purchased only from above li
 											</li>
 											<!--end::Item-->
 											<!--begin::Item-->
-											<li class="breadcrumb-item text-muted">Tablas</li>
+											<li class="breadcrumb-item text-muted">Secciones</li>
 											<!--end::Item-->
 											<!--begin::Item-->
 											<li class="breadcrumb-item">

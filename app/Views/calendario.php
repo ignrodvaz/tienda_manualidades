@@ -279,15 +279,7 @@ License: For each use you must have a valid license purchased only from above li
 											</li>
 											<!--end::Item-->
 											<!--begin::Item-->
-											<li class="breadcrumb-item text-muted">Tablas</li>
-											<!--end::Item-->
-											<!--begin::Item-->
-											<li class="breadcrumb-item">
-												<span class="bullet bg-gray-200 w-5px h-2px"></span>
-											</li>
-											<!--end::Item-->
-											<!--begin::Item-->
-											<li class="breadcrumb-item text-muted">Categoria</li>
+											<li class="breadcrumb-item text-muted">Calendario</li>
 											<!--end::Item-->
 										</ul>
 									<!--end::Breadcrumb-->
