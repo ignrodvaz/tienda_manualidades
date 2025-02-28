@@ -42,6 +42,8 @@ $routes->post('cliente/save', 'ClienteController::saveCliente'); // Crear CLIENT
 $routes->get('cliente/save/(:num)', 'ClienteController::saveCliente/$1'); // Mostrar formulario para editar CLIENTE (GET)
 $routes->post('cliente/save/(:num)', 'ClienteController::saveCliente/$1'); // Editar CLIENTE (POST)
 $routes->get('cliente/delete/(:num)', 'ClienteController::delete/$1'); //Esta ruta elimina una CLIENTE específica usando su ID.
+$routes->get('cliente/exportar', 'ClienteController::exportar'); //Esta ruta exporta las categorías a un archivo CSV.
+
 
 //DETALLE_PEDIDO
 //Rutas para Detalle_pedido
