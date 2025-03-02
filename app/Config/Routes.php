@@ -54,6 +54,7 @@ $routes->post('detalle_pedido/save', 'DetallePedidoController::saveDetallePedido
 $routes->get('detalle_pedido/save/(:num)', 'DetallePedidoController::saveDetallePedido/$1'); // Mostrar formulario para editar DETALLE_PEDIDO (GET)
 $routes->post('detalle_pedido/save/(:num)', 'DetallePedidoController::saveDetallePedido/$1'); // Editar DETALLE_PEDIDO (POST)
 $routes->get('detalle_pedido/delete/(:num)', 'DetallePedidoController::delete/$1'); //Esta ruta elimina una DETALLE_PEDIDO específica usando su ID.
+$routes->get('detalle_pedido/exportar', 'DetallePedidoController::exportar'); //Esta ruta exporta las categorías a un archivo CSV.
 
 //PEDIDO
 //Rutas para Pedido
