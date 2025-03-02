@@ -76,6 +76,7 @@ $routes->post('producto/save', 'ProductoController::saveProducto'); // Crear PRO
 $routes->get('producto/save/(:num)', 'ProductoController::saveProducto/$1'); // Mostrar formulario para editar PRODUCTO (GET)
 $routes->post('producto/save/(:num)', 'ProductoController::saveProducto/$1'); // Editar PRODUCTO (POST)
 $routes->get('producto/delete/(:num)', 'ProductoController::delete/$1'); //Esta ruta elimina una PRODUCTO específica usando su ID.
+$routes->get('producto/exportar', 'ProductoController::exportar'); //Esta ruta exporta las categorías a un archivo CSV.
 
 //ROL
 //Rutas para Rol

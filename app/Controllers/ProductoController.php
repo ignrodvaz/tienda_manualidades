@@ -7,6 +7,12 @@ use App\Models\CategoriaModel;
 
 class ProductoController extends BaseController
 {
+    protected $productoModel;
+    public function __construct()
+    {
+        helper(['form', 'url']);
+        $this->productoModel = new ProductoModel();
+    }
     public function index()
     {
         $session = session();
@@ -28,8 +34,10 @@ class ProductoController extends BaseController
         $fecha_baja = $this->request->getVar('FECHA_BAJA');
         $fk_id_categoria = $this->request->getVar('FK_ID_CATEGORIA');
         $estado = $this->request->getGet('estado') ?? 'todas';
-        $perPage = $this->request->getVar('perPage') ?: 10;
+        $perPage = in_array($this->request->getGet('perPage'), [5, 10, 15, 20]) ? $this->request->getGet('perPage') : 10;
 
+        $order_columna = trim($this->request->getGet('order_columna') ?? 'NOMBRE');
+        $order_direccion = trim($this->request->getGet('order_direccion') ?? 'asc');
 
 
         $query = $ProductoModel->select('PRODUCTO.*, CATEGORIA.NOMBRE AS CATEGORIA_NOMBRE')->join('CATEGORIA', 'CATEGORIA.PK_ID_CATEGORIA = PRODUCTO.FK_ID_CATEGORIA', 'left');
@@ -60,6 +68,11 @@ class ProductoController extends BaseController
             $query->like('CATEGORIA.NOMBRE', $fk_id_categoria);
         }
 
+        $columnas_validas = ['NOMBRE', 'DESCRIPCION', 'PRECIO', 'STOCK', 'CATEGORIA_NOMBRE'];
+        if(in_array($order_columna, $columnas_validas) && in_array($order_direccion, ['asc', 'desc'])){
+            $query->orderBy($order_columna, $order_direccion);
+        }
+
         // Configuración de la paginación
         $data['productos'] = $query->paginate($perPage); // Obtener categorías paginadas
         $data['pager'] = $ProductoModel->pager; // Pasar el objeto del paginador a la vista
@@ -70,6 +83,8 @@ class ProductoController extends BaseController
         $data['fk_id_categoria'] = $fk_id_categoria;
         $data['estado'] = $estado; // Mantener el estado en la vista
         $data['perPage'] = $perPage; // Mantener el número de resultados por página en la vista
+        $data['order_columna'] = $order_columna; // Mantener la columna de orden en la vista
+        $data['order_direccion'] = $order_direccion; // Mantener la dirección de orden en la vista
 
         return view('listado_producto', $data); // Cargar la vista con los datos
     }
@@ -182,5 +197,70 @@ class ProductoController extends BaseController
             return redirect()->to('/producto')->with('success', 'Categoría dada de alta correctamente.');
         }
         
+    }
+
+    public function exportar()
+    {
+        $name = $this->request->getVar('NOMBRE'); // Obtener el término de búsqueda desde el formulario
+        $descripcion = $this->request->getVar('DESCRIPCION');
+        $precio = $this->request->getVar('PRECIO');
+        $stock = $this->request->getVar('STOCK');
+        $fecha_baja = $this->request->getVar('FECHA_BAJA');
+        $fk_id_categoria = $this->request->getVar('FK_ID_CATEGORIA');
+        $estado = $this->request->getGet('estado') ?? 'todas';
+        $order_columna = trim($this->request->getGet('order_columna') ?? 'NOMBRE');
+        $order_direccion = trim($this->request->getGet('order_direccion') ?? 'asc');
+
+        $ProductoModel = new ProductoModel();
+
+        $query = $ProductoModel->select('PRODUCTO.*, CATEGORIA.NOMBRE AS CATEGORIA_NOMBRE')->join('CATEGORIA', 'CATEGORIA.PK_ID_CATEGORIA = PRODUCTO.FK_ID_CATEGORIA', 'left');
+
+        // Aplicar filtro por estado usando switch
+        switch ($estado) {
+            case 'altas':
+                $query->where('PRODUCTO.FECHA_BAJA', null);
+                break;
+            case 'bajas':
+                $query->where('PRODUCTO.FECHA_BAJA !=', null);
+                break;
+            default:
+                // No se aplica ningún filtro adicional para 'todas'
+                break;
+        }
+
+        // Aplicar filtro si se introduce un nombre
+        if($name){
+            $query->like('PRODUCTO.NOMBRE', $name);
+        }else if($descripcion){
+            $query->like('PRODUCTO.DESCRIPCION', $descripcion);
+        }else if($precio){
+            $query->like('PRODUCTO.PRECIO', $precio);
+        }else if($stock){
+            $query->like('PRODUCTO.STOCK', $stock);
+        }else if($fk_id_categoria){
+            $query->like('CATEGORIA.NOMBRE', $fk_id_categoria);
+        }
+
+        $query = $query->orderBy('PRODUCTO.'.$order_columna, $order_direccion);
+
+        $productos = $query->findAll();
+
+        if(empty($productos)){
+            return "⚠️ No hay datos que coincidan con los filtros.";
+        }
+
+        header('Content-Type: text/csv; charset=utf-8');
+        header('Content-Disposition: attachment; filename="clientes_filtradas.csv"');
+
+        $output = fopen('php://output', 'w');
+
+        fputcsv($output, ['Nombre', 'Descripción', 'Precio', 'Stock', 'Fecha de Baja', 'Nombre Categoria', 'Fecha de Creación', 'Fecha de Actualización'], ';');
+
+        foreach ($productos as $producto) {
+            fputcsv($output, [$producto['NOMBRE'], $producto['DESCRIPCION'], $producto['PRECIO'], $producto['STOCK'], $producto['FECHA_BAJA'], $producto['CATEGORIA_NOMBRE'], $producto['created_at'], $producto['updated_at']], ';');
+        }
+
+        fclose($output);
+        exit();
     }
 }

@@ -384,12 +384,19 @@ License: For each use you must have a valid license purchased only from above li
 															<!--begin::Input group-->
 															<div class="mb-3">
 																<select name="estado" id="estado" class="form-select form-select-solid fw-bolder" onchange="this.form.submit()">
-																	<option value="" disabled selected <?= $estado === null ? 'selected' : '' ?>  >Seleccione una opción</option>
-																	<option value="altas" >Altas</option>
-																	<option value="bajas" >Bajas</option>
-																	<option value="todas" >Todas</option>
+																	<option value="" disabled <?= $estado === null ? 'selected' : '' ?>>Seleccione una opción</option>
+																	<option value="altas" <?= $estado === 'altas' ? 'selected' : '' ?>>Altas</option>
+																	<option value="bajas" <?= $estado === 'bajas' ? 'selected' : '' ?>>Bajas</option>
+																	<option value="todas" <?= $estado === 'todas' ? 'selected' : '' ?>>Todas</option>
 																</select>
-																<input type="hidden" name="perPage" id="hiddenPerPage">
+																<select class="d-none" name="perPage">
+																	<option value="5" <?= ($perPage == 5) ? 'selected' : '' ?>>5</option>
+																	<option value="10" <?= ($perPage == 10) ? 'selected' : '' ?>>10</option>
+																	<option value="20" <?= ($perPage == 20) ? 'selected' : '' ?>>20</option>
+																</select>
+																<input type="hidden" name="order_columna" value="<?= esc($order_columna) ?>">
+    															<input type="hidden" name="order_direccion" value="<?= esc($order_direccion) ?>">
+																<input type="hidden" name="perPage" id="hiddenPerPage" value="<?= esc($perPage) ?>">
 															</div>
 															<!--end::Input group-->
 															<div class="d-flex justify-content-end">
@@ -404,7 +411,14 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Menu 1-->
 												<!--end::Filter-->
 												<!--begin::Export-->
-												<button type="button" class="btn btn-light-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_export_users">
+												<a href="<?php echo base_url('producto/exportar?' . http_build_query(array_merge($_GET, [
+													'NOMBRE' => $name,
+													'DESCRIPCION' => $descripcion,
+													'PRECIO' => $precio,
+													'STOCK' => $stock,
+													'CATEGORIA_NOMBRE' => $fk_id_categoria,
+													'order_columna' => $order_columna,
+													'order_direccion' => $order_direccion]))); ?>" class="btn btn-light-primary me-3">
 												<!--begin::Svg Icon | path: icons/duotune/arrows/arr078.svg-->
 												<span class="svg-icon svg-icon-2">
 													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -413,7 +427,7 @@ License: For each use you must have a valid license purchased only from above li
 														<path d="M18.75 8.25H17.75C17.1977 8.25 16.75 8.69772 16.75 9.25C16.75 9.80228 17.1977 10.25 17.75 10.25C18.3023 10.25 18.75 10.6977 18.75 11.25V18.25C18.75 18.8023 18.3023 19.25 17.75 19.25H5.75C5.19772 19.25 4.75 18.8023 4.75 18.25V11.25C4.75 10.6977 5.19771 10.25 5.75 10.25C6.30229 10.25 6.75 9.80228 6.75 9.25C6.75 8.69772 6.30229 8.25 5.75 8.25H4.75C3.64543 8.25 2.75 9.14543 2.75 10.25V19.25C2.75 20.3546 3.64543 21.25 4.75 21.25H18.75C19.8546 21.25 20.75 20.3546 20.75 19.25V10.25C20.75 9.14543 19.8546 8.25 18.75 8.25Z" fill="#C4C4C4" />
 													</svg>
 												</span>
-												<!--end::Svg Icon-->Export</button>
+												<!--end::Svg Icon-->Exportar</a>
 												<!--end::Export-->
 												<!--begin::Add user-->
 												<a href="<?=base_url('producto/save')?>" type="button" class="btn btn-primary">
@@ -510,11 +524,21 @@ License: For each use you must have a valid license purchased only from above li
 										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
 											<thead>
 												<tr class="text-start text-muted fw-bolder fs-7 gs-0">
-                                                    <th class="text-center">NOMBRE</th>
-                                                    <th class="text-center">DESCRIPCION</th>
-                                                    <th class="text-center">PRECIO</th>
-                                                    <th class="text-center">STOCK</th>
-                                                    <th class="text-center">CATEGORIA</th>
+                                                    <th class="text-center">
+														<a href="<?= current_url() . '?' . http_build_query(array_merge($_GET, ['order_columna' => 'NOMBRE', 'order_direccion' => ($order_columna == 'NOMBRE' && $order_direccion == 'asc') ? 'desc' : 'asc'], ['perPage' => $perPage])) ?>">Nombre <?= ($order_columna == 'NOMBRE') ? ($order_direccion == 'asc' ? '↑' : '↓') : '' ?></a>
+													</th>
+                                                    <th class="text-center">
+														<a href="<?= current_url() . '?' . http_build_query(array_merge($_GET, ['order_columna' => 'DESCRIPCION', 'order_direccion' => ($order_columna == 'DESCRIPCION' && $order_direccion == 'asc') ? 'desc' : 'asc'], ['perPage' => $perPage])) ?>">Descripción <?= ($order_columna == 'DESCRIPCION') ? ($order_direccion == 'asc' ? '↑' : '↓') : '' ?></a>
+													</th>
+                                                    <th class="text-center">
+														<a href="<?= current_url() . '?' . http_build_query(array_merge($_GET, ['order_columna' => 'PRECIO', 'order_direccion' => ($order_columna == 'PRECIO' && $order_direccion == 'asc') ? 'desc' : 'asc'], ['perPage' => $perPage])) ?>">Precio <?= ($order_columna == 'PRECIO') ? ($order_direccion == 'asc' ? '↑' : '↓') : '' ?></a>
+													</th>
+                                                    <th class="text-center">
+														<a href="<?= current_url() . '?' . http_build_query(array_merge($_GET, ['order_columna' => 'STOCK', 'order_direccion' => ($order_columna == 'STOCK' && $order_direccion == 'asc') ? 'desc' : 'asc'], ['perPage' => $perPage])) ?>">Stock <?= ($order_columna == 'STOCK') ? ($order_direccion == 'asc' ? '↑' : '↓') : '' ?></a>
+													</th>
+                                                    <th class="text-center">
+														<a href="<?= current_url() . '?' . http_build_query(array_merge($_GET, ['order_columna' => 'CATEGORIA_NOMBRE', 'order_direccion' => ($order_columna == 'CATEGORIA_NOMBRE' && $order_direccion == 'asc') ? 'desc' : 'asc'], ['perPage' => $perPage])) ?>">Nombre categoria <?= ($order_columna == 'CATEGORIA_NOMBRE') ? ($order_direccion == 'asc' ? '↑' : '↓') : '' ?></a>
+													</th>
                                                     <th class="text-center">ACCIONES</th>
 												</tr>
 											</thead>

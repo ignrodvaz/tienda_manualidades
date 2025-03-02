@@ -114,3 +114,215 @@ in APPPATH/Views/listado_pedido.php on line 544.
  9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 19:29:24 --> ErrorException: Undefined variable $order_columna
+[Method: GET, Route: producto]
+in APPPATH/Views/listado_producto.php on line 397.
+ 1 APPPATH/Views/listado_producto.php(397): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $order_columna', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_producto.php', 397)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_producto.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_producto', [], true)
+ 5 APPPATH/Controllers/ProductoController.php(87): view('listado_producto', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 19:30:56 --> ErrorException: Undefined array key "updated-at"
+[Method: GET, Route: producto/exportar]
+in APPPATH/Controllers/ProductoController.php on line 260.
+ 1 APPPATH/Controllers/ProductoController.php(260): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "updated-at"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/ProductoController.php', 260)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->exportar()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-02 19:36:58 --> mysqli_sql_exception: Unknown column 'PRODUCTO.CATEGORIA_NOMBRE' in 'order clause' in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT `PRODUCT...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `PRODUCT...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `PRODUCT...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `PRODUCT...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(675): CodeIgniter\Model->doFindAll(5, 0)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(5, 0)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/ProductoController.php(77): CodeIgniter\BaseModel->paginate(5)
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-03-02 19:36:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'PRODUCTO.CATEGORIA_NOMBRE' in 'order clause'
+[Method: GET, Route: producto]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `PRODUCTO`.*, `CATEGORIA`.`NOMBRE` AS `CATEGORIA_NOMBRE`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+ORDER BY `PRODUCTO`.`CATEGORIA_NOMBRE` ASC
+ LIMIT 5', [], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(5, 0)
+ 4 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(5, 0)
+ 5 APPPATH/Controllers/ProductoController.php(77): CodeIgniter\BaseModel->paginate(5)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 19:36:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'PRODUCTO.CATEGORIA_NOMBRE' in 'order clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `PRODUCTO`.*, `CATEGORIA`.`NOMBRE` AS `CATEGORIA_NOMBRE`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+ORDER BY `PRODUCTO`.`CATEGORIA_NOMBRE` ASC
+ LIMIT 5')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `PRODUCTO`.*, `CATEGORIA`.`NOMBRE` AS `CATEGORIA_NOMBRE`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+ORDER BY `PRODUCTO`.`CATEGORIA_NOMBRE` ASC
+ LIMIT 5')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `PRODUCTO`.*, `CATEGORIA`.`NOMBRE` AS `CATEGORIA_NOMBRE`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+ORDER BY `PRODUCTO`.`CATEGORIA_NOMBRE` ASC
+ LIMIT 5', [], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(5, 0)
+ 6 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(5, 0)
+ 7 APPPATH/Controllers/ProductoController.php(77): CodeIgniter\BaseModel->paginate(5)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 19:36:58 --> [Caused by] mysqli_sql_exception: Unknown column 'PRODUCTO.CATEGORIA_NOMBRE' in 'order clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT `PRODUCTO`.*, `CATEGORIA`.`NOMBRE` AS `CATEGORIA_NOMBRE`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+ORDER BY `PRODUCTO`.`CATEGORIA_NOMBRE` ASC
+ LIMIT 5', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `PRODUCTO`.*, `CATEGORIA`.`NOMBRE` AS `CATEGORIA_NOMBRE`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+ORDER BY `PRODUCTO`.`CATEGORIA_NOMBRE` ASC
+ LIMIT 5')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `PRODUCTO`.*, `CATEGORIA`.`NOMBRE` AS `CATEGORIA_NOMBRE`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+ORDER BY `PRODUCTO`.`CATEGORIA_NOMBRE` ASC
+ LIMIT 5')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `PRODUCTO`.*, `CATEGORIA`.`NOMBRE` AS `CATEGORIA_NOMBRE`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+ORDER BY `PRODUCTO`.`CATEGORIA_NOMBRE` ASC
+ LIMIT 5', [], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(5, 0)
+ 7 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(5, 0)
+ 8 APPPATH/Controllers/ProductoController.php(77): CodeIgniter\BaseModel->paginate(5)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-02 19:38:58 --> mysqli_sql_exception: Unknown column 'PRODUCTO.CATEGORIA_NOMBRE' in 'order clause' in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT `PRODUCT...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `PRODUCT...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `PRODUCT...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `PRODUCT...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(675): CodeIgniter\Model->doFindAll(5, 0)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(5, 0)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/ProductoController.php(77): CodeIgniter\BaseModel->paginate(5)
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-03-02 19:38:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'PRODUCTO.CATEGORIA_NOMBRE' in 'order clause'
+[Method: GET, Route: producto]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `PRODUCTO`.*, `CATEGORIA`.`NOMBRE` AS `CATEGORIA_NOMBRE`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+ORDER BY `PRODUCTO`.`CATEGORIA_NOMBRE` ASC
+ LIMIT 5', [], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(5, 0)
+ 4 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(5, 0)
+ 5 APPPATH/Controllers/ProductoController.php(77): CodeIgniter\BaseModel->paginate(5)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 19:38:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'PRODUCTO.CATEGORIA_NOMBRE' in 'order clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `PRODUCTO`.*, `CATEGORIA`.`NOMBRE` AS `CATEGORIA_NOMBRE`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+ORDER BY `PRODUCTO`.`CATEGORIA_NOMBRE` ASC
+ LIMIT 5')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `PRODUCTO`.*, `CATEGORIA`.`NOMBRE` AS `CATEGORIA_NOMBRE`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+ORDER BY `PRODUCTO`.`CATEGORIA_NOMBRE` ASC
+ LIMIT 5')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `PRODUCTO`.*, `CATEGORIA`.`NOMBRE` AS `CATEGORIA_NOMBRE`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+ORDER BY `PRODUCTO`.`CATEGORIA_NOMBRE` ASC
+ LIMIT 5', [], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(5, 0)
+ 6 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(5, 0)
+ 7 APPPATH/Controllers/ProductoController.php(77): CodeIgniter\BaseModel->paginate(5)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 19:38:58 --> [Caused by] mysqli_sql_exception: Unknown column 'PRODUCTO.CATEGORIA_NOMBRE' in 'order clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('SELECT `PRODUCTO`.*, `CATEGORIA`.`NOMBRE` AS `CATEGORIA_NOMBRE`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+ORDER BY `PRODUCTO`.`CATEGORIA_NOMBRE` ASC
+ LIMIT 5', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `PRODUCTO`.*, `CATEGORIA`.`NOMBRE` AS `CATEGORIA_NOMBRE`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+ORDER BY `PRODUCTO`.`CATEGORIA_NOMBRE` ASC
+ LIMIT 5')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `PRODUCTO`.*, `CATEGORIA`.`NOMBRE` AS `CATEGORIA_NOMBRE`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+ORDER BY `PRODUCTO`.`CATEGORIA_NOMBRE` ASC
+ LIMIT 5')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `PRODUCTO`.*, `CATEGORIA`.`NOMBRE` AS `CATEGORIA_NOMBRE`
+FROM `PRODUCTO`
+LEFT JOIN `CATEGORIA` ON `CATEGORIA`.`PK_ID_CATEGORIA` = `PRODUCTO`.`FK_ID_CATEGORIA`
+ORDER BY `PRODUCTO`.`CATEGORIA_NOMBRE` ASC
+ LIMIT 5', [], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(675): CodeIgniter\Model->doFindAll(5, 0)
+ 7 SYSTEMPATH/BaseModel.php(1287): CodeIgniter\BaseModel->findAll(5, 0)
+ 8 APPPATH/Controllers/ProductoController.php(77): CodeIgniter\BaseModel->paginate(5)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProductoController->index()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductoController))
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
