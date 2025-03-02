@@ -65,6 +65,7 @@ $routes->post('pedido/save', 'PedidoController::savePedido'); // Crear PEDIDO (P
 $routes->get('pedido/save/(:num)', 'PedidoController::savePedido/$1'); // Mostrar formulario para editar PEDIDO (GET)
 $routes->post('pedido/save/(:num)', 'PedidoController::savePedido/$1'); // Editar PEDIDO (POST)
 $routes->get('pedido/delete/(:num)', 'PedidoController::delete/$1'); //Esta ruta elimina una PEDIDO específica usando su ID.
+$routes->get('pedido/exportar', 'PedidoController::exportar'); //Esta ruta exporta las categorías a un archivo CSV.
 
 //PRODUCTO
 //Rutas para Producto

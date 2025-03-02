@@ -1,0 +1,116 @@
+CRITICAL - 2025-03-02 18:42:43 --> ErrorException: Undefined array key "FECHA_CREACION"
+[Method: GET, Route: pedido/exportar]
+in APPPATH/Controllers/PedidoController.php on line 250.
+ 1 APPPATH/Controllers/PedidoController.php(250): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "FECHA_CREACION"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/PedidoController.php', 250)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->exportar()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 18:48:42 --> CodeIgniter\Exceptions\ModelException: You cannot use "getCompiledSelect()" in "App\Models\PedidoModel". This is a method of the Query Builder Class.
+[Method: GET, Route: pedido/exportar]
+in SYSTEMPATH/Model.php on line 946.
+ 1 SYSTEMPATH/Model.php(946): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\PedidoModel', 'getCompiledSelect()')
+ 2 SYSTEMPATH/Model.php(926): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH/Controllers/PedidoController.php(237): CodeIgniter\Model->__call('getCompiledSelect', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->exportar()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 18:49:37 --> CodeIgniter\Exceptions\ModelException: You cannot use "getCompiledSelect()" in "App\Models\PedidoModel". This is a method of the Query Builder Class.
+[Method: GET, Route: pedido/exportar]
+in SYSTEMPATH/Model.php on line 946.
+ 1 SYSTEMPATH/Model.php(946): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\PedidoModel', 'getCompiledSelect()')
+ 2 SYSTEMPATH/Model.php(926): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH/Controllers/PedidoController.php(237): CodeIgniter\Model->__call('getCompiledSelect', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->exportar()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 18:49:41 --> CodeIgniter\Exceptions\ModelException: You cannot use "getCompiledSelect()" in "App\Models\PedidoModel". This is a method of the Query Builder Class.
+[Method: GET, Route: pedido/exportar]
+in SYSTEMPATH/Model.php on line 946.
+ 1 SYSTEMPATH/Model.php(946): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\PedidoModel', 'getCompiledSelect()')
+ 2 SYSTEMPATH/Model.php(926): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH/Controllers/PedidoController.php(237): CodeIgniter\Model->__call('getCompiledSelect', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->exportar()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 18:59:20 --> ErrorException: Undefined array key "CLIENTE_NOMBRE"
+[Method: GET, Route: pedido]
+in APPPATH/Views/listado_pedido.php on line 544.
+ 1 APPPATH/Views/listado_pedido.php(544): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "CLIENTE_NOMBRE"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php', 544)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(100): view('listado_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 18:59:46 --> ErrorException: Undefined array key "CLIENTE_NOMBRE"
+[Method: GET, Route: pedido]
+in APPPATH/Views/listado_pedido.php on line 544.
+ 1 APPPATH/Views/listado_pedido.php(544): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "CLIENTE_NOMBRE"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php', 544)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(100): view('listado_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 19:00:28 --> ErrorException: Undefined array key "CLIENTE_NOMBRE"
+[Method: GET, Route: pedido]
+in APPPATH/Views/listado_pedido.php on line 544.
+ 1 APPPATH/Views/listado_pedido.php(544): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "CLIENTE_NOMBRE"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php', 544)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(100): view('listado_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 19:00:30 --> ErrorException: Undefined array key "CLIENTE_NOMBRE"
+[Method: GET, Route: pedido]
+in APPPATH/Views/listado_pedido.php on line 544.
+ 1 APPPATH/Views/listado_pedido.php(544): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "CLIENTE_NOMBRE"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php', 544)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(100): view('listado_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-02 19:02:15 --> ErrorException: Undefined array key "CLIENTE_NOMBRE"
+[Method: GET, Route: pedido]
+in APPPATH/Views/listado_pedido.php on line 544.
+ 1 APPPATH/Views/listado_pedido.php(544): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "CLIENTE_NOMBRE"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php', 544)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_pedido.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_pedido', [], true)
+ 5 APPPATH/Controllers/PedidoController.php(101): view('listado_pedido', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
