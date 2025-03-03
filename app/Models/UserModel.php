@@ -12,7 +12,7 @@ class UserModel extends Model
 
     protected $primaryKey = 'PK_ID_CLIENTE';
 
-    protected $allowedFields = ['NOMBRE', 'EMAIL', 'CONTRASENA', 'TELEFONO', 'DIRECCION', 'FECHA_REGISTRO', 'FECHA_BAJA', 'FK_ID_ROL'];
+    protected $allowedFields = ['NOMBRE', 'EMAIL', 'CONTRASENA', 'google_id', 'TELEFONO', 'DIRECCION', 'FECHA_REGISTRO', 'FECHA_BAJA', 'FK_ID_ROL'];
 
     public function findByEmail(string $email){
         return $this->where('EMAIL', $email)->first();

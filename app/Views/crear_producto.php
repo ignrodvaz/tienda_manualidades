@@ -50,7 +50,7 @@ License: For each use you must have a valid license purchased only from above li
 					<!--begin::Brand-->
 					<div class="aside-logo flex-column-auto" id="kt_aside_logo">
 						<!--begin::Logo-->
-						<a href="../home">
+						<a href="<?= base_url('../home')?>">
 							<img alt="Logo" src="../../assets/media/logos/Logo Lpt.png" class="h-100px logo" />
 						</a>
 						<!--end::Logo-->
@@ -80,7 +80,7 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 								</div>
 								<div class="menu-item">
-									<a class="menu-link" href="../home">
+									<a class="menu-link" href="<?= base_url('../home')?>">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -124,7 +124,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php $session = session(); ?>
 											<?php if($session->get('rol') == 'ADMINISTRADOR' || $session->get('rol') == 'MODERADOR'): ?>
 											<div class="menu-item">
-												<a class="menu-link" href="../categoria">
+												<a class="menu-link active" href="<?= base_url('../categoria')?>">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -134,7 +134,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php endif; ?>
 											<?php if($session->get('rol') == 'ADMINISTRADOR'):?>
 											<div class="menu-item">
-												<a class="menu-link" href="../cliente">
+												<a class="menu-link" href="<?= base_url('../cliente')?>">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -144,7 +144,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php endif; ?>
 											<?php if($session->get(key: 'rol') == 'ADMINISTRADOR' || $session->get('rol') == 'SUPERVISOR'):?>
 											<div class="menu-item">
-												<a class="menu-link" href="../detalle_pedido">
+												<a class="menu-link" href="<?= base_url('../detalle_pedido')?>">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -154,7 +154,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php endif; ?>
 											<?php if($session->get(key: 'rol') == 'ADMINISTRADOR' || $session->get('rol') == 'SUPERVISOR'):?>
 											<div class="menu-item">
-												<a class="menu-link" href="../pedido">
+												<a class="menu-link" href="<?= base_url('../pedido')?>">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -164,7 +164,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php endif; ?>
 											<?php if($session->get('rol') == 'ADMINISTRADOR' || $session->get('rol') == 'MODERADOR'): ?>
 											<div class="menu-item">
-												<a class="menu-link active" href="../producto">
+												<a class="menu-link" href="<?= base_url('../producto')?>">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -174,7 +174,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php endif; ?>
 											<?php if($session->get('rol') == 'ADMINISTRADOR'):?>
 											<div class="menu-item">
-												<a class="menu-link" href="../rol">
+												<a class="menu-link" href="<?= base_url('../rol')?>">
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
@@ -192,7 +192,7 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 								</div>
 								<div class="menu-item">
-									<a class="menu-link" href="../calendario">
+									<a class="menu-link" href="<?=base_url('../calendario')?>">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotune/general/gen014.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -259,7 +259,7 @@ License: For each use you must have a valid license purchased only from above li
 										<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 											<!--begin::Item-->
 											<li class="breadcrumb-item text-muted">
-												<a href="../home" class="text-muted text-hover-primary">Home</a>
+												<a href="<?= base_url('../home')?>" class="text-muted text-hover-primary">Home</a>
 											</li>
 											<!--end::Item-->
 											<!--begin::Item-->

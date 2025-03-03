@@ -129,6 +129,10 @@ License: For each use you must have a valid license purchased only from above li
 							</div>
 							<!--end::Actions-->
 						</form>
+						<a href="<?= base_url('google-auth') ?>" class="btn btn-danger w-100 mb-3">
+    						<i class="fab fa-google"></i> Iniciar sesión con Google
+						</a>
+
                         <script>
                             document.getElementById('submitButton').addEventListener('click', function() {
                                 this.disabled = true;

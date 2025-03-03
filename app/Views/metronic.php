@@ -239,9 +239,10 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="btn btn-custom btn-primary w-100">
 							<?php if (session()->get('isLoggedIn')): ?>
 								Nombre: <?= esc(session()->get('name')) ?> <br>
-								Rol: <?= esc(session()->get('rol')) ?>
+								Rol: <?= esc(session()->get('rol') ?? 'USUARIO') ?>
 							<?php else: ?>
-								No hay usuario logueado.
+								Nombre: <?= esc(session()->get('user_name')) ?> <br>
+								Rol: <?= esc(session()->get('rol') ?? 'USUARIO') ?>
 							<?php endif; ?>
 						</div>
 					</div>

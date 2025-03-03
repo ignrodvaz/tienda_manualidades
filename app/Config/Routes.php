@@ -98,3 +98,7 @@ $routes->post('eventos/eliminar', 'EventoController::eliminarEvento');
 
 //ACCESO RESTRINGIDO
 $routes->get('acceso_restringido', 'acceso_restringidoController::index'); //Esta ruta muestra el listado de ACCESO_RESTRINGIDO.
+
+
+$routes->get('google-auth', 'GoogleAuth::login');
+$routes->get('google-callback', 'GoogleAuth::callback');
