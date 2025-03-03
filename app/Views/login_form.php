@@ -39,19 +39,32 @@ License: For each use you must have a valid license purchased only from above li
 		<!--begin::Main-->
 		<div class="d-flex flex-column flex-root">
 			<!--begin::Authentication - Sign-in -->
-			<div class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed" style="background-image: url(assets/media/illustrations/sketchy-1/14.png)">
+			<div class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed">
 				<!--begin::Content-->
 				<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
 					<!--begin::Logo-->
-					<a href="../../demo1/dist/index.html" class="mb-12">
-						<img alt="Logo" src="assets/media/logos/logo-1.svg" class="h-40px" />
-					</a>
+					<img alt="Logo" src="../assets/media/logos/Logo Lpt.png" class="h-250px logo" />
 					<!--end::Logo-->
 					<!--begin::Wrapper-->
 					<div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
 						<!--begin::Form-->
 						<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="<?= base_url('login/authenticate') ?>" method="post">
 							<!--begin::Heading-->
+							<?php if (session()->getFlashdata('error')): ?>
+								<div class="alert alert-danger">
+									<?= session()->getFlashdata('error') ?>
+								</div>
+							<?php endif; ?>
+
+							<?php if (isset($validation) && $validation->getErrors()): ?>
+								<div class="alert alert-danger">
+									<ul>
+										<?php foreach ($validation->getErrors() as $error): ?>
+											<li><?= esc($error) ?></li>
+										<?php endforeach; ?>
+									</ul>
+								</div>
+							<?php endif; ?>
 							<div class="text-center mb-10">
 								<!--begin::Title-->
 								<h1 class="text-dark mb-3">Iniciar sesión en Metronic</h1>

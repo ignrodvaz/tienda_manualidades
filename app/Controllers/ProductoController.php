@@ -250,7 +250,7 @@ class ProductoController extends BaseController
         }
 
         header('Content-Type: text/csv; charset=utf-8');
-        header('Content-Disposition: attachment; filename="clientes_filtradas.csv"');
+        header('Content-Disposition: attachment; filename="producto_filtradas.csv"');
 
         $output = fopen('php://output', 'w');
 

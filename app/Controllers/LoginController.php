@@ -19,14 +19,24 @@ class LoginController extends Controller
         helper(['form', 'url']); // Carga los helpers necesarios para trabajar con formularios y URLs.
         $session = session(); // Inicia una sesión para el usuario.
 
-        // Configuración de las reglas de validación del formulario.
+        // Configuración de las reglas de validación del formulario con mensajes personalizados.
         $rules = [
             'email' => 'required|valid_email', // El correo es obligatorio y debe ser válido.
             'password' => 'required', // La contraseña es obligatoria.
         ];
 
+        $errors = [
+            'email' => [
+                'required' => 'El correo electrónico es obligatorio.',
+                'valid_email' => 'Por favor ingresa un correo electrónico válido.',
+            ],
+            'password' => [
+                'required' => 'La contraseña es obligatoria.',
+            ],
+        ];
+
         // Si la validación falla, volvemos a mostrar el formulario con los errores.
-        if (!$this->validate($rules)) {
+        if (!$this->validate($rules, $errors)) {
             return view('login_form', [
                 'validation' => $this->validator, // Pasamos los errores de validación a la vista.
             ]);
@@ -58,6 +68,7 @@ class LoginController extends Controller
         // Si las credenciales son incorrectas, mostramos un mensaje de error.
         return redirect()->to('/login')->with('error', 'Correo o contraseña incorrectos.');
     }
+
 
     public function logout()
     {

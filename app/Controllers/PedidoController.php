@@ -250,7 +250,7 @@ class PedidoController extends BaseController
         }
 
         header('Content-Type: text/csv; charset=utf-8');
-        header('Content-Disposition: attachment; filename="clientes_filtradas.csv"');
+        header('Content-Disposition: attachment; filename="Pedido_filtradas.csv"');
 
         $output = fopen('php://output', 'w');
         fputcsv($output, ['Fecha Pedido', 'Direccion', 'Total Pedido', 'Estado', 'Nombre Cliente', 'Fecha Baja', 'Fecha Creación', 'Fecha Actualización'], ';');

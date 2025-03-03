@@ -52,7 +52,7 @@ License: For each use you must have a valid license purchased only from above li
 					<div class="aside-logo flex-column-auto" id="kt_aside_logo">
 						<!--begin::Logo-->
 						<a href="home">
-							<img alt="Logo" src="../assets/media/logos/logo-1-dark.svg" class="h-25px logo" />
+							<img alt="Logo" src="../assets/media/logos/Logo Lpt.png" class="h-100px logo" />
 						</a>
 						<!--end::Logo-->
 						<!--begin::Aside toggler-->
@@ -150,16 +150,6 @@ License: For each use you must have a valid license purchased only from above li
 															<span class="bullet bullet-dot"></span>
 														</span>
 														<span class="menu-title">Detalle Pedido</span>
-													</a>
-												</div>
-												<?php endif; ?>
-												<?php if($session->get('rol') == 'ADMINISTRADOR'):?>
-												<div class="menu-item">
-													<a class="menu-link" href="log">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Log</span>
 													</a>
 												</div>
 												<?php endif; ?>
