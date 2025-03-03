@@ -3,3 +3,6 @@
 
 #Ignora la configuración de Google
 app/Config/Google.php
+
+
+writable/session/
