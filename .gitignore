@@ -1,0 +1,5 @@
+#Ignora la carpeta Vendor
+/vendor/
+
+#Ignora la configuración de Google
+app/Config/Google.php
