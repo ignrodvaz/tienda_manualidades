@@ -65,8 +65,10 @@ class LoginController extends Controller
                 'created_at' => $user['created_at'], // Fecha de registro del usuario.
             ]);
 
+            // Guardar mensaje en una cookie
+            setcookie('login_message', 'Inicio de sesión exitoso.', time() + 5, "/");
             // Redirigimos a la página de inicio con un mensaje de éxito.
-            return redirect()->to('/')->with('success', 'Inicio de sesión exitoso.');
+            return redirect()->to('/');
         }
 
         // Si las credenciales son incorrectas, mostramos un mensaje de error.
@@ -76,8 +78,10 @@ class LoginController extends Controller
 
     public function logout()
     {
-        $session = session();
-        $session->destroy();
-        return redirect()->to('/login')->with('success', 'Cierre de sesión exitoso.');
+        setcookie('logout_message', 'Cierre de sesión exitoso.', time() + 5, "/"); // Cookie expira en 5 segundos
+        session()->destroy();
+        return redirect()->to('/login');
     }
+
+
 }

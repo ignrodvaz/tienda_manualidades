@@ -50,11 +50,28 @@ License: For each use you must have a valid license purchased only from above li
 						<!--begin::Form-->
 						<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="<?= base_url('login/authenticate') ?>" method="post">
 							<!--begin::Heading-->
-							<?php if (session()->getFlashdata('error')): ?>
-								<div class="alert alert-danger">
-									<?= session()->getFlashdata('error') ?>
+							<?php if (isset($_COOKIE['logout_message'])): ?>
+								<div id="logout-alert" class="alert alert-success">
+									<?= $_COOKIE['logout_message'] ?>
 								</div>
+								<?php setcookie('logout_message', '', time() - 3600, "/"); // Eliminar la cookie ?>
 							<?php endif; ?>
+
+							<script>
+								document.addEventListener("DOMContentLoaded", function() {
+									setTimeout(function() {
+										var alertBox = document.getElementById('logout-alert');
+										if (alertBox) {
+											alertBox.style.transition = "opacity 1s ease-out";
+											alertBox.style.opacity = "0";
+
+											setTimeout(function() {
+												alertBox.remove(); // Elimina el elemento del DOM
+											}, 1000); // Espera 1 segundo más después de la animación
+										}
+									}, 4000); // Espera 4 segundos antes de iniciar el desvanecimiento
+								});
+							</script>
 
 							<?php if (isset($validation) && $validation->getErrors()): ?>
 								<div class="alert alert-danger">

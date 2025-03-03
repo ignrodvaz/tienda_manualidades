@@ -54,6 +54,21 @@ License: For each use you must have a valid license purchased only from above li
 						<a href="home">
 							<img alt="Logo" src="../assets/media/logos/Logo Lpt.png" class="h-100px logo" />
 						</a>
+						<?php if (isset($_COOKIE['login_message'])): ?>
+							<script>
+								document.addEventListener("DOMContentLoaded", function() {
+									Swal.fire({
+										title: "¡Bienvenido!",
+										text: "<?= $_COOKIE['login_message'] ?>",
+										icon: "success",
+										timer: 3000, // Se cierra automáticamente en 3 segundos
+										showConfirmButton: false
+									});
+								});
+							</script>
+							<?php setcookie('login_message', '', time() - 3600, "/"); // Eliminar la cookie ?>
+						<?php endif; ?>
+
 						<!--end::Logo-->
 						<!--begin::Aside toggler-->
 						<div id="kt_aside_toggle" class="btn btn-icon w-auto px-0 btn-active-color-primary aside-toggle" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="aside-minimize">
