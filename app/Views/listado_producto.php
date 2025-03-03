@@ -284,13 +284,6 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								</div>
 								<!--end::Page title-->
-								<!--begin::Actions-->
-								<div class="d-flex align-items-center py-1">
-									<!--begin::Button-->
-									<a href="login" class="btn btn-sm btn-primary">Iniciar sesión</a>
-									<!--end::Button-->
-								</div>
-								<!--end::Actions-->
 							</div>
 							<!--end::Container-->
 						</div>
