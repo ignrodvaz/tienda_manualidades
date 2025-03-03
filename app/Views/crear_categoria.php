@@ -13,7 +13,7 @@ License: For each use you must have a valid license purchased only from above li
 <html lang="en">
 	<!--begin::Head-->
 	<head><base href="">
-		<title>Metronic - the world's #1 selling Bootstrap Admin Theme Ecosystem for HTML, Vue, React, Angular &amp; Laravel by Keenthemes</title>
+		<title>Libro Papel y Tijera</title>
 		<meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -404,12 +404,12 @@ License: For each use you must have a valid license purchased only from above li
 													<div class="d-flex flex-center flex-column py-5">
 														<div class="mb-3">
 															<!--begin::Name-->
-															<label for="nombre">Nombre:</label>
+															<label for="nombre">Nombre <span class="text-danger">*</span></label>
 															<input type="text" class="form-control form-control-solid mb-3 mb-lg-0" id="nombre" name="nombre" placeholder="Nombre" value="<?= esc($categoria['NOMBRE'] ?? set_value('nombre')) ?>">
 															<!--end::Name-->
 														</div>
 														<div class="mb-3">
-															<Label for="descripcion">Descripción:</Label>
+															<Label for="descripcion">Descripción <span class="text-danger">*</span></Label>
 															<input class="form-control form-control-solid mb-3 mb-lg-0" id="descripcion" name="descripcion" placeholder="Descripción" value="<?= esc($categoria['DESCRIPCION'] ?? set_value('descripcion')) ?>"></input>
 														</div>
 													</div>

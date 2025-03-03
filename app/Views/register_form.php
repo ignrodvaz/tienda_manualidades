@@ -13,7 +13,7 @@ License: For each use you must have a valid license purchased only from above li
 <html lang="en">
 	<!--begin::Head-->
 	<head><base href="tienda_manualidades">
-		<title>Metronic - the world's #1 selling Bootstrap Admin Theme Ecosystem for HTML, Vue, React, Angular &amp; Laravel by Keenthemes</title>
+		<title>Libro Papel y Tijera</title>
 		<meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -82,13 +82,13 @@ License: For each use you must have a valid license purchased only from above li
 							<div class="row fv-row mb-7">
 								<!--begin::Col-->
 								<div class="col-xl-6">
-									<label class="form-label fw-bolder text-dark fs-6">Nombre</label>
+									<label class="form-label fw-bolder text-dark fs-6">Nombre <span class="text-danger">*</span></label>
 									<input class="form-control form-control-lg form-control-solid" type="text" placeholder="Nombre" name="nombre" id="nombre" autocomplete="off" />
 								</div>
 								<!--end::Col-->
 								<!--begin::Col-->
 								<div class="col-xl-6">
-									<label class="form-label fw-bolder text-dark fs-6">Apellidos</label>
+									<label class="form-label fw-bolder text-dark fs-6">Apellidos <span class="text-danger">*</span></label>
 									<input class="form-control form-control-lg form-control-solid" type="text" placeholder="Apellidos" autocomplete="off" />
 								</div>
 								<!--end::Col-->
@@ -96,7 +96,7 @@ License: For each use you must have a valid license purchased only from above li
 							<!--end::Input group-->
 							<!--begin::Input group-->
 							<div class="fv-row mb-7">
-								<label class="form-label fw-bolder text-dark fs-6">Email</label>
+								<label class="form-label fw-bolder text-dark fs-6">Email <span class="text-danger">*</span></label>
 								<input class="form-control form-control-lg form-control-solid" type="email" placeholder="Ejemplo@correo.com" name="email" id="email" autocomplete="off" />
 							</div>
 							<!--end::Input group-->
@@ -105,7 +105,7 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Wrapper-->
 								<div class="mb-1">
 									<!--begin::Label-->
-									<label class="form-label fw-bolder text-dark fs-6">Contraseña</label>
+									<label class="form-label fw-bolder text-dark fs-6">Contraseña <span class="text-danger">*</span></label>
 									<!--end::Label-->
 									<!--begin::Input wrapper-->
 									<div class="position-relative mb-3">
@@ -133,19 +133,19 @@ License: For each use you must have a valid license purchased only from above li
 							<!--end::Input group=-->
 							<!--begin::Input group-->
 							<div class="fv-row mb-5">
-								<label class="form-label fw-bolder text-dark fs-6">Confirmar contraseña</label>
+								<label class="form-label fw-bolder text-dark fs-6">Confirmar contraseña <span class="text-danger">*</span></label>
 								<input class="form-control form-control-lg form-control-solid" type="password" placeholder="Confirmar contraseña" name="confirm-password" id="confirmar" autocomplete="off" />
 							</div>
 							<!--end::Input group-->
                             <!--begin::Input group-->
                             <div class="fv-row mb-5">
-                                <label class="form-label fw-bolder text-dark fs-6">Telefono</label>
+                                <label class="form-label fw-bolder text-dark fs-6">Telefono <span class="text-danger">*</span></label>
                                 <input class="form-control form-control-lg form-control-solid" type="text" placeholder="Teléfono" name="telefono" id="telefono" autocomplete="off" />
                             </div>
                             <!--end::Input group-->
                             <!--begin::Input group-->
                             <div class="fv-row mb-5">
-                                <label class="form-label fw-bolder text-dark fs-6">Direccion</label>
+                                <label class="form-label fw-bolder text-dark fs-6">Direccion <span class="text-danger">*</span></label>
                                 <input class="form-control form-control-lg form-control-solid" type="text" placeholder="Dirección" name="direccion" id="direccion" autocomplete="off" />
                             </div>
                             <!--end::Input group-->
