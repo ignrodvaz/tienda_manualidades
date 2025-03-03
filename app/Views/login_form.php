@@ -43,7 +43,7 @@ License: For each use you must have a valid license purchased only from above li
 				<!--begin::Content-->
 				<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
 					<!--begin::Logo-->
-					<img alt="Logo" src="../assets/media/logos/Logo Lpt.png" class="h-250px logo" />
+					<img alt="Logo" src="<?= base_url('../assets/media/logos/Logo LPT.png') ?>" class="h-250px"/>
 					<!--end::Logo-->
 					<!--begin::Wrapper-->
 					<div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">

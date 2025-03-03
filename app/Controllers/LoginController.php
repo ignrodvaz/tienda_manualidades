@@ -8,6 +8,10 @@ use CodeIgniter\Controller;
 
 class LoginController extends Controller
 {
+    public function __construct()
+    {
+        helper(['form', 'url']); // Carga los helpers necesarios para trabajar con formularios y URLs.
+    }
     public function index()
     {
         // Mostrar el formulario de inicio de sesión
