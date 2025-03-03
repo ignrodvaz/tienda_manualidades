@@ -7,7 +7,6 @@ use CodeIgniter\Controller;
 
 class CategoriaController extends BaseController
 {
-
     protected $categoriaModel;
 
     public function __construct()
