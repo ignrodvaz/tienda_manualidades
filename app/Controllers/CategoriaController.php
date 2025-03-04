@@ -226,7 +226,7 @@ class CategoriaController extends BaseController
         }
 
         fclose($output);
-        exit;
+        exit();
     }
 
 

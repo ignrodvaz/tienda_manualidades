@@ -87,6 +87,7 @@ $routes->post('rol/save', 'RolController::saveRol'); // Crear ROL (POST)
 $routes->get('rol/save/(:num)', 'RolController::saveRol/$1'); // Mostrar formulario para editar ROL (GET)
 $routes->post('rol/save/(:num)', 'RolController::saveRol/$1'); // Editar ROL (POST)
 $routes->get('rol/delete/(:num)', 'RolController::delete/$1'); //Esta ruta elimina una ROL específica usando su ID.
+$routes->get('rol/exportar', 'RolController::exportar'); //Esta ruta exporta las categorías a un archivo CSV.
 
 //EVENTO
 //Rutas para Evento
