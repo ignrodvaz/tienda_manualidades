@@ -77,7 +77,7 @@ License: For each use you must have a valid license purchased only from above li
 							<div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true">
 								<div class="menu-item">
 									<div class="menu-content pb-2">
-										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Dashboard</span>
+										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Inicio</span>
 									</div>
 								</div>
 								<div class="menu-item">
@@ -94,14 +94,14 @@ License: For each use you must have a valid license purchased only from above li
 											</span>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-title">Default</span>
+										<span class="menu-title">Inicio</span>
 									</a>
 								</div>
 								<?php $session = session(); ?>
 								<?php if($session->get('rol') !== 'USUARIO'):?>
 								<div class="menu-item">
 									<div class="menu-content pt-8 pb-2">
-										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Crafted</span>
+										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Secciones</span>
 									</div>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
@@ -189,7 +189,7 @@ License: For each use you must have a valid license purchased only from above li
 								<?php endif; ?>
 								<div class="menu-item">
 									<div class="menu-content pt-8 pb-2">
-										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Apps</span>
+										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Calendario</span>
 									</div>
 								</div>
 								<div class="menu-item">
@@ -260,7 +260,7 @@ License: For each use you must have a valid license purchased only from above li
 										<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 											<!--begin::Item-->
 											<li class="breadcrumb-item text-muted">
-												<a href="home" class="text-muted text-hover-primary">Home</a>
+												<a href="home" class="text-muted text-hover-primary">Inicio</a>
 											</li>
 											<!--end::Item-->
 											<!--begin::Item-->
@@ -504,9 +504,6 @@ License: For each use you must have a valid license purchased only from above li
 											<thead>
 												<tr class="text-start text-muted fw-bolder fs-7 gs-0">
                                                     <th class="text-center">
-														<a href="<?= current_url() . '?' . http_build_query(array_merge($_GET, ['order_columna' => 'PK_ID_DETALLE', 'order_direccion' => ($order_columna == 'PK_ID_DETALLE' && $order_direccion == 'asc') ? 'desc' : 'asc'], ['perPage' => $perPage])) ?>">ID  <?= ($order_columna == 'PK_ID_DETALLE') ? ($order_direccion == 'asc' ? '↑' : '↓') : '' ?></a>
-													</th>
-                                                    <th class="text-center">
 														<a href="<?= current_url() . '?' . http_build_query(array_merge($_GET, ['order_columna' => 'CANTIDAD', 'order_direccion' => ($order_columna == 'CANTIDAD' && $order_direccion == 'asc') ? 'desc' : 'asc'], ['perPage' => $perPage])) ?>">Cantidad <?= ($order_columna == 'CANTIDAD') ? ($order_direccion == 'asc' ? '↑' : '↓') : '' ?></a>
 													</th>
                                                     <th class="text-center">
@@ -524,9 +521,8 @@ License: For each use you must have a valid license purchased only from above li
 											<tbody class="text-gray-700 fw-bold">
                                                 <?php foreach ($detalles as $detalle): ?>
                                                     <tr class="<?= isset($detalle['FECHA_BAJA']) && $detalle['FECHA_BAJA'] !== null ? 'bg-light-danger' : '' ?>">
-                                                        <td class="text-center"><?= esc($detalle['PK_ID_DETALLE']) ?></td>
                                                         <td class="text-center"><?= esc($detalle['CANTIDAD']) ?></td>
-                                                        <td class="text-center"><?= esc($detalle['PRECIO_UNITARIO']) ?></td>
+                                                        <td class="text-center"><?= esc($detalle['PRECIO_UNITARIO']) ?>€</td>
                                                         <td class="text-center"><?= esc($detalle['FK_ID_PEDIDO']) ?></td>
                                                         <td class="text-center"><?= esc($detalle['PRODUCTO_NOMBRE']) ?></td>
 														<td class="text-center">
@@ -632,22 +628,9 @@ License: For each use you must have a valid license purchased only from above li
 							<!--begin::Copyright-->
 							<div class="text-dark order-2 order-md-1">
 								<span class="text-muted fw-bold me-1">2021©</span>
-								<a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
+								<a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Libro Papel Y Tijera</a>
 							</div>
 							<!--end::Copyright-->
-							<!--begin::Menu-->
-							<ul class="menu menu-gray-600 menu-hover-primary fw-bold order-1">
-								<li class="menu-item">
-									<a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
-								</li>
-								<li class="menu-item">
-									<a href="https://keenthemes.com/support" target="_blank" class="menu-link px-2">Support</a>
-								</li>
-								<li class="menu-item">
-									<a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
-								</li>
-							</ul>
-							<!--end::Menu-->
 						</div>
 						<!--end::Container-->
 					</div>

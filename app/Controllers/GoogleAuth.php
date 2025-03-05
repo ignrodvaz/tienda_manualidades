@@ -5,7 +5,7 @@ namespace App\Controllers;
 use Google\Client;
 use Google\Service\Oauth2;
 use App\Models\UserModel;
-use Config\Google;  // Asegúrate de que esté aquí
+use Config\Google;
 
 class GoogleAuth extends BaseController
 {
