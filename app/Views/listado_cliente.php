@@ -546,7 +546,7 @@ License: For each use you must have a valid license purchased only from above li
                                                         <td class="text-center"><?= esc($cliente['EMAIL']) ?></td>
                                                         <td class="text-center"><?= esc($cliente['TELEFONO']) ?></td>
                                                         <td class="text-center"><?= esc($cliente['DIRECCION']) ?></td>
-                                                        <td class="text-center"><?= esc($cliente['FECHA_REGISTRO']) ?></td>
+                                                        <td class="text-center"><?= esc((new DateTime($cliente['FECHA_REGISTRO']))->format('d/m/Y')) ?></td>
                                                         <td class="text-center"><?= esc($cliente['ROL_NOMBRE']) ?></td>
 														<td class="text-center">
 															<a href="#" class="btn btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Acciones

@@ -528,7 +528,7 @@ License: For each use you must have a valid license purchased only from above li
 											<tbody class="text-gray-700 fw-bold">
                                                 <?php foreach ($pedidos as $pedido): ?>
                                                     <tr class="<?= isset($pedido['FECHA_BAJA']) && $pedido['FECHA_BAJA'] !== null ? 'bg-light-danger' : '' ?>">
-                                                        <td class="text-center"><?= esc($pedido['FECHA_PEDIDO']) ?></td>
+														<td class="text-center"><?= esc((new DateTime($pedido['FECHA_PEDIDO']))->format('d/m/Y')) ?></td>
                                                         <td class="text-center"><?= esc($pedido['DIRECCION_PEDIDO']) ?></td>
                                                         <td class="text-center"><?= esc($pedido['TOTAL_PEDIDO']) ?>€</td>
                                                         <td class="text-center"><?= esc($pedido['ESTADO']) ?></td>
