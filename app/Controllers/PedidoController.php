@@ -312,7 +312,7 @@ class PedidoController extends BaseController
             logoPath: '',
             logoResizeToWidth: 50,
             logoPunchoutBackground: true,
-            labelText: 'Escanea para descargar PDF',
+            labelText: 'Pedido' . $id_pedido,
             labelFont: new OpenSans(20),
             labelAlignment: LabelAlignment::Center
         );

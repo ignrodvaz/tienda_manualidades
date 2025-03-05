@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
             data: [1200, 1500, 1800, 2100, 1700, 2000, 2300] // Datos de ventas diarias/semanales
         }, {
             name: 'Pedidos', // Serie 2: Pedidos
-            data: [50, 70, 60, 80, 75, 90, 85] // Datos de pedidos diarios/semanales
+            data: [500, 700, 600, 800, 750, 900, 850] // Datos de pedidos diarios/semanales
         }],
         chart: {
             height: 350,
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var options = {
         series: [{
         name: 'Inflation',
-        data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2]
+        data: [2.3, 3.1, 4.0, 10.1, 4.0]
       }],
         chart: {
         height: 350,
@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       
       xaxis: {
-        categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        categories: ["Pinturas", "Algodón", "Papel", "Herramientas", "Arcilla"],
         position: 'top',
         axisBorder: {
           show: false
@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
       
       },
       title: {
-        text: 'Monthly Inflation in Argentina, 2002',
+        text: 'Categoria y Productos - Año 2023',
         floating: true,
         offsetY: 330,
         align: 'center',
