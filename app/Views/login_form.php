@@ -130,7 +130,7 @@ License: For each use you must have a valid license purchased only from above li
 							<!--end::Actions-->
 						</form>
 						<a href="<?= base_url('google-auth') ?>" class="btn btn-danger w-100 mb-3">
-    						<i class="fab fa-google"></i> Iniciar sesión con Google
+    						<i class="fab fa-google"></i> Accerder con Google
 						</a>
 
                         <script>

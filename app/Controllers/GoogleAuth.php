@@ -51,7 +51,7 @@ class GoogleAuth extends BaseController
                     'NOMBRE'   => $userInfo->name,  // Usar 'NOMBRE' en lugar de 'name'
                     'EMAIL'    => $userInfo->email, // Usar 'EMAIL' en lugar de 'email'
                     'CONTRASENA' => '', // No guardamos contraseña
-                    'google_id' => $userInfo->id   // Si no tienes la columna google_id, cámbiala por 'google_id'
+                    'PK_ID_CLIENTE' => $userInfo->id   // Si no tienes la columna google_id, cámbiala por 'google_id'
                 ];
 
                 $userModel->insert($newUser);
