@@ -60,3 +60,234 @@ in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
 12 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
 13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 09:41:34 --> ArgumentCountError: Too few arguments to function App\Controllers\PedidoController::generarQR(), 0 passed in /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: pedido/generarQR/11]
+in APPPATH/Controllers/PedidoController.php on line 271.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 09:42:57 --> ErrorException: Attempt to read property "FECHA_PEDIDO" on array
+[Method: GET, Route: pedido/generarQR/12]
+in APPPATH/Controllers/PedidoController.php on line 282.
+ 1 APPPATH/Controllers/PedidoController.php(282): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "FECHA_PEDIDO" on array', '/Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/PedidoController.php', 282)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('12')
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 09:47:55 --> Error: Call to undefined method Endroid\QrCode\QrCode::setEncoding()
+[Method: GET, Route: pedido/generarQR/12]
+in APPPATH/Controllers/PedidoController.php on line 297.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('12')
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 09:49:56 --> Error: Call to undefined method Endroid\QrCode\QrCode::setErrorCorrectionLevel()
+[Method: GET, Route: pedido/generarQR/12]
+in APPPATH/Controllers/PedidoController.php on line 297.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('12')
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 09:51:20 --> Error: Call to undefined method Endroid\QrCode\QrCode::setSize()
+[Method: GET, Route: pedido/generarQR/14]
+in APPPATH/Controllers/PedidoController.php on line 298.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('14')
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 10:07:00 --> Error: Call to undefined method Endroid\QrCode\QrCode::create()
+[Method: GET, Route: pedido/generarQR/12]
+in APPPATH/Controllers/PedidoController.php on line 292.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('12')
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 10:45:41 --> Error: Call to undefined method Endroid\QrCode\Builder\Builder::create()
+[Method: GET, Route: pedido/generarQR/14]
+in APPPATH/Controllers/PedidoController.php on line 297.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('14')
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 10:51:48 --> Error: Call to undefined method Endroid\QrCode\Builder\Builder::create()
+[Method: GET, Route: pedido/generarQR/11]
+in APPPATH/Controllers/PedidoController.php on line 297.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('11')
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 10:52:07 --> Error: Call to undefined method Endroid\QrCode\Builder\Builder::create()
+[Method: GET, Route: pedido/generarQR/15]
+in APPPATH/Controllers/PedidoController.php on line 297.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('15')
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 10:57:15 --> Exception: Could not read logo image data from path "/Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/assets/symfony.png": file_get_contents(/Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/assets/symfony.png): Failed to open stream: No such file or directory
+[Method: GET, Route: pedido/generarQR/11]
+in VENDORPATH/endroid/qr-code/src/ImageData/LogoImageData.php on line 28.
+ 1 VENDORPATH/endroid/qr-code/src/Writer/AbstractGdWriter.php(131): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+ 2 VENDORPATH/endroid/qr-code/src/Writer/AbstractGdWriter.php(119): Endroid\QrCode\Writer\AbstractGdWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\GdResult))
+ 3 VENDORPATH/endroid/qr-code/src/Writer/PngWriter.php(25): Endroid\QrCode\Writer\AbstractGdWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), [...])
+ 4 VENDORPATH/endroid/qr-code/src/Builder/Builder.php(120): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), [...])
+ 5 APPPATH/Controllers/PedidoController.php(309): Endroid\QrCode\Builder\Builder->build()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('11')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 11:43:44 --> Error: Call to undefined method Endroid\QrCode\Builder\Builder::create()
+[Method: GET, Route: pedido/generarQR/12]
+in APPPATH/Controllers/PedidoController.php on line 296.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('12')
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 12:32:36 --> Error: Call to undefined method Endroid\QrCode\Builder\Builder::create()
+[Method: GET, Route: pedido/generarQR/11]
+in APPPATH/Controllers/PedidoController.php on line 294.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('11')
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 12:45:39 --> Error: Call to undefined method Endroid\QrCode\Builder\Builder::create()
+[Method: GET, Route: pedido/generarQR/11]
+in APPPATH/Controllers/PedidoController.php on line 294.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('11')
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 12:56:57 --> Error: Call to undefined method Endroid\QrCode\Builder\Builder::create()
+[Method: GET, Route: pedido/generarQR/11]
+in APPPATH/Controllers/PedidoController.php on line 296.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('11')
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 13:06:54 --> ErrorException: require(vendor/autoload.php): Failed to open stream: No such file or directory
+[Method: GET, Route: pedido]
+in APPPATH/Controllers/PedidoController.php on line 5.
+ 1 APPPATH/Controllers/PedidoController.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(vendor/autoload.php): Failed to open stream: No such file or directory', '/Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/PedidoController.php', 5)
+ 2 APPPATH/Controllers/PedidoController.php(5): require()
+ 3 VENDORPATH/composer/ClassLoader.php(576): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/PedidoController.php')
+ 4 VENDORPATH/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Applications/MAMP/htdocs/tienda_manualidades/vendor/composer/../../app/Controllers/PedidoController.php')
+ 5 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\PedidoController')
+ 6 SYSTEMPATH/CodeIgniter.php(885): class_exists('\\App\\Controllers\\PedidoController', true)
+ 7 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 13:06:57 --> ErrorException: require(vendor/autoload.php): Failed to open stream: No such file or directory
+[Method: GET, Route: pedido/save/11]
+in APPPATH/Controllers/PedidoController.php on line 5.
+ 1 APPPATH/Controllers/PedidoController.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(vendor/autoload.php): Failed to open stream: No such file or directory', '/Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/PedidoController.php', 5)
+ 2 APPPATH/Controllers/PedidoController.php(5): require()
+ 3 VENDORPATH/composer/ClassLoader.php(576): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/PedidoController.php')
+ 4 VENDORPATH/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Applications/MAMP/htdocs/tienda_manualidades/vendor/composer/../../app/Controllers/PedidoController.php')
+ 5 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\PedidoController')
+ 6 SYSTEMPATH/CodeIgniter.php(885): class_exists('\\App\\Controllers\\PedidoController', true)
+ 7 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 13:07:30 --> Error: Call to undefined method Endroid\QrCode\Builder\Builder::create()
+[Method: GET, Route: pedido/generarQR/11]
+in APPPATH/Controllers/PedidoController.php on line 248.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('11')
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-04 13:30:39 --> mysqli_sql_exception: Unknown column 'google_id' in 'field list' in /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/MySQLi/Connection.php(327): mysqli->query('INSERT INTO `CL...', 0)
+#1 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `CL...')
+#2 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `CL...')
+#3 /Applications/MAMP/htdocs/tienda_manualidades/system/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `CL...', Array, false)
+#4 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/MAMP/htdocs/tienda_manualidades/system/BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/MAMP/htdocs/tienda_manualidades/system/Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 /Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/GoogleAuth.php(57): CodeIgniter\Model->insert(Array)
+#8 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(933): App\Controllers\GoogleAuth->callback()
+#9 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GoogleAuth))
+#10 /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /Applications/MAMP/htdocs/tienda_manualidades/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Applications/MAMP/htdocs/tienda_manualidades/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-03-04 13:30:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'google_id' in 'field list'
+[Method: GET, Route: google-callback]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `CLIENTE` (`NOMBRE`, `EMAIL`, `CONTRASENA`, `google_id`) VALUES (:NOMBRE:, :EMAIL:, :CONTRASENA:, :google_id:)', [...], false)
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH/Controllers/GoogleAuth.php(57): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\GoogleAuth->callback()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GoogleAuth))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 13:30:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'google_id' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `CLIENTE` (`NOMBRE`, `EMAIL`, `CONTRASENA`, `google_id`) VALUES (\'Ignacio Manuel Rodriguez Vazquez\', \'tatorguez@alumnos.alborfp.com\', \'\', \'105550876555493088934\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `CLIENTE` (`NOMBRE`, `EMAIL`, `CONTRASENA`, `google_id`) VALUES (\'Ignacio Manuel Rodriguez Vazquez\', \'tatorguez@alumnos.alborfp.com\', \'\', \'105550876555493088934\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `CLIENTE` (`NOMBRE`, `EMAIL`, `CONTRASENA`, `google_id`) VALUES (:NOMBRE:, :EMAIL:, :CONTRASENA:, :google_id:)', [...], false)
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH/Controllers/GoogleAuth.php(57): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\GoogleAuth->callback()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GoogleAuth))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-04 13:30:39 --> [Caused by] mysqli_sql_exception: Unknown column 'google_id' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query('INSERT INTO `CLIENTE` (`NOMBRE`, `EMAIL`, `CONTRASENA`, `google_id`) VALUES (\'Ignacio Manuel Rodriguez Vazquez\', \'tatorguez@alumnos.alborfp.com\', \'\', \'105550876555493088934\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `CLIENTE` (`NOMBRE`, `EMAIL`, `CONTRASENA`, `google_id`) VALUES (\'Ignacio Manuel Rodriguez Vazquez\', \'tatorguez@alumnos.alborfp.com\', \'\', \'105550876555493088934\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `CLIENTE` (`NOMBRE`, `EMAIL`, `CONTRASENA`, `google_id`) VALUES (\'Ignacio Manuel Rodriguez Vazquez\', \'tatorguez@alumnos.alborfp.com\', \'\', \'105550876555493088934\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `CLIENTE` (`NOMBRE`, `EMAIL`, `CONTRASENA`, `google_id`) VALUES (:NOMBRE:, :EMAIL:, :CONTRASENA:, :google_id:)', [...], false)
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH/Controllers/GoogleAuth.php(57): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\GoogleAuth->callback()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GoogleAuth))
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

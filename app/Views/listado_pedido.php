@@ -554,6 +554,11 @@ License: For each use you must have a valid license purchased only from above li
 																	<a href="<?= base_url('pedido/delete/' . esc($pedido['PK_ID_PEDIDO'])) ?>"   class="menu-link px-3" data-kt-users-table-filter="delete_row"><?= isset($pedido['FECHA_BAJA']) ? 'Dar de Alta' : 'Dar de Baja' ?></a>
 																</div>
 																<!--end::Menu item-->
+																<!--begin::Menu item-->
+																<div class="menu-item px-3">
+																	<a href="<?= base_url('pedido/generarQR/' . esc($pedido['PK_ID_PEDIDO'])) ?>"   class="menu-link px-3" data-kt-users-table-filter="delete_row">Generar QR</a>
+																</div>
+																<!--end::Menu item-->
 															</div>
 															<!--end::Menu-->
 														</td>

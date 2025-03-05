@@ -1,0 +1,41 @@
+CRITICAL - 2025-03-05 08:27:04 --> Error: Call to undefined method Endroid\QrCode\QrCode::create()
+[Method: GET, Route: pedido/generarQR/12]
+in APPPATH/Controllers/PedidoController.php on line 271.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('12')
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-05 08:30:07 --> Error: Call to undefined method Endroid\QrCode\QrCode::create()
+[Method: GET, Route: pedido/generarQR/12]
+in APPPATH/Controllers/PedidoController.php on line 271.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('12')
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-05 08:34:22 --> Exception: Could not read logo image data from path "/Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/assets/symfony.png": file_get_contents(/Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/assets/symfony.png): Failed to open stream: No such file or directory
+[Method: GET, Route: pedido/generarQR/12]
+in VENDORPATH/endroid/qr-code/src/ImageData/LogoImageData.php on line 28.
+ 1 VENDORPATH/endroid/qr-code/src/Writer/AbstractGdWriter.php(131): Endroid\QrCode\ImageData\LogoImageData::createForLogo(Object(Endroid\QrCode\Logo\Logo))
+ 2 VENDORPATH/endroid/qr-code/src/Writer/AbstractGdWriter.php(119): Endroid\QrCode\Writer\AbstractGdWriter->addLogo(Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Writer\Result\GdResult))
+ 3 VENDORPATH/endroid/qr-code/src/Writer/PngWriter.php(25): Endroid\QrCode\Writer\AbstractGdWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), [...])
+ 4 VENDORPATH/endroid/qr-code/src/Builder/Builder.php(120): Endroid\QrCode\Writer\PngWriter->write(Object(Endroid\QrCode\QrCode), Object(Endroid\QrCode\Logo\Logo), Object(Endroid\QrCode\Label\Label), [...])
+ 5 APPPATH/Controllers/PedidoController.php(269): Endroid\QrCode\Builder\Builder->build()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('12')
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-05 08:59:44 --> ArgumentCountError: Too few arguments to function App\Controllers\PedidoController::generarQR(), 1 passed in /Applications/MAMP/htdocs/tienda_manualidades/system/CodeIgniter.php on line 933 and exactly 2 expected
+[Method: GET, Route: pedido/generarQR/11]
+in APPPATH/Controllers/PedidoController.php on line 249.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\PedidoController->generarQR('11')
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PedidoController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

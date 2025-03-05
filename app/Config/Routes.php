@@ -66,6 +66,8 @@ $routes->get('pedido/save/(:num)', 'PedidoController::savePedido/$1'); // Mostra
 $routes->post('pedido/save/(:num)', 'PedidoController::savePedido/$1'); // Editar PEDIDO (POST)
 $routes->get('pedido/delete/(:num)', 'PedidoController::delete/$1'); //Esta ruta elimina una PEDIDO específica usando su ID.
 $routes->get('pedido/exportar', 'PedidoController::exportar'); //Esta ruta exporta las categorías a un archivo CSV.
+$routes->get('pedido/generarQR/(:num)', 'PedidoController::generarQR/$1'); // Genera y descarga un código QR con los datos del pedido
+$routes->get('pedido/generarPDF/(:num)', 'PedidoController::generarPDF/$1'); // Genera y descarga un PDF con los datos del pedido
 
 //PRODUCTO
 //Rutas para Producto
