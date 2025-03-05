@@ -4,6 +4,19 @@ namespace App\Controllers;
 
 use App\Models\DetallePedidoModel;
 
+// Importar las clases necesarias para la generación del QR
+use Endroid\QrCode\Builder\Builder;
+use Endroid\QrCode\Encoding\Encoding;
+use Endroid\QrCode\ErrorCorrectionLevel;
+use Endroid\QrCode\Label\LabelAlignment;
+use Endroid\QrCode\Label\Font\OpenSans;
+use Endroid\QrCode\RoundBlockSizeMode;
+use Endroid\QrCode\Writer\PngWriter;
+
+//Importar las clases para generar PDF
+use Dompdf\Dompdf;
+use Dompdf\Options;
+
 class DetallePedidoController extends BaseController
 {
     protected $DetallePedidoModel;
@@ -173,6 +186,76 @@ class DetallePedidoController extends BaseController
         }
     }
 
+    public function generarPDF($id_detalle)
+    {
+        $detalle = $this->DetallePedidoModel->select('DETALLE_PEDIDO.*, PRODUCTO.NOMBRE AS PRODUCTO_NOMBRE, DETALLE_PEDIDO.FK_ID_PEDIDO')
+            ->join('PRODUCTO', 'PRODUCTO.PK_ID_PRODUCTO = DETALLE_PEDIDO.FK_ID_PRODUCTO', 'left')
+            ->where('DETALLE_PEDIDO.PK_ID_DETALLE', $id_detalle)
+            ->first();
+
+        if (!$detalle) {
+            return redirect()->to('error_detalle_no_encontrado');
+        }
+
+        $html = '
+            <h2>Detalle de Pedido #'.$detalle['PK_ID_DETALLE'].'</h2>
+            <p><strong>ID Pedido:</strong> '.$detalle['FK_ID_PEDIDO'].'</p>
+            <p><strong>Cantidad:</strong> '.$detalle['CANTIDAD'].'</p>
+            <p><strong>Precio Unitario:</strong> '.$detalle['PRECIO_UNITARIO'].'€</p>
+            <p><strong>Producto:</strong> '.$detalle['PRODUCTO_NOMBRE'].'</p>
+        ';
+
+        $options = new Options();
+        $options->set('isHtml5ParserEnabled', true);
+        $dompdf = new Dompdf($options);
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+
+        header('Content-Type: application/pdf');
+        header('Content-Disposition: attachment; filename="DetallePedido_'.$id_detalle.'.pdf"');
+
+        echo $dompdf->output();
+        exit();
+    }
+
+
+    public function generarQR($id_detalle)
+    {
+        // Generar la URL completa del PDF
+        $baseUrl = base_url("detalle_pedido/generarPDF/$id_detalle");
+    
+        // Construcción del QR con la URL
+        $builder = new Builder(
+            writer: new PngWriter(),
+            writerOptions: [],
+            validateResult: false,
+            data: $baseUrl, // 📌 El QR ahora contiene la URL del PDF
+            encoding: new Encoding('UTF-8'),
+            errorCorrectionLevel: ErrorCorrectionLevel::High,
+            size: 300,
+            margin: 10,
+            roundBlockSizeMode: RoundBlockSizeMode::Margin,
+            logoPath: '',
+            logoResizeToWidth: 50,
+            logoPunchoutBackground: true,
+            labelText: 'Detalle Pedido: ' . $id_detalle,
+            labelFont: new OpenSans(20),
+            labelAlignment: LabelAlignment::Center
+        );
+    
+        // Generar la imagen QR
+        $result = $builder->build();
+    
+        // Configurar los encabezados para la descarga
+        header('Content-Type: image/png');
+        header('Content-Disposition: attachment; filename="QR_Pedido_' . $id_detalle . '.png"');
+    
+        // Enviar la imagen QR
+        echo $result->getString();
+        exit();
+    }
+
     public function exportar()
     {
         $pk_id_detalle = $this->request->getVar('PK_ID_DETALLE');
@@ -185,6 +268,8 @@ class DetallePedidoController extends BaseController
         $order_direccion = $this->request->getGet('order_direccion') ?? 'asc';
 
         $DetallePedidoModel = new DetallePedidoModel();
+
+        
 
         $query = $DetallePedidoModel->select('DETALLE_PEDIDO.*, PRODUCTO.NOMBRE as PRODUCTO_NOMBRE')
         ->join('PEDIDO', 'DETALLE_PEDIDO.FK_ID_PEDIDO = PEDIDO.PK_ID_PEDIDO', 'left')

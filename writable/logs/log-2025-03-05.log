@@ -39,3 +39,45 @@ in APPPATH/Controllers/PedidoController.php on line 249.
  4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
  5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-05 10:52:12 --> ErrorException: Undefined array key "PK_ID_DETALLE"
+[Method: GET, Route: detalle_pedido/generarPDF/14]
+in APPPATH/Controllers/DetallePedidoController.php on line 203.
+ 1 APPPATH/Controllers/DetallePedidoController.php(203): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "PK_ID_DETALLE"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/DetallePedidoController.php', 203)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->generarPDF('14')
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-05 11:38:45 --> ErrorException: Undefined array key "PK_ID_DETALLE"
+[Method: GET, Route: detalle_pedido/generarPDF/14]
+in APPPATH/Controllers/DetallePedidoController.php on line 206.
+ 1 APPPATH/Controllers/DetallePedidoController.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "PK_ID_DETALLE"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/DetallePedidoController.php', 206)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->generarPDF('14')
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-05 11:42:15 --> ErrorException: Undefined array key "PK_ID_DETALLE"
+[Method: GET, Route: detalle_pedido/generarPDF/17]
+in APPPATH/Controllers/DetallePedidoController.php on line 207.
+ 1 APPPATH/Controllers/DetallePedidoController.php(207): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "PK_ID_DETALLE"', '/Applications/MAMP/htdocs/tienda_manualidades/app/Controllers/DetallePedidoController.php', 207)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->generarPDF('17')
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-05 11:48:03 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "detalle_pedido_pdf.php"
+[Method: GET, Route: detalle_pedido/generarPDF/14]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('detalle_pedido_pdf.php')
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('detalle_pedido_pdf', [], true)
+ 3 APPPATH/Controllers/DetallePedidoController.php(197): view('detalle_pedido_pdf', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\DetallePedidoController->generarPDF('14')
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DetallePedidoController))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

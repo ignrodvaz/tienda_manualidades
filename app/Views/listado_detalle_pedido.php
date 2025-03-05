@@ -550,6 +550,16 @@ License: For each use you must have a valid license purchased only from above li
 																	<a href="<?= base_url('detalle_pedido/delete/' . esc($detalle['PK_ID_DETALLE'])) ?>"   class="menu-link px-3" data-kt-users-table-filter="delete_row"><?= isset($detalle['FECHA_BAJA']) ? 'Dar de Alta' : 'Dar de Baja' ?></a>
 																</div>
 																<!--end::Menu item-->
+																<!--begin::Menu item-->
+																<div class="menu-item px-3">
+																	<a href="<?= base_url('detalle_pedido/generarQR/' . esc($detalle['PK_ID_DETALLE'])) ?>"   class="menu-link px-3" data-kt-users-table-filter="delete_row">Generar QR</a>
+																</div>
+																<!--end::Menu item-->
+																<!--begin::Menu item-->
+																<div class="menu-item px-3">
+																	<a href="<?= base_url('detalle_pedido/generarPDF/' . esc($detalle['PK_ID_DETALLE'])) ?>"   class="menu-link px-3" data-kt-users-table-filter="delete_row">Generar PDF</a>
+																</div>
+																<!--end::Menu item-->
 															</div>
 															<!--end::Menu-->
 														</td>
