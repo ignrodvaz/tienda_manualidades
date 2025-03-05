@@ -271,7 +271,7 @@ class PedidoController extends BaseController
             <h2>Pedido #'.$pedido['PK_ID_PEDIDO'].'</h2>
             <p><strong>Fecha:</strong> '.$pedido['FECHA_PEDIDO'].'</p>
             <p><strong>Dirección:</strong> '.$pedido['DIRECCION_PEDIDO'].'</p>
-            <p><strong>Total:</strong> $'.$pedido['TOTAL_PEDIDO'].'</p>
+            <p><strong>Total:</strong> '.$pedido['TOTAL_PEDIDO'].'€</p>
             <p><strong>Estado:</strong> '.$pedido['ESTADO'].'</p>
             <p><strong>Cliente:</strong> '.$pedido['CLIENTE_NOMBRE'].'</p>
         ';
@@ -312,7 +312,7 @@ class PedidoController extends BaseController
             logoPath: '',
             logoResizeToWidth: 50,
             logoPunchoutBackground: true,
-            labelText: 'Pedido' . $id_pedido,
+            labelText: 'Pedido: ' . $id_pedido,
             labelFont: new OpenSans(20),
             labelAlignment: LabelAlignment::Center
         );
