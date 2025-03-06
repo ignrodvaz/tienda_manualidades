@@ -393,7 +393,6 @@ License: For each use you must have a valid license purchased only from above li
 															</div>
 															<!--end::Input group-->
 															<div class="d-flex justify-content-end">
-																<button type="reset" class="btn btn-light btn-active-light-primary fw-bold me-2 px-6">Reset</button>
 																<button type="submit" class="btn btn-primary fw-bold px-6">Buscar</button>
 															</div>
 															<!--end::Actions-->
