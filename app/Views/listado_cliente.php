@@ -347,57 +347,103 @@ License: For each use you must have a valid license purchased only from above li
 													<!--begin::Content-->
 													<form id="formularioListadoCliente" action="<?= base_url('cliente')?>">
 														<div class="px-7 py-5" data-kt-user-table-filter="form">
-															<!--begin::Input group-->
-															<div class="mb-3">
-																<input type="text" name="NOMBRE" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Nombre" value="<?= esc($name) ?>"></input>
+															<div class="mb-3" id="nombreContainer">
+																<input type="text" name="NOMBRE" id="NOMBRE" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Nombre" value="<?= esc($name) ?>">
 															</div>
 															<div class="mb-3">
-                                                                <input type="text" name="EMAIL" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Email" value="<?= esc($email) ?>"></input>
+																<input type="text" name="EMAIL" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Email" value="<?= esc($email) ?>">
 															</div>
-                                                            <div class="mb-3">
-                                                                <input type="text" name="TELEFONO" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Telefono" value="<?= esc($telefono) ?>">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <input type="text" name="DIRECCION" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Direccion" value="<?= esc($direccion) ?>">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <input type="text" name="FECHA_REGISTRO" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha Registro" value="<?= esc($fecha_registro) ?>">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <select name="ROL" id="ROL" class="form-select form-select-solid fw-bolder" onchange="this.form.submit()">
-                                                                    <option value="" disabled>Seleccione una opción</option>
+															<div class="mb-3">
+																<input type="text" name="TELEFONO" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Telefono" value="<?= esc($telefono) ?>">
+															</div>
+															<div class="mb-3">
+																<input type="text" name="DIRECCION" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Direccion" value="<?= esc($direccion) ?>">
+															</div>
+															<div class="mb-3">
+																<input type="text" name="FECHA_REGISTRO" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha Registro" value="<?= esc($fecha_registro) ?>">
+															</div>
+															<div class="mb-3">
+																<select name="ROL" id="ROL" class="form-select form-select-solid fw-bolder">
+																	<option value="" disabled>Seleccione una opción</option>
 																	<option value="" <?= $rol === null ? 'selected' : '' ?>>Todos</option>
-                                                                    <option value="USUARIO" <?= $rol === 'USUARIO' ? 'selected' : '' ?>>Usuario</option>
-                                                                    <option value="ADMINISTRADOR" <?= $rol === 'ADMINISTRADOR' ? 'selected' : '' ?>>Administrador</option>
-                                                                    <option value="MODERADOR" <?= $rol === 'MODERADOR' ? 'selected' : '' ?>>Moderador</option>
-                                                                    <option value="SUPERVISOR" <?= $rol === 'SUPERVISOR' ? 'selected' : '' ?>>Supervisor</option>
-                                                                </select>
-                                                            </div>
-															<!--begin::Actions-->
-															<!--begin::Input group-->
-															<div class="mb-3">
-																<select name="estado" id="estado" class="form-select form-select-solid fw-bolder" onchange="this.form.submit()">
-																	<option value="" disabled <?= $estado === null ? 'selected' : '' ?>>Seleccione una opción</option>
-																	<option value="altas" <?= $estado === 'altas' ? 'selected' : '' ?>>Altas</option>
-																	<option value="bajas" <?= $estado === 'bajas' ? 'selected' : '' ?>>Bajas</option>
-																	<option value="todas" <?= $estado === 'todas' ? 'selected' : '' ?>>Todas</option>
+																	<option value="USUARIO" <?= $rol === 'USUARIO' ? 'selected' : '' ?>>Usuario</option>
+																	<option value="ADMINISTRADOR" <?= $rol === 'ADMINISTRADOR' ? 'selected' : '' ?>>Administrador</option>
+																	<option value="MODERADOR" <?= $rol === 'MODERADOR' ? 'selected' : '' ?>>Moderador</option>
+																	<option value="SUPERVISOR" <?= $rol === 'SUPERVISOR' ? 'selected' : '' ?>>Supervisor</option>
 																</select>
-																<select class="d-none" name="perPage">
-																	<option value="5" <?= ($perPage == 5) ? 'selected' : '' ?>>5</option>
-																	<option value="10" <?= ($perPage == 10) ? 'selected' : '' ?>>10</option>
-																	<option value="20" <?= ($perPage == 20) ? 'selected' : '' ?>>20</option>
-																</select>
-																<input type="hidden" name="order_columna" value="<?= esc($order_columna) ?>">
-    															<input type="hidden" name="order_direccion" value="<?= esc($order_direccion) ?>">
-																<input type="hidden" name="perPage" id="hiddenPerPage" value="<?= esc($perPage) ?>">
+																<input type="hidden" id="selectedUserName" value="<?= isset($selectedUserName) ? $selectedUserName : '' ?>">
 															</div>
-															<!--end::Input group-->
 															<div class="d-flex justify-content-end">
 																<button type="submit" class="btn btn-primary fw-bold px-6">Buscar</button>
 															</div>
-															<!--end::Actions-->
 														</div>
 													</form>
+													<script>
+														document.addEventListener("DOMContentLoaded", function () {
+															let selectedUserName = "<?= esc($name) ?>"; // Recuperamos el nombre real del usuario
+															let nombreContainer = document.getElementById("nombreContainer");
+															let rolSelect = document.getElementById("ROL");
+
+															function actualizarFiltroDeNombres(rolSeleccionado) {
+																if (!rolSeleccionado) {
+																	nombreContainer.innerHTML = `<input type="text" name="NOMBRE" id="NOMBRE" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Nombre" value="${selectedUserName}">`;
+																	return;
+																}
+
+																nombreContainer.innerHTML = '<select class="form-select form-select-solid fw-bolder"><option>Cargando...</option></select>';
+
+																fetch(`<?= base_url('cliente/getNombrePorRol?rol=') ?>${rolSeleccionado}`)
+																	.then(response => response.json())
+																	.then(data => {
+																		let select = document.createElement("select");
+																		select.name = "NOMBRE";
+																		select.id = "NOMBRE";
+																		select.classList.add("form-select", "form-select-solid", "fw-bolder");
+
+																		let defaultOption = document.createElement("option");
+																		defaultOption.value = "";
+																		defaultOption.textContent = "Todos";
+																		defaultOption.selected = true;
+																		select.appendChild(defaultOption);
+
+																		data.forEach(usuario => {
+																			let option = document.createElement("option");
+																			option.value = usuario.NOMBRE; // 🔥 Ahora el value es el nombre
+																			option.textContent = usuario.NOMBRE;
+
+																			if (usuario.NOMBRE === selectedUserName) {
+																				option.selected = true;
+																			}
+
+																			select.appendChild(option);
+																		});
+
+																		nombreContainer.innerHTML = "";
+																		nombreContainer.appendChild(select);
+																	})
+																	.catch(error => {
+																		console.error("Error cargando nombres:", error);
+																		nombreContainer.innerHTML = `<input type="text" name="NOMBRE" id="NOMBRE" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Nombre" value="${selectedUserName}">`;
+																	});
+															}
+
+															// ✅ Actualizar el filtro de nombres al cambiar el rol
+															rolSelect.addEventListener("change", function () {
+																actualizarFiltroDeNombres(this.value);
+															});
+
+															// ✅ Cargar los datos al entrar a los filtros si hay rol seleccionado
+															if (rolSelect.value) {
+																actualizarFiltroDeNombres(rolSelect.value);
+															} else if (selectedUserName) {
+																// Si hay un usuario seleccionado pero sin rol, mostramos solo su nombre en un input
+																nombreContainer.innerHTML = `<input type="text" name="NOMBRE" id="NOMBRE" class="form-control form-control-solid mb-3 mb-lg-0" value="${selectedUserName}" readonly>`;
+															}
+														});
+
+
+
+													</script>
 													<!--end::Content-->
 												</div>
 												<!--end::Menu 1-->

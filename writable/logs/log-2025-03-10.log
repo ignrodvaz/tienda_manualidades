@@ -1,0 +1,98 @@
+CRITICAL - 2025-03-10 12:21:11 --> ErrorException: Undefined variable $cliente_id
+[Method: GET, Route: cliente]
+in APPPATH/Views/listado_cliente.php on line 385.
+ 1 APPPATH/Views/listado_cliente.php(385): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cliente_id', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_cliente.php', 385)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_cliente.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_cliente', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(112): view('listado_cliente', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-10 12:21:43 --> ErrorException: Undefined variable $pk_id_cliente
+[Method: GET, Route: cliente]
+in APPPATH/Views/listado_cliente.php on line 385.
+ 1 APPPATH/Views/listado_cliente.php(385): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pk_id_cliente', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_cliente.php', 385)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_cliente.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_cliente', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(112): view('listado_cliente', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-10 12:22:32 --> ErrorException: Undefined variable $PK_ID_CLIENTE
+[Method: GET, Route: cliente]
+in APPPATH/Views/listado_cliente.php on line 385.
+ 1 APPPATH/Views/listado_cliente.php(385): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $PK_ID_CLIENTE', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_cliente.php', 385)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_cliente.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_cliente', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(112): view('listado_cliente', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-10 12:25:31 --> ErrorException: Undefined variable $PK_ID_CLIENTE
+[Method: GET, Route: cliente]
+in APPPATH/Views/listado_cliente.php on line 385.
+ 1 APPPATH/Views/listado_cliente.php(385): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $PK_ID_CLIENTE', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_cliente.php', 385)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_cliente.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_cliente', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(114): view('listado_cliente', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-10 12:25:41 --> ErrorException: Undefined variable $PK_ID_CLIENTE
+[Method: GET, Route: cliente]
+in APPPATH/Views/listado_cliente.php on line 385.
+ 1 APPPATH/Views/listado_cliente.php(385): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $PK_ID_CLIENTE', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_cliente.php', 385)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_cliente.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_cliente', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(114): view('listado_cliente', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-10 12:26:20 --> ErrorException: Undefined variable $pk_id_cliente
+[Method: GET, Route: cliente]
+in APPPATH/Views/listado_cliente.php on line 385.
+ 1 APPPATH/Views/listado_cliente.php(385): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pk_id_cliente', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_cliente.php', 385)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_cliente.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_cliente', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(117): view('listado_cliente', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-10 12:29:13 --> ErrorException: Undefined variable $pk_id_cliente
+[Method: GET, Route: cliente]
+in APPPATH/Views/listado_cliente.php on line 385.
+ 1 APPPATH/Views/listado_cliente.php(385): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pk_id_cliente', '/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_cliente.php', 385)
+ 2 SYSTEMPATH/View/View.php(224): include('/Applications/MAMP/htdocs/tienda_manualidades/app/Views/listado_cliente.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('listado_cliente', [], true)
+ 5 APPPATH/Controllers/ClienteController.php(112): view('listado_cliente', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ClienteController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

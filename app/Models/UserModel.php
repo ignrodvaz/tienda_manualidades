@@ -17,5 +17,13 @@ class UserModel extends Model
     public function findByEmail(string $email){
         return $this->where('EMAIL', $email)->first();
     }
+
+    public function getUsuariosPorRol($rol)
+    {
+        return $this->select('PK_ID_CLIENTE, NOMBRE')
+                    ->where('FK_ID_ROL', $rol)
+                    ->findAll();
+    }
+
 }
 

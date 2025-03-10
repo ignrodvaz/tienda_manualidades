@@ -298,6 +298,30 @@ class ClienteController extends BaseController
         exit;
     }
 
+    public function getNombrePorRol()
+    {
+        $rolNombre = $this->request->getGet('rol');
+
+        if (!$rolNombre) {
+            return $this->response->setJSON(['error' => 'Rol no proporcionado']);
+        }
+
+        // Modelo de roles para obtener el ID del rol
+        $rolModel = new RolModel();
+        $rol = $rolModel->where('NOMBRE', $rolNombre)->first();
+
+        if (!$rol) {
+            return $this->response->setJSON(['error' => 'Rol no encontrado']);
+        }
+
+        // Modelo de clientes para obtener los nombres
+        $clienteModel = new ClienteModel();
+        $clientes = $clienteModel->select('PK_ID_CLIENTE, NOMBRE')
+                                ->where('FK_ID_ROL', $rol['PK_ID_ROL'])
+                                ->findAll();
+
+        return $this->response->setJSON($clientes);
+    }
 
 
 }
