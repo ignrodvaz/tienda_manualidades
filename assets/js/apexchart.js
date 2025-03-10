@@ -1,33 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    var options = {
+    document.querySelectorAll('.row').forEach(row => {
+        new Sortable(row, {
+            group: 'shared', // Permite mover entre filas
+            animation: 150,
+            ghostClass: 'sortable-ghost',
+            chosenClass: 'sortable-chosen',
+            dragClass: 'sortable-drag',
+            onEnd: function (evt) {
+                console.log('Elemento movido:', evt.item.id);
+            },
+        });
+    });
+
+    const optionsCategoria = {
         series: [25, 20, 15, 10, 10, 10, 5],
         chart: {
-            width: 500,
-            height: 500,
-            type: 'pie',
+          width: 500,
+          height: 500,
+          type: 'pie',
         },
         labels: ['Pinturas', 'Telas', 'Papel', 'Herramientas', 'Hilos y lanas', 'Arcilla', 'Pegamentos'],
         legend: {
-            position: 'right', // Asegura que esté en el lado derecho
-            offsetY: -20 // Ajusta la posición vertical de la leyenda
+          position: 'right',
+          offsetY: -20,
         },
         responsive: [{
-            breakpoint: 480,
-            options: {
-                chart: {
-                    width: 500,
-                    height: 500
-                },
-                legend: {
-                    position: 'center',
-                    offsetY: -10
-                }
-            }
-        }]
-    };
-    
-    var categoria = new ApexCharts(document.querySelector("#categoria"), options);
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 500,
+              height: 500,
+            },
+            legend: {
+              position: 'center',
+              offsetY: -10,
+            },
+          },
+        }],
+      };
+      
+    const categoria = new ApexCharts(document.querySelector('#categoria'), optionsCategoria);
     categoria.render();
     
 
@@ -43,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const ventasMensuales = datosDesdeBackend.map(item => item.ventas);
 
-        var options = {
+        var optionsVentasMensuales = {
             series: [{
                 name: 'Ventas',
                 data: ventasMensuales
@@ -121,10 +134,10 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
 
-    var ventas = new ApexCharts(document.querySelector("#ventas"), options);
+    var ventas = new ApexCharts(document.querySelector("#ventas"), optionsVentasMensuales);
     ventas.render();
 
-    var options = {
+    var optionsVentasPedidos = {
         series: [{
             name: 'Ventas', // Serie 1: Ventas
             data: [1200, 1500, 1800, 2100, 1700, 2000, 2300] // Datos de ventas diarias/semanales
@@ -181,10 +194,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
     
-    var ventasPedidos = new ApexCharts(document.querySelector("#ventasPedidos"), options);
+    var ventasPedidos = new ApexCharts(document.querySelector("#ventasPedidos"), optionsVentasPedidos);
     ventasPedidos.render();
 
-    var options = {
+    var optionsCategoriaProducto = {
         series: [{
         name: 'Inflation',
         data: [2.3, 3.1, 4.0, 10.1, 4.0]
@@ -264,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       };
 
-      var chart = new ApexCharts(document.querySelector("#chart"), options);
+      var chart = new ApexCharts(document.querySelector("#chart"), optionsCategoriaProducto);
       chart.render();
 
 });

@@ -35,6 +35,7 @@ License: For each use you must have a valid license purchased only from above li
 		<link href="../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 		<script src="../"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 		<!--end::Global Stylesheets Bundle-->
 	</head>
@@ -275,8 +276,8 @@ License: For each use you must have a valid license purchased only from above li
 						<!--end::Toolbar-->
 						<!--begin::Post-->
 						<div class="post d-flex flex-column-fluid" id="kt_post">
-							<!--begin::Container-->
-							<div id="kt_content_container" class="container-xxl">
+							<!--begin::Chart_Container-->
+							<div id="charts_container" class="container-xxl">
 									<!--begin::Row-->
 									<div class="row gy-5 g-xl-8">
 									<!--begin::Col-->
@@ -360,7 +361,7 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::Row-->
 							</div>
-							<!--end::Container-->
+							<!--end::Chart_Container-->
 						</div>
 						<!--end::Post-->
 					</div>
